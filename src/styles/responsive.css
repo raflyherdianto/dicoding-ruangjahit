@@ -1,0 +1,52 @@
+@media screen and (min-width: 650px) {
+  .app-bar {
+    grid-template-columns: 1fr auto;
+    padding: 8px 32px;
+  }
+ 
+  .app-bar .app-bar__menu {
+    display: none;
+  }
+ 
+  .app-bar .app-bar__navigation {
+    position: static;
+    width: 100%;
+  }
+ 
+  .app-bar .app-bar__navigation ul li {
+    display: inline-block;
+  }
+ 
+  .app-bar .app-bar__navigation ul li a {
+    display: inline-block;
+    width: 120px;
+    text-align: center;
+    margin: 0;
+  }
+
+  footer .footer-head {
+    padding: 35px;
+}
+}
+ 
+@media screen and (min-width: 768px) {
+  .app-bar .app-bar__brand h1 {
+    font-size: 1.2em;
+  }
+
+  .app-bar .app-bar__navigation ul div { display: inline-block }
+
+  .app-bar .app-bar__navigation ul .app-bar__registration .login a { margin-right: 8px }
+
+  footer .footer-head {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  footer .footer-head {
+    grid-template-columns: 30% 20% 20% 30%;
+    gap: 8px;
+  }
+}
