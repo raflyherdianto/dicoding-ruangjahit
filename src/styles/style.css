@@ -1,4 +1,4 @@
-* {
+*, html {
   padding: 0;
   margin: 0;
 }
@@ -37,60 +37,71 @@ body {
 .app-bar .app-bar__navigation {
   position: absolute;
   display: grid;
-  top: 50px;
-  left: -110%;
-  width: 100%;
+  top: 55px;
+  left: -170px;
+  width: 150px;
   transition: all 0.3s;
   padding: 8px;
   background-color: white;
+  border-bottom-right-radius: 20px;
   overflow: hidden;
   justify-content: center;
 }
 
-.app-bar .app-bar__navigation ul {
-    margin: 0;
-    padding: 0;
+.app-bar .app-bar__navigation div {
+  margin: 0;
+  padding: 0;
 }
 
-.app-bar .app-bar__navigation ul li a{
-    text-decoration: none;
+.app-bar .app-bar__navigation div li a{
+  text-decoration: none;
 }
 
-.app-bar .app-bar__navigation ul div {
+.app-bar .app-bar__navigation div ol {
   list-style-type: none;
   text-align: center;
 }
 
-.app-bar .app-bar__navigation ul .app-bar__navigation-item {
-  margin-right: 8px;
+.app-bar .app-bar__navigation div .app-bar__navigation-item li a:hover {
+  font-weight: 600;
+  color: #ff8a00;
 }
 
-.app-bar .app-bar__navigation ul .app-bar__navigation-item li a:hover {
-    font-weight: 700;
-    color: #ff8a00;
-}
-
-.app-bar .app-bar__navigation ul .app-bar__navigation-item li a, .app-bar .app-bar__navigation ul .app-bar__registration li a {
+.app-bar .app-bar__navigation div .app-bar__navigation-item li a, .app-bar .app-bar__navigation div .app-bar__registration li a {
   display: inline-block;
   color: black;
-  padding: 10px;
+  padding: 10px 0px;
   width: 100%;
 }
 
-.app-bar .app-bar__navigation ul .app-bar__registration .login a {
-    background-color: #ffe1a6;
-    color: #ff8a00;
-    padding: 10px 4px;
-    width: 80px;
-    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+.app-bar .app-bar__navigation div .app-bar__registration .login a {
+  background-color: #ffe1a6;
+  color: #ff8a00;
+  padding: 10px 4px;
+  margin: 10px 0px 10px 0px;
+  width: 80px;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
 }
 
-.app-bar .app-bar__navigation ul .app-bar__registration .register a {
-    background-color: #ff8a00;
-    color: #ffe1a6;
-    padding: 10px 4px;
-    width: 80px;
-    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+.app-bar .app-bar__navigation div .app-bar__registration .login a:hover {
+  background-color: #ff8a00;
+  color: #fbfbfb;
+  font-weight: 700;
+}
+
+.app-bar .app-bar__navigation div .app-bar__registration .register a:hover {
+  background-color: #ffe1a6;
+  color: #ff8a00;
+  font-weight: 700;
+}
+
+.app-bar .app-bar__navigation div .app-bar__registration .register a {
+  background-color: #ff8a00;
+  color: #ffe1a6;
+  padding: 10px 4px;
+  margin: 10px 0px 20px 0px;
+  width: 80px;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
 }
 
 .app-bar .app-bar__menu {
@@ -121,17 +132,17 @@ main {
 
 /* Footer */
 footer .footer-head {
-    display: grid;
-    padding: 20px;
-    background-color: #fbfbfb;
-    color: #000;
-    grid-template-columns: 1fr;
+  display: grid;
+  padding: 20px;
+  background-color: #fbfbfb;
+  color: #000;
+  grid-template-columns: 1fr;
 }
 
 footer div h1 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
 }
 
 footer div p {
@@ -143,25 +154,36 @@ footer ul {
   margin-bottom: 8px;
 }
 
-ul li { list-style: none; margin: 14px 0px; }
+ul li {
+  list-style: none;
+  margin: 14px 0px; 
+}
 
-ul li a { text-decoration: none; color: #000; }
+ul li a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul li a:hover {
+  color: #ff8a00;
+  font-weight: 600;
+}
 
 footer .footer-head .footer-head__support .footer-head__support-list img {
-    margin: 10px;
+  margin: 10px;
 }
 
 /* Footer Separator */
 footer .separator {
-    height: 1px;
-    width: 100%;
-    background-color: #000;
+  height: 1px;
+  width: 100%;
+  background-color: #000;
 }
 
 /* Footer-Copyright */
 footer .footer-copyright {
-    text-align: center;
-    color: #000;
-    padding: 10px;
-    background-color: #fbfbfb;
+  text-align: center;
+  color: #000;
+  padding: 10px;
+  background-color: #fbfbfb;
 }
