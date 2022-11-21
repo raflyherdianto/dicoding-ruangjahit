@@ -1,0 +1,156 @@
+.about-ruangjahit {
+    padding: 50px 36px;
+    display: grid;
+    grid-template-columns: 700px 1fr;
+    align-items: center;
+    justify-items: center;
+    background-color: #ffffff;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.ruangjahit-image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.ruangjahit-description {
+    padding: 24px;
+    padding-right: 140px;
+}
+
+.ruangjahit-description h1 {
+    margin-bottom: 16px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.about-team {
+    display: grid;
+    grid-template-rows: auto auto;
+    text-align: center;
+    align-items: center;
+    background-color: #ffe1a6;
+    padding: 48px 80px
+}
+
+.team-description {
+    margin-bottom: 48px;
+}
+
+.team-description h1 {
+    font-size: 32px;
+    margin-bottom: 24px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.team-profile {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.card-profile {
+    width: 16rem;
+    box-shadow: 6px 6px 10px 0 rgba(0, 0, 0, 0.2);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    align-items: center;
+    justify-self: center;
+}
+
+.card-profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+}
+
+.card-profile h1 {
+    font-size: 1em;
+    font-weight: 600;
+    color: #000000;
+}
+
+.card-profile h2 {
+    font-size: 0.8em;
+    font-weight: 200;
+}
+
+.card-profile button {
+    min-width: 45px;
+    min-height: 45px;
+    padding: 12px 24px;
+    background: #FFE1A6;
+    border: none;
+    margin: 12px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.card-profile button a {
+    color: #FF8A00;
+    text-decoration: none;
+}
+
+.card-profile button:hover {
+    background-color: #FF8A00;
+    transition: all ease .5s;
+}
+
+.card-profile button a:hover {
+    color: #ffffff;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .team-profile {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        row-gap: 25px;
+    }
+
+    .card-profile > *{
+        margin-bottom: 24px;
+    }
+
+    .about-ruangjahit {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ruangjahit-description {
+        padding: 16px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-ruangjahit {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto, 1fr;
+    }
+
+    .about-ruangjahit .ruangjahit-image img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .about-team {
+        padding: 50px 36px;
+    }
+
+    .team-description {
+        margin-bottom: 20px;
+    }
+
+    .team-profile {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        row-gap: 25px;
+    }
+}

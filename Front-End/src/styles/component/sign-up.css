@@ -1,0 +1,82 @@
+.container-signup {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 100vh;
+}
+
+/* Left Side */
+.container-signup .left-side img {
+    width: 100px;
+    margin: 10px;
+}
+
+.container-signup .signup-input {
+    padding: 5rem;
+    text-align: center;
+}
+
+.container-signup .signup-input h3 {
+    padding: 24px;
+}
+
+.container-signup .signup-input input[type=text], input[type=email], input[type=password], input[type=number] {
+    width: 100%;
+    background-color: #D9D9D9;
+    border: none;
+    padding: 8px;
+    margin-bottom: 12px;
+}
+
+.container-signup .signup-input input[type=submit] {
+    padding: 12px 24px;
+    background: #FF8A00;
+    border: none;
+    color: whitesmoke;
+    margin: 12px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Right Side */
+.container-signup .right-side {
+    background-image: url(/src/public/assets/background.jpg);
+    background-size: cover;
+    width: 100%;
+}
+
+.container-signup .box-signin {
+    padding: 2rem;
+    margin: 12rem auto;
+    text-align: center;
+}
+
+.container-signup .box-signin h3 {
+    padding: 15px;
+}
+
+.container-signup .box-signin p {
+    padding: 10px auto 5px;
+}
+
+.container-signup .box-signin a {
+    font-weight: 600;
+    text-decoration: none;
+    color: rgb(32, 32, 32);
+}
+
+.container-signup .box-signin input[type=submit] {
+    padding: 12px 24px;
+    background: #FF8A00;
+    border: none;
+    color: whitesmoke;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 768px) {
+    .container-signup {
+        grid-template-columns: auto;
+    }
+    .container-signup .signup-input {
+        padding: 2rem;
+        text-align: center;
+    }
+}

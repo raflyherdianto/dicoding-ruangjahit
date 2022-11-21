@@ -1,0 +1,120 @@
+.container-signin {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 100vh;
+}
+
+/* Left Side */
+.container-signin .left-side {
+    background-image: url(/src/public/assets/background.jpg);
+    background-size: cover;
+    width: 100%;
+}
+
+.container-signin .box-signin {
+    padding: 2rem;
+    margin: 12rem auto;
+    text-align: center;
+}
+
+.container-signin .box-signin h3 {
+    padding: 15px;
+}
+
+.container-signin .box-signin p {
+    padding: 10px auto 5px;
+}
+
+.container-signin .box-signin a {
+    font-weight: 600;
+    text-decoration: none;
+    color: rgb(32, 32, 32);
+}
+
+.container-signin .box-signin input[type=submit] {
+    padding: 12px 24px;
+    background: #FF8A00;
+    border: none;
+    color: whitesmoke;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Right Side */
+.container-signin .right-side img {
+    width: 100px;
+    margin: 8px;
+}
+
+.container-signin .container-input {
+    padding: 5rem;
+    text-align: center;
+    height: 100vh;
+}
+
+.container-signin .signin-input {
+    margin-top: 4rem;
+}
+
+.container-signin .signin-input h3 {
+    padding: 24px;
+}
+
+.container-signin .signin-input a {
+    display: block;
+    width: fit-content;
+    text-decoration: none;
+    font-weight: 500;
+    color: rgb(42, 42, 42);
+}
+
+.container-signin .signin-input input[type=text], input[type=password] {
+    width: 100%;
+    background-color: #D9D9D9;
+    border: none;
+    padding: 8px;
+    margin-bottom: 12px;
+}
+
+.container-signin .signin-input input[type=submit] {
+    padding: 12px 24px;
+    background: #FF8A00;
+    border: none;
+    color: whitesmoke;
+    margin: 20px 12px 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.container-signin .separator {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.container-signin .block {
+    height: 1px;
+    width: 50%;
+    background-color: #D9D9D9;
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+}
+
+.container-signin .social-media input[type=button] {
+    padding: 12px 24px;
+    background: #FFE1A6;
+    border: none;
+    color: #FF8A00;
+    margin: 12px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 768px) {
+    .container-signin {
+        grid-template-columns: auto;
+    }
+    .container-signin .container-input {
+        padding: 2rem;
+        text-align: center;
+    }
+}

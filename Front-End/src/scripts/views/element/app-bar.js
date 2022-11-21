@@ -10,7 +10,7 @@ class AppBar extends HTMLElement {
     this.innerHTML = `
     <header class="app-bar">
       <div class="app-bar__brand">
-        <img src="/Logo Ruangjahit 2.png" width="150px" alt="">
+        <img src="./assets/logo-ruangjahit.png" width="150px" alt="Logo Ruang Jahit">
       </div>
       <nav id="navigationDrawer" class="app-bar__navigation">
         <div>
@@ -20,8 +20,8 @@ class AppBar extends HTMLElement {
               <li><a href="#/favorite" class="nav-link">Favorite</a></li>
               <li><a href="#/about-us" class="nav-link">About Us</a></li>
 
-              <li class="login"><a href="#/masuk">Masuk</a></li>
-              <li class="register"><a href="#/daftar">Daftar</a></li>
+              <li class="login"><a href="#/sign-in">Masuk</a></li>
+              <li class="register"><a href="#/sign-up">Daftar</a></li>
           </ul>
 
         </div>
