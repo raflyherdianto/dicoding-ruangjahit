@@ -27,28 +27,28 @@ const AboutUs = {
             <div class="team-profile">
                 <div class="card-profile">
                     <img src="../users/man.png" alt="Hagi Azzam Azzikri">
-                    <button><a href="https://www.linkedin.com/in/hagi-azzam-azzikri-108929215/">Connect</a></button>
+                    <a href="https://www.linkedin.com/in/hagi-azzam-azzikri-108929215/"><button>Connect</button></a>
                     <h2>Back-End | Developer</h2>
                     <h1>Hagi Azzam Azzikri</h1>
                 </div>
 
                 <div class="card-profile">
                     <img src="../users/woman.png" alt="Anisa Fitrianida Lutfiajati P.">
-                    <button><a href="https://www.linkedin.com/in/anisa-f-466150141/">Connect</a></button>
+                    <a href="https://www.linkedin.com/in/anisa-f-466150141/"><button>Connect</button></a>
                     <h2>Front-End | Developer</h2>
                     <h1>Anisa Fitrianida Lutfiajati P.</h1>
                 </div>
                 
                 <div class="card-profile">
                     <img src="../users/woman.png" alt="Nilam Magfira Az-zahra">
-                    <button><a href="https://www.linkedin.com/in/nilam-magfira-az-zahra-24a40a20a"/>Connect</a></button>
+                    <a href="https://www.linkedin.com/in/nilam-magfira-az-zahra-24a40a20a"/><button>Connect</button></a>
                     <h2>Front-End | Developer</h2>
                     <h1>Nilam Magfira Az-zahra</h1>
                 </div>
 
                 <div class="card-profile">
                     <img src="../users/man.png" alt="Mochammad Rafly Herdianto">
-                    <button><a href="https://www.linkedin.com/in/mochraflyherdianto/">Connect</a></button>
+                    <a href="https://www.linkedin.com/in/mochraflyherdianto/"><button>Connect</button></a>
                     <h2>Back-End | Developer</h2>
                     <h1>Mochammad Rafly Herdianto</h1>
                 </div>
@@ -58,8 +58,7 @@ const AboutUs = {
   },
 
   async afterRender() {
-    const hero = document.querySelector('hero-element');
-    hero.style.display = 'none';
+    // Fungsi ini akan dipanggil setelah render()
   },
 };
 
