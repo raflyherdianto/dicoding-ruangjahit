@@ -1,0 +1,12 @@
+.container-favorite {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 100px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center
+}
+
+.container-favorite h1 {
+    padding-top: 100px;
+}
