@@ -62,11 +62,9 @@ const SignUp = {
   },
 
   async afterRender() {
-    const appBar = document.querySelector('app-bar');
-    const hero = document.querySelector('hero-element');
+    document.querySelector('app-bar').style.display = 'none';
+    document.querySelector('hero-element').style.display = 'none';
     const footerBar = document.querySelector('footer-bar');
-    hero.style.display = 'none';
-    appBar.style.display = 'none';
     footerBar.style.display = 'none';
   },
 };
