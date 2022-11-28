@@ -124,7 +124,7 @@ const Product = {
         <p class="rate-title">Location</p>
         <select class="form-select" aria-label="Select your location">
           <option selected>Select your location</option>
-          <option value="Aceh">ACEh</option>
+          <option value="Aceh">ACEH</option>
           <option value="Sumatera">SUMATERA</option>
           <option value="Jawa Barat">JAWA BARAT</option>
           <option value="Jawa Tengah">JAWA TENGAH</option>

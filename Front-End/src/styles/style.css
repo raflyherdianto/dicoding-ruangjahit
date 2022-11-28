@@ -303,11 +303,22 @@ color: grey;
   height: fit-content;
 }
 
+.sec-body div h3 {
+  font-weight: 500;
+  padding: 0 16px;
+}
+
+.sec-body div ul li {
+  font-weight: 500;
+  font-size: 22px;
+  padding: 0 16px;
+}
+
 .sec-body div p {
   margin: 0;
   font-weight: 500;
   font-size: 22px;
-  padding: 1em 16px;
+  padding: 8px 16px 20px;
 }
 
 .third {

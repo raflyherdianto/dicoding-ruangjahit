@@ -215,7 +215,7 @@ const Home = {
     </section>
 
     <section class="second">
-    <h1>Mengapa Harus Memilih RuangJahit?</h1>
+    <h1>Layanan yang Kami Tawarkan</h1>
     
     <div class="sec-body">
       <div class="sec-img">
@@ -223,13 +223,16 @@ const Home = {
       </div>
 
       <div>
-      <p>RuangJahit adalah donec leo ligula, tempus id vehicula eget, dictum at velit. Quisque gravida nunc elit, id aliquam diam
-      tincidunt sit amet. Phasellus volutpat justo vel ex scelerisque, id tempus est pulvinar. Donec sollicitudin molestie fringilla.
-      Donec ornare ullamcorper risus, quis rhoncus.
-      </p>
-      <p>RuangJahit adalah donec leo ligula, tempus id vehicula eget, dictum at velit. Quisque gravida nunc elit, id aliquam diam
-      tincidunt sit amet. Phasellus volutpat justo vel ex scelerisque, id tempus est pulvinar. Donec sollicitudin molestie fringilla.
-      Donec ornare ullamcorper risus, quis rhoncus.
+      <h3>Layanan Produk</h3>
+      <ul>
+        <li>Kami hadir untuk membantu Anda dalam menyediakan informasi Penyedia Layanan Jahit berdasarkan rating atau lokasi.</li>
+        <br>
+        <li>Tingkatkan penjualan Anda dengan mendaftarkan produk Anda di RuangJahit.</li>
+      </ul>
+
+      <h3>Layanan Jasa</h3>
+      <p>
+        Bergabunglah bersama kami untuk membantu lebih banyak pelanggan dalam menemukan Layanan Jahit terbaik.
       </p>
       </div>
     </div>

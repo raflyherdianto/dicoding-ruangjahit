@@ -4,9 +4,8 @@ const AboutUs = {
         <section class="about-ruangjahit">
             <div class="ruangjahit-description">
             <h1>Tentang RuangJahit</h1>
-            <p>RuangJahit adalah donec leo ligula, tempus id vehicula eget, dictum at velit. Quisque gravida nunc elit, id aliquam diam
-            tincidunt sit amet. Phasellus volutpat justo vel ex scelerisque, id tempus est pulvinar. Donec sollicitudin molestie fringilla.
-            Donec ornare ullamcorper risus, quis rhoncus.
+            <p>RuangJahit adalah website yang menghubungkan Pelanggan dan Penyedia Jasa Jahit baik individu maupun UMKM agar dapat 
+            memperluas potensi Penyedia Jasa Jahit untuk dapat dikenal banyak orang dan memudahkan Pelanggan dalam menemukan informasi Penyedia Jasa Jahit terbaik.
             </p>
             </div>
 
@@ -18,9 +17,9 @@ const AboutUs = {
         <section class="about-team">
             <div class="team-description">
             <h1>Tentang Kami</h1>
-            <p>Kami adalah mahasiswa-mahasiswi Indonesia yang ... Ut scelerisque posuere tellus,
-            tempus pretium arcu elementum et. Praesent et molestie risus. Vivamus viverra tortor vitae mollis dignissim.
-            Aliquam tincidunt vestibulum lacus, eget varius elit porttitor a. Mauris consectetur nulla.
+            <p>Kami adalah mahasiswa - mahasiswi Indonesia yang berfokus dalam dunia Software Developer khususnya dalam bidang Front-End Web dan Back End. <br>
+            Misi kami kali ini adalah untuk membantu sesama terutama masyarakat disekitar kami. <br>
+            Harapan utama pembuatan Website RuangJahit agar dapat membantu individu maupun UMKM dalam meningkatkan dan memperkenalkan produk mereka.
             </p> 
             </div>
 
