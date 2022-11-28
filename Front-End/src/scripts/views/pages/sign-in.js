@@ -45,9 +45,7 @@ const SignIn = {
 
   async afterRender() {
     document.querySelector('app-bar').style.display = 'none';
-    document.querySelector('hero-element').style.display = 'none';
-    const footerBar = document.querySelector('footer-bar');
-    footerBar.style.display = 'none';
+    document.querySelector('footer-bar').style.display = 'none';
   },
 };
 

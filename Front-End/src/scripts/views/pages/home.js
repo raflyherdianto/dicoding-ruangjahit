@@ -4,13 +4,14 @@ const Home = {
     <section class="hero rows containers">
       <div>
         <h1>Buat Desain Impianmu<br>bersama RuangJahit!</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, commodi sequi saepe praesentium aliquid doloremque est laudantium blanditiis voluptate corrupti aspernatur!</p>
+        <p>Kami hadir untuk membantu Anda dalam menemukan jasa penjahit terbaik dan memberikan ruang untuk jasa penjahit agar dapat lebih dikenal oleh banyak orang. </p>
         <a href="#/product" class="hero-btn">Pesan Sekarang!</a>
       </div>
       <div class="rows">
         <img src="./assets/header.png" width="650px" alt="">
       </div>
     </section>
+
     <div class="title-section">
       <h2>Top Selling Item</h2>
     </div>
@@ -234,34 +235,36 @@ const Home = {
     </div>
     </section>
 
+    <div class="title-section">
+      <h2>Our Top Tailor</h2>
+    </div>
     <section class="third">
-        <h2>Our Top Tailor</h2>
-        <div class="row">
-            <div class="col">
-                <div class="card">
-                    
-                    <h5 class="m-1"><img src="/tailors/tailor1.png" width="100px" class="img-fluid float-start rounded-circle p-2" alt=""><br>Lorem Ipsum<br><span><a href="#">see more</a></span></h5>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    
-                    <h5 class="m-1"><img src="/tailors/tailor2.png" width="100px" class="img-fluid float-start rounded-circle p-2" alt=""><br>Lorem Ipsum<br><span><a href="#">see more</a></span></h5>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    
-                    <h5 class="m-1"><img src="/tailors/tailor3.png" width="100px" class="img-fluid float-start rounded-circle p-2" alt=""><br>Lorem Ipsum<br><span><a href="#">see more</a></span></h5>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    
-                    <h5 class="m-1"><img src="/tailors/tailor4.png" width="100px" class="img-fluid float-start rounded-circle p-2" alt=""><br>Lorem Ipsum<br><span><a href="#">see more</a></span></h5>
-                </div>
-            </div>
+      <div class="row">
+        <div class="col">
+          <div class="card">
+              
+              <h5 class="m-1"><img src="/tailors/tailor1.png" width="100px" class="img-fluid float-start rounded-circle p-2" alt=""><br>Lorem Ipsum<br><span><a href="#">see more</a></span></h5>
+          </div>
         </div>
+        <div class="col">
+          <div class="card">
+              
+              <h5 class="m-1"><img src="/tailors/tailor2.png" width="100px" class="img-fluid float-start rounded-circle p-2" alt=""><br>Lorem Ipsum<br><span><a href="#">see more</a></span></h5>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+              
+              <h5 class="m-1"><img src="/tailors/tailor3.png" width="100px" class="img-fluid float-start rounded-circle p-2" alt=""><br>Lorem Ipsum<br><span><a href="#">see more</a></span></h5>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+              
+              <h5 class="m-1"><img src="/tailors/tailor4.png" width="100px" class="img-fluid float-start rounded-circle p-2" alt=""><br>Lorem Ipsum<br><span><a href="#">see more</a></span></h5>
+          </div>
+        </div>
+      </div>
     </section>
     `;
   },
