@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CategoryProductsController;
 
 /*
@@ -23,11 +24,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Public routes
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
+Route::post('/admin/register/', [AuthController::class, 'registerAdmin']);
 
 // Protected routes
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::resource('/categories', CategoryProductsController::class);
-    Route::post('/logout', [AuthController::class, 'logout']);
+    Route::resource('/products', ProductsController::class);
 
+    Route::post('/logout', [AuthController::class, 'logout']);
 });
 

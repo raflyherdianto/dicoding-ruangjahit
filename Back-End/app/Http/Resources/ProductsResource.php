@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class CategoryProductsResource extends JsonResource
+class ProductsResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -18,7 +18,12 @@ class CategoryProductsResource extends JsonResource
             'id' => (string)$this->id,
             'attributes' => [
                 'name' => $this->name,
-                'slug' => $this->slug,
+                'user_id' => $this->user_id,
+                'price'=> $this->price,
+                'description' => $this->description,
+                'rating' => $this->rating,
+                'stock' => $this->stock,
+                'category_product_id' => $this->category_product_id,
             ],
         ];
     }

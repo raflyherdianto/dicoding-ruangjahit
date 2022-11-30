@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Products;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Resources\ProductsResource;
 use App\Http\Requests\StoreProductsRequest;
 use App\Http\Requests\UpdateProductsRequest;
 
@@ -15,7 +18,9 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        //
+        return ProductsResource::collection(
+            Products::all()
+        );
     }
 
     /**
@@ -36,7 +41,24 @@ class ProductsController extends Controller
      */
     public function store(StoreProductsRequest $request)
     {
-        //
+        if (Auth::user()->roles == 'admin') {
+            $request->validated($request->all());
+
+            $product = Products::create([
+                'name' => $request->name,
+                'user_id' => Auth::user()->id,
+                'price' => $request->price,
+                'description' => $request->description,
+                'stock' => $request->stock,
+                'category_product_id' => $request->category_product_id,
+            ]);
+
+            return new ProductsResource($product);
+        } else {
+            return response()->json([
+                'message' => 'You are not authorized to make request'
+            ], 401);
+        }
     }
 
     /**
@@ -45,9 +67,15 @@ class ProductsController extends Controller
      * @param  \App\Models\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function show(Products $products)
+    public function show(Products $product)
     {
-        //
+        if(!$product->id) {
+            return response()->json([
+                'message' => 'Product not found'
+            ], 404);
+        } else {
+            return new ProductsResource($product);
+        }
     }
 
     /**
@@ -68,9 +96,17 @@ class ProductsController extends Controller
      * @param  \App\Models\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateProductsRequest $request, Products $products)
+    public function update(Request $request, Products $product)
     {
-        //
+        if (Auth::user()->roles == 'admin') {
+            $product->update($request->all());
+
+            return new ProductsResource($product);
+        } else {
+            return response()->json([
+                'message' => 'You are not authorized to make request'
+            ], 401);
+        }
     }
 
     /**
@@ -79,8 +115,18 @@ class ProductsController extends Controller
      * @param  \App\Models\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Products $products)
+    public function destroy(Products $product)
     {
-        //
+        if (Auth::user()->roles == 'admin') {
+            $product->delete();
+
+            return response()->json([
+                'message' => 'Product has been deleted'
+            ], 200);
+        } else {
+            return response()->json([
+                'message' => 'You are not authorized to make request'
+            ], 401);
+        }
     }
 }

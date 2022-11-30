@@ -22,7 +22,6 @@ class CreateProductsTable extends Migration
             $table->string('description');
             $table->double('rating')->nullable();
             $table->integer('stock');
-            $table->foreignId('review_id')->nullable();
             $table->timestamps();
         });
     }

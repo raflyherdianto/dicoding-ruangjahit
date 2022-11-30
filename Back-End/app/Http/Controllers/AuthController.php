@@ -51,6 +51,28 @@ class AuthController extends Controller
         ]);
     }
 
+    public function registerAdmin(StoreUserRequest $request) {
+        $request->validated($request->all());
+
+        $user = User::create([
+            'name' => $request->name,
+            'username' => $request->username,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'first_address' => $request->first_address,
+            'province_id' => $request->province_id,
+            'regency_id' => $request->regency_id,
+            'zip_code' => $request->zip_code,
+            'first_phone' => $request->first_phone,
+            'roles' => $request->roles,
+        ]);
+
+        return $this->success([
+            'user' => $user,
+            'token' => $user->createToken('API Token of ' . $user->name)->plainTextToken
+        ]);
+    }
+
     public function logout() {
         Auth::user()->currentAccessToken()->delete();
 
