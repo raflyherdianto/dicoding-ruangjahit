@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->foreignId('category_product_id');
             $table->bigInteger('price');
             $table->string('description');
+            $table->double('rating')->nullable();
             $table->integer('stock');
             $table->foreignId('review_id')->nullable();
             $table->timestamps();

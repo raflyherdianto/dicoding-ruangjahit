@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\CategoryProducts;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CategoryProductsFactory extends Factory
@@ -14,7 +15,8 @@ class CategoryProductsFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->name(),
+            'slug' => $this->faker->slug(),
         ];
     }
 }

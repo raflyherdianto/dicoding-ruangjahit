@@ -19,8 +19,15 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'username',
         'email',
         'password',
+        'first_address',
+        'province_id',
+        'regency_id',
+        'zip_code',
+        'first_phone',
+        'roles',
     ];
 
     /**
@@ -41,4 +48,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function categoryProducts(){
+        return $this->hasMany(CategoryProduct::class);
+    }
 }
