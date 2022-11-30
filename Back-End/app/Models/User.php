@@ -22,12 +22,20 @@ class User extends Authenticatable
         'username',
         'email',
         'password',
+        'photo',
         'first_address',
+        'second_address',
         'province_id',
         'regency_id',
         'zip_code',
         'first_phone',
+        'second_phone',
         'roles',
+        'store_name',
+        'bank_name',
+        'bank_account',
+        'open_time',
+        'close_time',
     ];
 
     /**
@@ -49,11 +57,28 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function categoryProducts(){
-        return $this->hasMany(CategoryProduct::class);
+    public function province(){
+        return $this->belongsTo(Province::class);
     }
 
-    public function products(){
-        return $this->hasMany(Product::class);
+    public function regency(){
+        return $this->belongsTo(Regency::class);
     }
+
+    public function category_product(){
+        return $this->belongsTo(CategoryProducts::class);
+    }
+
+    public function product(){
+        return $this->hasMany(Products::class);
+    }
+
+    public function reviews(){
+        return $this->hasMany(Reviews::class);
+    }
+
+    public function transaction(){
+        return $this->hasMany(Transactions::class);
+    }
+
 }

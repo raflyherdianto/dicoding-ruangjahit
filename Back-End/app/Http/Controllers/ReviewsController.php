@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Reviews;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Resources\ReviewsResource;
 use App\Http\Requests\StoreReviewsRequest;
 use App\Http\Requests\UpdateReviewsRequest;
 
@@ -15,7 +18,9 @@ class ReviewsController extends Controller
      */
     public function index()
     {
-        //
+        return ReviewsResource::collection(
+            Reviews::all()
+        );
     }
 
     /**
@@ -36,7 +41,23 @@ class ReviewsController extends Controller
      */
     public function store(StoreReviewsRequest $request)
     {
-        //
+        if (Auth::user()->roles == 'user') {
+
+            $request->validated($request->all());
+
+            $review = Reviews::create([
+                'user_id' => Auth::user()->id,
+                'product_id' => $request->product_id,
+                'star' => $request->star,
+                'description' => $request->description,
+            ]);
+
+            return new ReviewsResource($review);
+        } else {
+            return response()->json([
+                'message' => 'You are not authorized to make request'
+            ], 401);
+        }
     }
 
     /**
@@ -45,9 +66,15 @@ class ReviewsController extends Controller
      * @param  \App\Models\Reviews  $reviews
      * @return \Illuminate\Http\Response
      */
-    public function show(Reviews $reviews)
+    public function show(Reviews $review)
     {
-        //
+        if(!$review->id) {
+            return response()->json([
+                'message' => 'Review not found'
+            ], 404);
+        } else {
+            return new ReviewsResource($review);
+        }
     }
 
     /**
@@ -68,9 +95,17 @@ class ReviewsController extends Controller
      * @param  \App\Models\Reviews  $reviews
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateReviewsRequest $request, Reviews $reviews)
+    public function update(Request $request, Reviews $review)
     {
-        //
+        if (Auth::user()->roles == 'user') {
+            $review->update($request->all());
+
+            return new ReviewsResource($review);
+        } else {
+            return response()->json([
+                'message' => 'You are not authorized to make request'
+            ], 401);
+        }
     }
 
     /**
@@ -79,8 +114,17 @@ class ReviewsController extends Controller
      * @param  \App\Models\Reviews  $reviews
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reviews $reviews)
+    public function destroy(Reviews $review)
     {
-        //
+        if(!Auth::user()){
+            return response()->json([
+                'message' => 'You are not authorized to make request'
+            ], 401);
+        }
+        $review->delete();
+
+        return response()->json([
+            'message' => 'Review has been deleted'
+        ], 200);
     }
 }

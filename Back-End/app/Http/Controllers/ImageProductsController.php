@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Models\ImageProducts;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Resources\ImageProductsResource;
 use App\Http\Requests\StoreImageProductsRequest;
 use App\Http\Requests\UpdateImageProductsRequest;
 
@@ -15,7 +18,9 @@ class ImageProductsController extends Controller
      */
     public function index()
     {
-        //
+        return ImageProductsResource::collection(
+            ImageProducts::all()
+        );
     }
 
     /**
@@ -36,7 +41,20 @@ class ImageProductsController extends Controller
      */
     public function store(StoreImageProductsRequest $request)
     {
-        //
+        if (Auth::user()->roles == 'admin') {
+            $request->validated($request->all());
+
+            $product = ImageProducts::create([
+                'image' => $request->image,
+                'product_id' => $request->product_id,
+            ]);
+            return new ImageProductsResource($product);
+
+        } else {
+            return response()->json([
+                'message' => 'You are not authorized to make request'
+            ], 401);
+        }
     }
 
     /**
@@ -45,9 +63,15 @@ class ImageProductsController extends Controller
      * @param  \App\Models\ImageProducts  $imageProducts
      * @return \Illuminate\Http\Response
      */
-    public function show(ImageProducts $imageProducts)
+    public function show(ImageProducts $imageProduct)
     {
-        //
+        if(!$imageProduct->id) {
+            return response()->json([
+                'message' => 'Image not found'
+            ], 404);
+        } else {
+            return new ImageProductsResource($imageProduct);
+        }
     }
 
     /**
@@ -68,9 +92,17 @@ class ImageProductsController extends Controller
      * @param  \App\Models\ImageProducts  $imageProducts
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateImageProductsRequest $request, ImageProducts $imageProducts)
+    public function update(Request $request, ImageProducts $imageProduct)
     {
-        //
+        if (Auth::user()->roles == 'admin') {
+            $imageProduct->update($request->all());
+
+            return new ImageProductsResource($imageProduct);
+        } else {
+            return response()->json([
+                'message' => 'You are not authorized to make request'
+            ], 401);
+        }
     }
 
     /**
@@ -79,8 +111,18 @@ class ImageProductsController extends Controller
      * @param  \App\Models\ImageProducts  $imageProducts
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ImageProducts $imageProducts)
+    public function destroy(ImageProducts $imageProduct)
     {
-        //
+        if (Auth::user()->roles == 'admin') {
+            $imageProduct->delete();
+
+            return response()->json([
+                'message' => 'Image has been deleted'
+            ], 200);
+        } else {
+            return response()->json([
+                'message' => 'You are not authorized to make request'
+            ], 401);
+        }
     }
 }

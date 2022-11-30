@@ -21,4 +21,20 @@ class Products extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    public function category_product(){
+        return $this->belongsTo(CategoryProducts::class);
+    }
+
+    public function image_product(){
+        return $this->hasMany(ImageProducts::class);
+    }
+
+    public function review(){
+        return $this->hasMany(Reviews::class);
+    }
+
+    public function transaction_detail(){
+        return $this->hasMany(TransactionDetails::class);
+    }
 }
