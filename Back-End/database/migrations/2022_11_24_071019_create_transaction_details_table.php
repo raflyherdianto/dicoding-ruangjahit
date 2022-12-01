@@ -19,6 +19,7 @@ class CreateTransactionDetailsTable extends Migration
             $table->foreignId('product_id')->constrained('products');
             $table->integer('quantity');
             $table->bigInteger('price');
+            $table->string('custom_size');
             $table->timestamps();
         });
     }

@@ -41,20 +41,20 @@ class CategoryProductsController extends Controller
      */
     public function store(StoreCategoryProductsRequest $request)
     {
-        if (Auth::user()->roles == 'admin') {
-            $request->validated($request->all());
-
-            $category = CategoryProducts::create([
-                'name' => $request->name,
-                'slug' => $request->slug,
-            ]);
-
-            return new CategoryProductsResource($category);
-        } else {
+        if (Auth::user()->roles != 'admin') {
             return response()->json([
-                'message' => 'You are not authorized to make request'
-            ], 401);
+                'message' => 'You are not authorized to make request',
+            ], 403);
         }
+
+        $request->validated($request->all());
+
+        $category = CategoryProducts::create([
+            'name' => $request->name,
+            'slug' => $request->slug,
+        ]);
+
+        return new CategoryProductsResource($category);
     }
 
     /**
@@ -63,9 +63,9 @@ class CategoryProductsController extends Controller
      * @param  \App\Models\CategoryProducts  $categoryProducts
      * @return \Illuminate\Http\Response
      */
-    public function show(CategoryProducts $categoryProducts)
+    public function show(CategoryProducts $category)
     {
-        //
+        return new CategoryProductsResource($category);
     }
 
     /**
@@ -88,15 +88,14 @@ class CategoryProductsController extends Controller
      */
     public function update(Request $request, CategoryProducts $category)
     {
-        if (Auth::user()->roles == 'admin') {
-            $category->update($request->all());
-
-            return new CategoryProductsResource($category);
-        } else {
+        if (Auth::user()->roles != 'admin') {
             return response()->json([
-                'message' => 'You are not authorized to make request'
-            ], 401);
+                'message' => 'You are not authorized to make request',
+            ], 403);
         }
+        $category->update($request->all());
+
+        return new CategoryProductsResource($category);
     }
 
     /**
@@ -107,16 +106,15 @@ class CategoryProductsController extends Controller
      */
     public function destroy(CategoryProducts $category)
     {
-        if (Auth::user()->roles == 'admin') {
-            $category->delete();
-
+        if (Auth::user()->roles != 'admin') {
             return response()->json([
-                'message' => 'Category has been deleted'
-            ], 200);
-        } else {
-            return response()->json([
-                'message' => 'You are not authorized to make request'
-            ], 401);
+                'message' => 'You are not authorized to make request',
+            ], 403);
         }
+        $category->delete();
+
+        return response()->json([
+           'message' => 'Category has been deleted'
+        ], 200);
     }
 }

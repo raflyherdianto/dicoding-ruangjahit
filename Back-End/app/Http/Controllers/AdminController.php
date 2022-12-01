@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\LoginUserRequest;
 use App\Http\Requests\StoreUserRequest;
 
-class AuthController extends Controller
+class AdminController extends Controller
 {
     use HttpResponses;
 
@@ -42,7 +42,7 @@ class AuthController extends Controller
             'regency_id' => $request->regency_id,
             'zip_code' => $request->zip_code,
             'first_phone' => $request->first_phone,
-            'roles' => 'user',
+            'roles' => 'admin',
         ]);
 
         return $this->success([

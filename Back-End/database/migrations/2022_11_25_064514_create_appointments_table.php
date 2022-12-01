@@ -18,7 +18,7 @@ class CreateAppointmentsTable extends Migration
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('product_id')->constrained('products');
             $table->date('deadline');
-            $table->boolean('status');
+            $table->string('status');
             $table->timestamps();
         });
     }

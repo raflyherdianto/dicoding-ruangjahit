@@ -22,6 +22,9 @@ class CreateProductsTable extends Migration
             $table->string('description');
             $table->double('rating')->nullable();
             $table->integer('stock');
+            $table->string('color');
+            $table->double('weight');
+            $table->string('size');
             $table->timestamps();
         });
     }

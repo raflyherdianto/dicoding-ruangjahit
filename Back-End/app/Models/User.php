@@ -65,15 +65,11 @@ class User extends Authenticatable
         return $this->belongsTo(Regency::class);
     }
 
-    public function category_product(){
-        return $this->belongsTo(CategoryProducts::class);
-    }
-
     public function product(){
         return $this->hasMany(Products::class);
     }
 
-    public function reviews(){
+    public function review(){
         return $this->hasMany(Reviews::class);
     }
 

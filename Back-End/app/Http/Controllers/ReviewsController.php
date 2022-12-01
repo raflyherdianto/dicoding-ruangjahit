@@ -41,24 +41,22 @@ class ReviewsController extends Controller
      */
     public function store(StoreReviewsRequest $request)
     {
-        if (Auth::user()->roles == 'user') {
-
-            $request->validated($request->all());
-
-            $review = Reviews::create([
-                'user_id' => Auth::user()->id,
-                'product_id' => $request->product_id,
-                'star' => $request->star,
-                'description' => $request->description,
-            ]);
-
-            return new ReviewsResource($review);
-        } else {
+        if (Auth::user()->roles != 'user') {
             return response()->json([
-                'message' => 'You are not authorized to make request'
-            ], 401);
+                'message' => 'You are not authorized to make request',
+            ], 403);
         }
+        $request->validated($request->all());
+
+        $review = Reviews::create([
+            'user_id' => Auth::user()->id,
+            'product_id' => $request->product_id,
+            'star' => $request->star,
+            'description' => $request->description,
+        ]);
+        return new ReviewsResource($review);
     }
+
 
     /**
      * Display the specified resource.
@@ -97,15 +95,14 @@ class ReviewsController extends Controller
      */
     public function update(Request $request, Reviews $review)
     {
-        if (Auth::user()->roles == 'user') {
-            $review->update($request->all());
-
-            return new ReviewsResource($review);
-        } else {
+        if (Auth::user()->roles != 'user') {
             return response()->json([
-                'message' => 'You are not authorized to make request'
-            ], 401);
+                'message' => 'You are not authorized to make request',
+            ], 403);
         }
+        $review->update($request->all());
+
+        return new ReviewsResource($review);
     }
 
     /**
@@ -116,11 +113,6 @@ class ReviewsController extends Controller
      */
     public function destroy(Reviews $review)
     {
-        if(!Auth::user()){
-            return response()->json([
-                'message' => 'You are not authorized to make request'
-            ], 401);
-        }
         $review->delete();
 
         return response()->json([

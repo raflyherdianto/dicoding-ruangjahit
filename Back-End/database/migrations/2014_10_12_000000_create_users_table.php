@@ -29,11 +29,10 @@ class CreateUsersTable extends Migration
             $table->enum('roles', ['admin', 'user'])->default('user');
             $table->string('store_name')->nullable();
             $table->string('bank_name')->nullable();
-            $table->string('bank_account')->nullable();
-            $table->timeTz('open_time')->nullable();
-            $table->timeTz('close_time')->nullable(); 
+            $table->string('bank_account')->unique()->nullable();
+            $table->string('open_time')->nullable();
+            $table->string('close_time')->nullable();
             $table->enum('store_status',['OPEN', 'CLOSED'])->nullable();
-            $table->foreignId('category_product_id')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

@@ -33,7 +33,6 @@ class StoreUserRequest extends FormRequest
             'regency_id' => ['required', 'integer'],
             'zip_code' => ['required', 'string', 'max:255'],
             'first_phone' => ['required', 'string', 'max:255'],
-            'roles' => ['required'],
         ];
     }
 }

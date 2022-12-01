@@ -16,6 +16,10 @@ class Products extends Model
         'price',
         'description',
         'stock',
+        'rating',
+        'size',
+        'color',
+        'weight',
     ];
 
     public function user(){
@@ -36,5 +40,17 @@ class Products extends Model
 
     public function transaction_detail(){
         return $this->hasMany(TransactionDetails::class);
+    }
+
+    public function favorite(){
+        return $this->hasMany(Favorites::class);
+    }
+
+    public function cart(){
+        return $this->hasMany(Carts::class);
+    }
+
+    public function appointment(){
+        return $this->hasMany(Appointments::class);
     }
 }
