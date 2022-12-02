@@ -19,11 +19,9 @@ const SignIn = {
               <form action="#" class="signin-input">
                   <h3>Masuk</h3>
                   <div class="input-field">
-                      <i class="bi bi-person-check"></i>
                       <input type="text" placeholder="Nama Pengguna" required>
                   </div>
                   <div class="input-field">
-
                       <input type="password" placeholder="Kata Sandi" required>
                   </div>
                   <a href="#">Lupa kata sandi ?</a>

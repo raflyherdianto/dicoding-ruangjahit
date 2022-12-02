@@ -193,6 +193,7 @@ main {
   padding: 50px;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
+  row-gap: 20px;
 }
 
 .first a {

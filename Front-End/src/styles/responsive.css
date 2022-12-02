@@ -76,7 +76,6 @@
 }
 
 @media screen and (max-width: 1200px) {
-  /* section first */
   .first {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -85,13 +84,12 @@
     font-size: 2em;
   }
 
-  .sec-body div p {
+  .sec-body div p, .sec-body div ul li {
     font-size: 0.98em;
   }
 }
 
 @media(max-width: 900px){
-  /* section first */
   .first {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -120,13 +118,26 @@
 }
 
 @media(max-width: 574px){
-  /* section first */
   .first {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px;
+    padding-bottom: 50px;
+  }
+  
+  .first .card {
+    margin: 5px;
   }
 
   .footer-col{
     width: 100%;
+  }
+}
+
+@media(max-width: 425px){
+  .first {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    padding: 40px;
+    padding-top: 10px;
   }
 }
