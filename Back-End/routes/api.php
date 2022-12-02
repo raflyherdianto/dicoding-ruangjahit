@@ -84,6 +84,8 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::resource('reviews', ReviewsController::class)->except(['index', 'create', 'show', 'edit']);
 
     // Route resource Carts
-    Route::resource('carts', CartsController::class)->except(['create', 'show', 'edit']);
+    Route::resource('carts', CartsController::class)->except(['create', 'show', 'edit', 'store']);
+    Route::post('/carts/{product}', [CartsController::class, 'store']);
+
 });
 

@@ -14,14 +14,6 @@ class CartsResource extends JsonResource
      */
     public function toArray($request)
     {
-        return [
-            'id' => (string)$this->id,
-            'attributes' => [
-                'user_id' => $this->user_id,
-                'product_id' => $this->product_id,
-                'quantity' => $this->quantity,
-                'custom_size' => $this->custom_size,
-            ],
-        ];
+        return parent::toArray($request);
     }
 }
