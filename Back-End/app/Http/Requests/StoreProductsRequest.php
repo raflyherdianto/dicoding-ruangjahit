@@ -31,7 +31,7 @@ class StoreProductsRequest extends FormRequest
             'stock' => ['required', 'integer'],
             'size' => ['required', 'string'],
             'color' => ['required', 'string'],
-            'weight' => ['required', 'integer'],
+            'weight' => ['required'],
         ];
     }
 }

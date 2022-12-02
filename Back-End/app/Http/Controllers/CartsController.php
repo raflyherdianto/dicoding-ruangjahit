@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Carts;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Resources\CartsResource;
 use App\Http\Requests\StoreCartsRequest;
 use App\Http\Requests\UpdateCartsRequest;
 
@@ -15,7 +18,9 @@ class CartsController extends Controller
      */
     public function index()
     {
-        //
+        return CartsResource::collection(
+            Carts::all()
+        );
     }
 
     /**
@@ -36,7 +41,19 @@ class CartsController extends Controller
      */
     public function store(StoreCartsRequest $request)
     {
-        //
+        if (Auth::user()->roles != 'user') {
+            return response()->json([
+                'message' => 'You are not authorized to make request',
+            ], 403);
+        }
+        $request->validated($request->all());
+        $cart = Carts::create([
+            'user_id' => Auth::user()->id,
+            'product_id' => $request->product_id,
+            'quantity' => $request->quantity,
+            'custom_size' => $request->custom_size,
+        ]);
+        return new CartsResource($cart);
     }
 
     /**
@@ -45,9 +62,20 @@ class CartsController extends Controller
      * @param  \App\Models\Carts  $carts
      * @return \Illuminate\Http\Response
      */
-    public function show(Carts $carts)
+    public function show(Carts $cart)
     {
-        //
+        if (Auth::user()->roles != 'user') {
+            return response()->json([
+                'message' => 'You are not authorized to make request',
+            ], 403);
+        }
+        if (!$cart->id) {
+            return response()->json([
+                'message' => 'Cart not found'
+            ], 404);
+        } else {
+            return new CartsResource($cart);
+        }
     }
 
     /**
@@ -68,9 +96,16 @@ class CartsController extends Controller
      * @param  \App\Models\Carts  $carts
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCartsRequest $request, Carts $carts)
+    public function update(Request $request, Carts $cart)
     {
-        //
+        if (Auth::user()->roles != 'user') {
+            return response()->json([
+                'message' => 'You are not authorized to make request',
+            ], 403);
+        }
+        $cart->update($request->all());
+
+        return new CartsResource($cart);
     }
 
     /**
@@ -79,8 +114,17 @@ class CartsController extends Controller
      * @param  \App\Models\Carts  $carts
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Carts $carts)
+    public function destroy(Carts $cart)
     {
-        //
+        if (Auth::user()->roles != 'user') {
+            return response()->json([
+                'message' => 'You are not authorized to make request',
+            ], 403);
+        }
+        $cart->delete();
+
+        return response()->json([
+            'message' => 'Cart has been deleted'
+        ], 200);
     }
 }

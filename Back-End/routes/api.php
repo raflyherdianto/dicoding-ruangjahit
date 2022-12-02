@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CartsController;
 use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ImageProductsController;
@@ -68,16 +69,21 @@ Route::middleware(['auth:sanctum', 'admin'])->group(function () {
 
     // Route resource Reviews
     Route::resource('reviews', ReviewsController::class)->except(['index', 'create', 'show', 'edit', 'store', 'update']);
-  });
+
+});
 
 // Middleware User
 Route::group(['middleware' => ['auth:sanctum']], function () {
     // Route get User Login
     Route::get('/user', [AuthController::class, 'getUserLoggedIn']);
+
     // Route edit User Login
     Route::put('/users/edit', [UserController::class, 'updateProfile']);
 
     // Route resource Reviews
     Route::resource('reviews', ReviewsController::class)->except(['index', 'create', 'show', 'edit']);
+
+    // Route resource Carts
+    Route::resource('carts', CartsController::class)->except(['create', 'show', 'edit']);
 });
 
