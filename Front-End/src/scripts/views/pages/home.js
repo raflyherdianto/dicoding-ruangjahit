@@ -24,7 +24,7 @@ const Home = {
                         <div class="header-product">
                         
                           <div class="d-flex justify-content-between align-items-center">
-                            <span class="like-btn"><i class="fa fa-heart-o"></i></span>
+                            <span class="like-btn"><i class="bi bi-bookmark-heart"></i></span>
                           </div>
                         </div>
                         <img src="./product/product1/1.jpg" class="img-fluid rounded thumbnail-image">
@@ -57,7 +57,7 @@ const Home = {
                       <div class="header-product">
                       
                         <div class="d-flex justify-content-between align-items-center">
-                          <span class="like-btn"><i class="fa fa-heart-o"></i></span>
+                          <span class="like-btn"><i class="bi bi-bookmark-heart"></i></span>
                         </div>
                       </div>
                       <img src="./product/product1/1.jpg" class="img-fluid rounded thumbnail-image">
@@ -89,7 +89,7 @@ const Home = {
                         <div class="header-product">
                         
                           <div class="d-flex justify-content-between align-items-center">
-                            <span class="like-btn"><i class="fa fa-heart-o"></i></span>
+                            <span class="like-btn"><i class="bi bi-bookmark-heart"></i></span>
                           </div>
                         </div>
                         <img src="./product/product1/1.jpg" class="img-fluid rounded thumbnail-image">
@@ -122,7 +122,7 @@ const Home = {
                       <div class="header-product">
                       
                         <div class="d-flex justify-content-between align-items-center">
-                          <span class="like-btn"><i class="fa fa-heart-o"></i></span>
+                          <span class="like-btn"><i class="bi bi-bookmark-heart"></i></span>
                         </div>
                       </div>
                       <img src="./product/product1/1.jpg" class="img-fluid rounded thumbnail-image">
@@ -154,7 +154,7 @@ const Home = {
                         <div class="header-product">
                         
                           <div class="d-flex justify-content-between align-items-center">
-                            <span class="like-btn"><i class="fa fa-heart-o"></i></span>
+                            <span class="like-btn"><i class="bi bi-bookmark-heart"></i></span>
                           </div>
                         </div>
                         <img src="./product/product1/1.jpg" class="img-fluid rounded thumbnail-image">
@@ -187,7 +187,7 @@ const Home = {
                       <div class="header-product">
                       
                         <div class="d-flex justify-content-between align-items-center">
-                          <span class="like-btn"><i class="fa fa-heart-o"></i></span>
+                          <span class="like-btn"><i class="bi bi-bookmark-heart"></i></span>
                         </div>
                       </div>
                       <img src="./product/product1/1.jpg" class="img-fluid rounded thumbnail-image">

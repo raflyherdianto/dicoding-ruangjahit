@@ -115,11 +115,11 @@ const Product = {
         <h5>Filter</h5>
         <p class="rate-title">Rating</p>
         <center class="mb-2">
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
+        <span><i class="bi bi-star-fill checked"></i></span>
+        <span><i class="bi bi-star-fill checked"></i></span>
+        <span><i class="bi bi-star-fill checked"></i></span>
+        <span><i class="bi bi-star-fill checked"></i></span>
+        <span><i class="bi bi-star"></i></span>
         </center>
         <p class="rate-title">Location</p>
         <select class="form-select" aria-label="Select your location">
@@ -144,7 +144,7 @@ const Product = {
               <div class="image-container">
                 <div class="header-product">
                   <div class="d-flex justify-content-between align-items-center">
-                    <span class="like-btn"><i class="fa fa-heart-o"></i></span>
+                    <span class="like-btn"><i class="bi bi-bookmark-heart"></i></i></span>
                   </div>
                 </div>
                 <img src="./product/product1/1.jpg" class="img-fluid rounded thumbnail-image">
@@ -174,7 +174,7 @@ const Product = {
               <div class="image-container">
                 <div class="header-product">
                   <div class="d-flex justify-content-between align-items-center">
-                    <span class="like-btn"><i class="fa fa-heart-o"></i></span>
+                    <span class="like-btn"><i class="bi bi-bookmark-heart"></i></i></span>
                   </div>
                 </div>
                 <img src="./product/product1/1.jpg" class="img-fluid rounded thumbnail-image">
@@ -205,7 +205,7 @@ const Product = {
                 <div class="header-product">
                 
                   <div class="d-flex justify-content-between align-items-center">
-                    <span class="like-btn"><i class="fa fa-heart-o"></i></span>
+                    <span class="like-btn"><i class="bi bi-bookmark-heart"></i></i></span>
                   </div>
                 </div>
                 <img src="./product/product2/1.jpg" class="img-fluid rounded thumbnail-image">
@@ -236,7 +236,7 @@ const Product = {
                 <div class="header-product">
                 
                   <div class="d-flex justify-content-between align-items-center">
-                    <span class="like-btn"><i class="fa fa-heart-o"></i></span>
+                    <span class="like-btn"><i class="bi bi-bookmark-heart"></i></i></span>
                   </div>
                 </div>
                 <img src="./product/product2/1.jpg" class="img-fluid rounded thumbnail-image">
@@ -267,7 +267,7 @@ const Product = {
                 <div class="header-product">
                 
                   <div class="d-flex justify-content-between align-items-center">
-                    <span class="like-btn"><i class="fa fa-heart-o"></i></span>
+                    <span class="like-btn"><i class="bi bi-bookmark-heart"></i></i></span>
                   </div>
                 </div>
                 <img src="./product/product2/1.jpg" class="img-fluid rounded thumbnail-image">
@@ -375,7 +375,6 @@ const Product = {
                 <div class="btn-product">
                   <input type="submit" name="search" class="buy-now" value="Buy Now">
                   <input type="submit" name="search" class="add-cart" value="Add to cart">
-                  <input type="submit" name="search" class="add-req" value="Request">
                 </div>
               </div>
               <div class="col-12 pt-3 pb-0">
