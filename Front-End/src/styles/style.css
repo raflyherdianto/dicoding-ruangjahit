@@ -4,6 +4,7 @@
 @import url('./component/sign-in.css');
 @import url('./component/sign-up.css');
 @import url('./component/product-page.css');
+@import url('./component/tailor-page.css');
 @import url('./component/favorite-page.css');
 
 *, html {

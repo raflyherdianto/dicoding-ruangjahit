@@ -1,0 +1,231 @@
+.container-tailor {
+    max-width: 100%;
+    padding: 50px;
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.search-box {
+    margin: auto;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    display: flex;
+    width: 50%;
+}
+
+.search-box input {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    box-sizing: border-box;
+    transition: .5s;
+}
+
+.search-box input[type="search"] {
+    background-color: #fff;
+    width: 100%;
+    height: 50px;
+    border: 2px solid #FF8A00;
+    border-right: none;
+    padding: 0 25px;
+    border-radius: 5px 0 0 5px;
+}
+
+.search-box [type="submit"] {
+    position: relative;
+    border-radius: 0 5px 5px 0;
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    cursor: pointer;
+    background-color: #FF8A00;
+    color: #fff;
+}
+
+.search-box input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+.main-content{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.tailor-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 50px 0px;
+    gap: 20px;
+    margin: auto;
+}
+
+.tailor-list h5 {
+    margin-top: 10px;
+    color: #000;
+    font-weight: 500;
+    font-size: medium;
+}
+
+.tailor-list p{
+    color: #000;
+    font-size: small;
+    margin-bottom: 8px;
+}
+
+.tailor-list .card {
+    height: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.tailor-list .card .card-body {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+}
+
+.tailor-list .card .btn-detail {
+    font-size: 14px;
+    padding: 12px;
+    background-color: #FF8A00;
+	color: #fff;
+	font-weight: 500;
+    border-radius: 5px;
+    text-decoration: none;
+    align-self: flex-end;
+}
+
+.tailor-list .card .btn-detail:hover {
+    background-color: #F58402;
+}
+
+aside{
+    width: fit-content;
+    height: fit-content;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 50px auto;
+    border-radius: 5px;
+}
+
+aside .category-filter .category-filter-list {
+    margin-bottom: 20px;
+}
+
+aside .category-filter .category-filter-list div {
+    margin-bottom: 10px;
+}
+
+aside h5 {
+    text-align: center;
+    padding: 10px;
+}
+
+aside p {
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+}
+
+aside center {
+    margin: 0 auto;
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+aside .checked {
+    color: #fbc02d;
+}
+
+aside .category-filter p,  aside .rate-filter p, aside .location-filter p{
+    background-color: #FF8A00;
+    border-radius: 5px;
+    width: fit-content
+}
+
+aside .location {
+    padding-top: 0;
+}
+
+aside .dropdown-toggle{
+    margin: 0 auto;
+    width: 300px;
+    background-color: #fff;
+    color: #000;
+}
+
+aside .dropdown-toggle:hover{
+    background-color: #f5c58e;
+    color: #000;
+}
+
+aside .dropdown-toggle:active{
+    background-color: #f5c58e;
+    color: #000;
+}
+
+aside .dropdown-menu {
+    width: 300px;
+}
+
+aside input[type="submit"] {
+    margin: 20px 15px 0px;
+    font-size: 14px;
+    border-radius: 5px;
+    width: 305px;
+    height: 40px;
+    position: relative;
+    border-radius: 5px;
+    border-style: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #FF8A00;
+    color: #fff;
+}
+
+@media screen and (max-width: 1200px) {  
+    .main-content {
+        gap: 0px;
+        grid-template-columns: 1fr;
+    }
+    
+    .container-tailor {
+        padding: 50px;
+    }
+
+    .search-box {
+        width: 70%;
+    }
+
+    aside {
+        display: none;
+    }
+} 
+
+@media screen and (max-width: 768px) {    
+    .tailor-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+} 
+
+@media screen and (max-width: 600px) { 
+    .container-tailor {
+        padding: 50px 10px 0px;
+    }
+
+    .search-box {
+        width: 90%;
+    }
+
+    .tailor-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        row-gap: 30px;
+    }
+} 
+
+@media screen and (max-width: 425px) {  
+    .tailor-list {
+        grid-template-columns: auto;
+    }
+}

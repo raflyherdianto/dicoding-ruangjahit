@@ -21,6 +21,7 @@ class Footer extends HTMLElement {
                 <ul>
                     <li><a href="#/home">Home</a></li>
                     <li><a href="#/product">Product</a></li>
+                    <li><a href="#/tailor">Tailor</a></li>
                     <li><a href="#/favorite">Favorite</a></li>
                     <li><a href="#/about-us">About Us</a></li>
                 </ul>

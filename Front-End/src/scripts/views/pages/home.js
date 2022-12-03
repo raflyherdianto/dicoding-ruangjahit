@@ -246,7 +246,7 @@ const Home = {
         <div class="col">
           <div class="card">
               
-              <h5 class="m-1"><img src="/tailors/tailor1.png" width="100px" class="img-fluid float-start rounded-circle p-2" alt=""><br>Lorem Ipsum<br><span><a href="#">see more</a></span></h5>
+              <h5 class="m-1"><img src="/tailors/tailor1.jpg" width="100px" class="img-fluid float-start rounded-circle p-2" alt=""><br>Lorem Ipsum<br><span><a href="#">see more</a></span></h5>
           </div>
         </div>
         <div class="col">
