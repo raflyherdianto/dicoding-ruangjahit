@@ -181,7 +181,51 @@ aside input[type="submit"] {
     color: #fff;
 }
 
-/* modal */
+/* filter modal */
+#filterProductModal .modal-content {
+    width: max-content;
+    margin: auto;
+    background-color: #fbf1e5;
+}
+
+#filterProductModal h5 {
+    margin: auto;
+    font-weight: bold;
+}
+
+#filterProductModal center {
+    margin: 0 auto;
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+#filterProductModal .rate-filter {
+    margin-top: 10px;
+}
+
+#filterProductModal .category-filter p,  #filterProductModal .rate-filter p, #filterProductModal .location-filter p {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+#filterProductModal .checked {
+    color: #fbc02d;
+}
+
+#filterProductModal input[type="submit"] {
+    margin: 10px auto;
+    font-size: 14px;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border-style: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #FF8A00;
+    color: #fff;
+}
+
+/* modal detail product */
 .modal .price {
     font-size: 25px;
     color: #FF8A00;
@@ -238,6 +282,12 @@ aside input[type="submit"] {
     height: 40px;
     border-radius: 5px;
     font-size: 15px;
+}
+
+.btn-product .buy-now {
+    background-color: #FF8A00;
+    border: none;
+    color: #fff;
 }
 
 .btn-product .add-cart {

@@ -147,6 +147,50 @@ aside input[type="submit"] {
     color: #fff;
 }
 
+/* filter modal */
+#filterTailorModal .modal-content {
+    width: max-content;
+    margin: auto;
+    background-color: #fbf1e5;
+}
+
+#filterTailorModal h5 {
+    margin: auto;
+    font-weight: bold;
+}
+
+#filterTailorModal center {
+    margin: 0 auto;
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+#filterTailorModal .rate-filter {
+    margin-top: 10px;
+}
+
+#filterTailorModal .category-filter p,  #filterTailorModal .rate-filter p, #filterTailorModal .location-filter p {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+#filterTailorModal .checked {
+    color: #fbc02d;
+}
+
+#filterTailorModal input[type="submit"] {
+    margin: 10px auto;
+    font-size: 14px;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border-style: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #FF8A00;
+    color: #fff;
+}
+
 @media screen and (max-width: 1200px) {  
     .tailors-content {
         gap: 0px;
