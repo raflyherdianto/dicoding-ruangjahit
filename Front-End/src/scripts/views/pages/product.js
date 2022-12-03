@@ -2,14 +2,17 @@ const Product = {
   async render() {
     return `
       <div class="container-product">
-        <div class="search-box">
-          <input type="search" id="searchProduct" placeholder="Search product">
-          <button id="searchProduct" type="submit">
-            <i class="bi bi-search"></i>
+        <search-bar></search-bar>
+        <div class="show-filter">
+          <button id="showFilterButton">
+            Search by <span>Filter 
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+            </svg></span>
           </button>
-        </div>
+        </div>  
 
-        <div class="main-content">
+        <div class="products-content">
           <div class="product">
             <div class="row g-2 pt-3">
               <div class="col-lg-2 col-sm-6 me-3 pb-4">

@@ -1,50 +1,13 @@
 .container-product {
     max-width: 100%;
     margin: auto;
-    padding: 50px 100px 0px;
+    padding: 50px;
     display: flex;
     flex-direction: column;
 }
 
-.search-box {
-    margin: auto;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    display: flex;
-}
-
-.search-box input {
-    position: relative;
-    display: inline-block;
-    font-size: 20px;
-    box-sizing: border-box;
-    transition: .5s;
-}
-
-.search-box input[type="search"] {
-    background-color: #fff;
-    width: 445px;
-    height: 50px;
-    border: 2px solid #FF8A00;
-    border-right: none;
-    padding: 0 25px;
-    border-radius: 5px 0 0 5px;
-}
-
-.search-box [type="submit"] {
-    position: relative;
-    border-radius: 0 5px 5px 0;
-    width: 50px;
-    height: 50px;
-    border-style: none;
-    /* outline: none; */
-    cursor: pointer;
-    background-color: #FF8A00;
-    color: #fff;
-}
-
-.search-box input[type="submit"]:hover {
-    cursor: pointer;
+.container-product .show-filter {
+    display: none;
 }
 
 .product {
@@ -129,7 +92,7 @@
     border-radius: 5px;
 }
 
-.main-content{
+.products-content{
     display: grid;
     grid-template-columns: auto auto;
 }
@@ -283,9 +246,28 @@ aside input[type="submit"] {
     color: #FF8A00;
 }
 
-@media screen and (max-width: 1200px) {    
-    .container-product {
-        padding: 50px;
+@media screen and (max-width: 1200px) {  
+    .container-product .show-filter {
+        display: inline-block;
+        margin: auto;
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    .container-product .show-filter button {
+        border: none;
+        align-items: center;
+        background-color: white;
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .container-product .show-filter button:hover {
+        color: #303030;
+    }
+    
+    .container-product .show-filter button span {
+        color: #CC704B;
     }
 
     aside {
@@ -300,12 +282,7 @@ aside input[type="submit"] {
 } 
 
 @media screen and (max-width: 600px) {  
-    .search-box input[type="search"] {
-        width: 100%;
-        font-size: small;
-    }
-
-    .main-content {
+    .products-content {
         grid-template-columns: 1fr;
     }
 

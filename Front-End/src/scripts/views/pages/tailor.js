@@ -1,17 +1,22 @@
+import '../element/search-bar';
+
 const Tailor = {
   async render() {
     return `
       <div class="container-tailor">
-        <div class="search-box">
-          <input type="search" id="searchTailor" placeholder="Search tailor">
-          <button id="searchTailor" type="submit">
-            <i class="bi bi-search"></i>
+        <search-bar></search-bar>
+        <div class="show-filter">
+          <button id="showFilterButton">
+            Search by <span>Filter 
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+            </svg></span>
           </button>
-        </div>
+        </div> 
 
-        <div class="main-content">
+        <div class="tailors-content">
             <div class="tailor-list">
-                <div class="card" style="width: 12rem;">
+                <div class="card">
                     <img src="./tailors/tailor1.jpg" class="img-fluid float-start rounded-circle p-2" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Cameron Williamson</h5>
@@ -20,7 +25,7 @@ const Tailor = {
                     </div>
                 </div>
 
-                <div class="card" style="width: 12rem;">
+                <div class="card">
                     <img src="./tailors/tailor1.jpg" class="img-fluid float-start rounded-circle p-2" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Cameron Williamson</h5>
@@ -29,7 +34,7 @@ const Tailor = {
                     </div>
                 </div>
 
-                <div class="card" style="width: 12rem;">
+                <div class="card">
                     <img src="./tailors/tailor1.jpg" class="img-fluid float-start rounded-circle p-2" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Cameron Williamson</h5>
@@ -38,7 +43,7 @@ const Tailor = {
                     </div>
                 </div>
 
-                <div class="card" style="width: 12rem;">
+                <div class="card">
                     <img src="./tailors/tailor1.jpg" class="img-fluid float-start rounded-circle p-2" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Cameron Williamson</h5>
@@ -47,8 +52,7 @@ const Tailor = {
                     </div>
                 </div>
 
-
-                <div class="card" style="width: 12rem;">
+                <div class="card">
                     <img src="./tailors/tailor1.jpg" class="img-fluid float-start rounded-circle p-2" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Cameron Williamson</h5>
@@ -56,7 +60,6 @@ const Tailor = {
                         <a href="#" class="btn-detail">Detail</a>
                     </div>
                 </div>
-                
             </div>
 
           <aside>

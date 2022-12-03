@@ -5,48 +5,11 @@
     grid-template-rows: auto auto;
 }
 
-.search-box {
-    margin: auto;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    display: flex;
-    width: 50%;
+.container-tailor .show-filter {
+    display: none;
 }
 
-.search-box input {
-    position: relative;
-    display: inline-block;
-    font-size: 20px;
-    box-sizing: border-box;
-    transition: .5s;
-}
-
-.search-box input[type="search"] {
-    background-color: #fff;
-    width: 100%;
-    height: 50px;
-    border: 2px solid #FF8A00;
-    border-right: none;
-    padding: 0 25px;
-    border-radius: 5px 0 0 5px;
-}
-
-.search-box [type="submit"] {
-    position: relative;
-    border-radius: 0 5px 5px 0;
-    width: 50px;
-    height: 50px;
-    border-style: none;
-    cursor: pointer;
-    background-color: #FF8A00;
-    color: #fff;
-}
-
-.search-box input[type="submit"]:hover {
-    cursor: pointer;
-}
-
-.main-content{
+.tailors-content{
     display: grid;
     grid-template-columns: auto auto;
 }
@@ -62,8 +25,8 @@
 .tailor-list h5 {
     margin-top: 10px;
     color: #000;
-    font-weight: 500;
-    font-size: medium;
+    font-weight: 600;
+    font-size: 14px;
 }
 
 .tailor-list p{
@@ -76,6 +39,7 @@
     height: fit-content;
     padding: 10px;
     border-radius: 10px;
+    width: 12rem;
 }
 
 .tailor-list .card .card-body {
@@ -184,7 +148,7 @@ aside input[type="submit"] {
 }
 
 @media screen and (max-width: 1200px) {  
-    .main-content {
+    .tailors-content {
         gap: 0px;
         grid-template-columns: 1fr;
     }
@@ -193,8 +157,27 @@ aside input[type="submit"] {
         padding: 50px;
     }
 
-    .search-box {
-        width: 70%;
+    .container-tailor .show-filter {
+        display: inline-block;
+        margin: auto;
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    .container-tailor .show-filter button {
+        border: none;
+        align-items: center;
+        background-color: white;
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .container-tailor .show-filter button:hover {
+        color: #303030;
+    }
+    
+    .container-tailor .show-filter button span {
+        color: #CC704B;
     }
 
     aside {
@@ -211,10 +194,6 @@ aside input[type="submit"] {
 @media screen and (max-width: 600px) { 
     .container-tailor {
         padding: 50px 10px 0px;
-    }
-
-    .search-box {
-        width: 90%;
     }
 
     .tailor-list {
