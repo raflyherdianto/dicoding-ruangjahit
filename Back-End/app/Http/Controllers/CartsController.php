@@ -21,6 +21,11 @@ class CartsController extends Controller
      */
     public function index()
     {
+        if (Auth::user()->roles != 'user') {
+            return response()->json([
+                'message' => 'You are not authorized to make request',
+            ], 403);
+        }
         return new CartsResource(Carts::with(['product'])->where('user_id',Auth::user()->id)->latest()->get());
     }
 
@@ -55,11 +60,11 @@ class CartsController extends Controller
             'custom_size' => $request->custom_size,
         ]);
         $total_price = $product->price * $request->quantity;
-        $transaction = Transactions::where('user_id', auth()->user()->id)->where('status', 'PENDING')->first();
+        $transaction = Transactions::where('user_id', auth()->user()->id)->where('status', 'CARTS')->first();
         if (!$transaction) {
             $transaction = Transactions::create([
                 'user_id' => auth()->user()->id,
-                'status' => 'PENDING',
+                'status' => 'CARTS',
                 'insurance_price' => 10000,
                 'shipping_price' => 10000,
                 'total_price' => $total_price,
@@ -146,7 +151,7 @@ class CartsController extends Controller
                 'message' => 'You are not authorized to make request',
             ], 403);
         }
-        $transaction = Transactions::where('user_id', auth()->user()->id)->where('status', 'PENDING')->orWhere('status', 'FAILED')->first();
+        $transaction = Transactions::where('user_id', auth()->user()->id)->orWhere('status', 'CARTS')->first();
         $transaction_detail = TransactionDetails::where('transaction_id', $transaction->id)->first();
         $transaction->delete();
         $transaction_detail->delete();
@@ -169,9 +174,13 @@ class CartsController extends Controller
         foreach ($carts as $cart) {
             $total_price += $cart->product->price * $cart->quantity;
         }
+        $transaction = Transactions::where('user_id', auth()->user()->id)->where('status', 'CARTS')->latest()->get();
+        $transaction->status = 'PENDING';
+        $transaction->update();
 
         return response()->json([
-            'message' => 'Total price is ' . $total_price
+            'message' => 'Checkout success', '\nTotal price is ' . $total_price, '\nTransfer to BCA 1234567890 a/n PT. RuangJahit'
         ], 200);
     }
 }
+

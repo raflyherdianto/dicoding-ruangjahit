@@ -19,7 +19,7 @@ class CreateTransactionsTable extends Migration
             $table->bigInteger('insurance_price');
             $table->bigInteger('shipping_price');
             $table->bigInteger('total_price');
-            $table->enum('status', ['PENDING', 'PROCESSED', 'SUCCESS', 'FAILED', 'SHIPPING']);
+            $table->enum('status', ['CARTS','PENDING', 'PROCESSED', 'SUCCESS', 'FAILED', 'SHIPPING']);
             $table->string('resi');
             $table->timestamps();
         });

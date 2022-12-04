@@ -18,9 +18,14 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        return ProductsResource::collection(
-            Products::all()
-        );
+        return new ProductsResource(Products::with(['category_product'])->latest()->get());
+    }
+
+    public function indexAdmin()
+    {
+        if (Auth::user()->roles != 'user') {
+            return new ProductsResource(Products::with(['category_product'])->where('user_id', Auth::user()->id)->latest()->get());
+        }
     }
 
     /**

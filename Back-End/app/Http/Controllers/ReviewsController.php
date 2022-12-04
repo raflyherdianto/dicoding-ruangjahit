@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Reviews;
+use App\Models\Products;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Resources\ReviewsResource;
@@ -18,9 +19,7 @@ class ReviewsController extends Controller
      */
     public function index()
     {
-        return ReviewsResource::collection(
-            Reviews::all()
-        );
+        return new ReviewsResource(Reviews::with(['product'])->latest()->get());
     }
 
     /**
@@ -54,6 +53,11 @@ class ReviewsController extends Controller
             'star' => $request->star,
             'description' => $request->description,
         ]);
+        $rating = Reviews::where('product_id', $request->product_id)->avg('star');
+        $product = Products::where('id', $review->product_id)->first();
+        $product->rating = $rating;
+        $product->update();
+
         return new ReviewsResource($review);
     }
 
@@ -100,9 +104,19 @@ class ReviewsController extends Controller
                 'message' => 'You are not authorized to make request',
             ], 403);
         }
-        $review->update($request->all());
 
-        return new ReviewsResource($review);
+        if (Auth::user()->id == $review->user_id) {
+            $review->update($request->all());
+            $rating = Reviews::where('product_id', $review->product_id)->avg('star');
+            $product = Products::where('id', $review->product_id)->first();
+            $product->rating = $rating;
+            $product->save();
+            return new ReviewsResource($review);
+        } else {
+            return response()->json([
+                'message' => 'You are not authorized to make request',
+            ], 403);
+        }
     }
 
     /**
@@ -113,10 +127,19 @@ class ReviewsController extends Controller
      */
     public function destroy(Reviews $review)
     {
-        $review->delete();
-
-        return response()->json([
-            'message' => 'Review has been deleted'
-        ], 200);
+        if (Auth::user()->id == $review->user_id) {
+            $review->delete();
+            $rating = Reviews::where('product_id', $review->product_id)->avg('star');
+            $products = Products::where('id', $review->product_id)->first();
+            $products->rating = $rating;
+            $products->save();
+            return response()->json([
+                'message' => 'Review deleted successfully'
+            ], 200);
+        } else {
+            return response()->json([
+                'message' => 'You are not authorized to make request',
+            ], 403);
+        }
     }
 }
