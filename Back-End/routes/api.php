@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AppointmentsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartsController;
@@ -46,6 +47,9 @@ Route::get('images', [ImageProductsController::class, 'index']);
 
 // Route get Favorites
 Route::get('/favorites', [FavoritesController::class, 'index']);
+
+// Route get Appointments
+Route::get('/appointments', [AppointmentsController::class, 'index']);
 
 
 // Prefix admin, namespace Admin
@@ -107,5 +111,8 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     // Route add Favorite
     Route::post('/favorites', [FavoritesController::class, 'store']);
+
+    // Route add Appointment
+    Route::post('/appointments', [AppointmentsController::class, 'store']);
 });
 

@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Appointments;
+use App\Models\Products;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Resources\AppointmentsResource;
 use App\Http\Requests\StoreAppointmentsRequest;
 use App\Http\Requests\UpdateAppointmentsRequest;
 
@@ -15,7 +19,7 @@ class AppointmentsController extends Controller
      */
     public function index()
     {
-        //
+        return new AppointmentsResource(Appointments::get());
     }
 
     /**
@@ -36,7 +40,16 @@ class AppointmentsController extends Controller
      */
     public function store(StoreAppointmentsRequest $request)
     {
-        //
+        $request->validated($request->all());
+
+        $appointment = appointments::create([
+            'user_id' => Auth::user()->id,
+            'product_id' => $request->product_id,
+            'deadline' => $request->deadline,
+            'status' => $request->status,
+        ]);
+
+        return new AppointmentsResource($appointment);
     }
 
     /**
@@ -47,7 +60,13 @@ class AppointmentsController extends Controller
      */
     public function show(Appointments $appointments)
     {
-        //
+        if(!$appointment->id) {
+            return response()->json([
+                'message' => 'Appoinments not found'
+            ], 404);
+        } else {
+            return new AppointmentsResource($appointment);
+        }
     }
 
     /**
@@ -81,6 +100,15 @@ class AppointmentsController extends Controller
      */
     public function destroy(Appointments $appointments)
     {
-        //
+        if (Auth::user()->id == $appointment->user_id) {
+            $appointment->delete();
+            return response()->json([
+                'message' => 'Cancelling an Appointment success'
+            ], 200);
+        } else {
+            return response()->json([
+                'message' => 'You are not authorized to make request',
+            ], 403);
+        }
     }
 }
