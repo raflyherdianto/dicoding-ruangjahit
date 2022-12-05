@@ -1,0 +1,88 @@
+.container-product-cart {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 50px;
+    padding-bottom: 30px;
+    height: fit-content;
+}
+
+.container-product-cart h1{
+    font-size: x-large;
+    padding: 10px;
+    margin: 0;
+    font-weight: 500;
+}
+
+.container-product-cart .separator {
+    width: 100%;
+    border: 1px solid rgb(157, 156, 156);
+}
+
+.container-product-cart .card {
+    display: flex;
+    flex-direction: row;
+    background-color: #ffe7cb;
+    margin-top: 25px;
+}
+
+.container-product-cart .card .card-head img {
+    height: 100%;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.container-product-cart .card .card-body {
+    margin: 14px;
+}
+
+.container-product-cart .card .card-body h4 {
+    margin-bottom: 12px;
+}
+
+.container-product-cart .card .card-body p {
+    margin-bottom: 10px;
+}
+
+.container-product-cart .card .card-btn {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.container-product-cart .card .card-btn .btn-delete {
+    color: #FF8A00;
+    padding: 20px;
+    font-size: 1.2rem;
+}
+
+.total-order {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.total-order p, .total-order a {
+    padding: 15px;
+    margin: 25px 15px 15px;
+}
+
+.total-order p {
+    font-weight: 600;
+}
+
+.total-order a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+    background-color: #FF8A00;
+    border-radius: 5px;
+}
+
+.total-order a:hover {
+    background-color: #F58402;
+}
+
+@media screen and (max-width: 768px) {
+    .container-product-cart .card {
+        flex-direction: column;
+    }
+}

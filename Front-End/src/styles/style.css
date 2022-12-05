@@ -4,6 +4,7 @@
 @import url('./component/sign-in.css');
 @import url('./component/sign-up.css');
 @import url('./component/product-page.css');
+@import url('./component/product-cart.css');
 @import url('./component/tailor-page.css');
 @import url('./component/favorite-page.css');
 
@@ -94,14 +95,13 @@ body {
 
 .app-bar .login {
   background-color: #FF8A00;
-  border-radius: 10px;
+  border-radius: 5px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 .app-bar .login:hover {
   background-color: #f1b26a;
-  border-radius: 10px;
 }
 
 .app-bar .app-bar__navigation .login a{
@@ -110,12 +110,11 @@ body {
 
 .app-bar .register {
   background-color: #f1b26a;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .app-bar .register:hover {
   background-color: #FF8A00;
-  border-radius: 10px;
 }
 
 .app-bar .app-bar__navigation .register a{
@@ -169,7 +168,7 @@ body {
   padding: 0.3em 1em;
   background-color: #fbfbfb;
   color: #FF8A00;
-  border-radius: 10px;
+  border-radius: 5px;
   transition: 0.3s ease-in-out;
   text-decoration: none;
 }
@@ -238,6 +237,7 @@ position: relative;
 font-size: 13px;
 font-weight: bold;
 width: 75%;
+cursor: pointer;
 }
 
 .first .price{

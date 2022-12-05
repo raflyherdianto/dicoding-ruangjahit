@@ -1,5 +1,6 @@
 import Home from '../views/pages/home';
 import Product from '../views/pages/product';
+import ProductCart from '../views/pages/product-cart';
 import Tailor from '../views/pages/tailor';
 import Favorite from '../views/pages/favorite';
 import AboutUs from '../views/pages/about-us';
@@ -10,6 +11,7 @@ const routes = {
   '/': Home, // default page
   '/home': Home,
   '/product': Product,
+  '/product-cart': ProductCart,
   '/tailor': Tailor,
   '/favorite': Favorite,
   '/about-us': AboutUs,

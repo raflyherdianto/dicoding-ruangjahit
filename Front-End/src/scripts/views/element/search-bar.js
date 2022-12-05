@@ -42,6 +42,7 @@ class SearchBar extends HTMLElement {
             height: 50px;
             border: 2px solid #FF8A00;
             border-right: none;
+            outline: none;
             padding: 0 25px;
             border-radius: 5px 0 0 5px;
         }
