@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartsController;
 use App\Http\Controllers\ReviewsController;
+use App\Http\Controllers\FavoritesController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ImageProductsController;
 use App\Http\Controllers\CategoryProductsController;
@@ -42,6 +43,9 @@ Route::get('reviews', [ReviewsController::class, 'index']);
 
 // Route get Reviews
 Route::get('images', [ImageProductsController::class, 'index']);
+
+// Route get Favorites
+Route::get('/favorites', [FavoritesController::class, 'index']);
 
 
 // Prefix admin, namespace Admin
@@ -100,5 +104,8 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     // Route Checkout Carts
     Route::put('/carts/checkout/{cart} ', [CartsController::class, 'checkout']);
+
+    // Route add Favorite
+    Route::post('/favorites', [FavoritesController::class, 'store']);
 });
 
