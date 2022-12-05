@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Products;
 use Illuminate\Http\Request;
 use App\Models\ImageProducts;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 use App\Http\Resources\ImageProductsResource;
 use App\Http\Requests\StoreImageProductsRequest;
 use App\Http\Requests\UpdateImageProductsRequest;
@@ -39,17 +41,28 @@ class ImageProductsController extends Controller
      * @param  \App\Http\Requests\StoreImageProductsRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreImageProductsRequest $request)
+    public function store(Request $request, Products $product, ImageProducts $imageProduct)
     {
-        if (Auth::user()->roles == 'admin') {
-            $request->validated($request->all());
+        if (Auth::user()->roles == 'admin'){
+            $validator = Validator::make($request->all(), [
+                'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            ]);
 
-            $product = ImageProducts::create([
-                'image' => $request->image,
+            if ($validator->fails()) {
+                return response()->json([
+                    'message' => 'Validation Failed',
+                    'errors' => $validator->errors(),
+                ], 422);
+            }
+
+            $image = $request->file('image');
+            $image->store('image-products');
+            $imageProduct = ImageProducts::create([
+                'image' => '/storage/'.'image-products/'.$image->hashName(),
                 'product_id' => $request->product_id,
             ]);
-            return new ImageProductsResource($product);
 
+            return new ImageProductsResource($imageProduct);
         } else {
             return response()->json([
                 'message' => 'You are not authorized to make request'

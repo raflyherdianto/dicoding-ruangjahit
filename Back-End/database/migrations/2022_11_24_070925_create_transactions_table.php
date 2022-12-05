@@ -16,9 +16,13 @@ class CreateTransactionsTable extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('product_id')->constrained('products');
+            $table->string('code');
+            $table->integer('quantity');
+            $table->string('custom_size');
+            $table->bigInteger('total_price');
             $table->bigInteger('insurance_price');
             $table->bigInteger('shipping_price');
-            $table->bigInteger('total_price');
             $table->enum('status', ['CARTS','PENDING', 'PROCESSED', 'SUCCESS', 'FAILED', 'SHIPPING']);
             $table->string('resi');
             $table->timestamps();

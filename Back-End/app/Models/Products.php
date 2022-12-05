@@ -19,27 +19,27 @@ class Products extends Model
         return $this->belongsTo(CategoryProducts::class);
     }
 
-    public function image_product(){
-        return $this->hasMany(ImageProducts::class);
+    public function image_products(){
+        return $this->hasMany(ImageProducts::class, 'product_id');
     }
 
-    public function review(){
-        return $this->hasMany(Reviews::class);
+    public function reviews(){
+        return $this->hasMany(Reviews::class, 'product_id');
     }
 
-    public function transaction_detail(){
-        return $this->hasMany(TransactionDetails::class);
+    public function transactions(){
+        return $this->hasMany(Transactions::class, 'product_id');
     }
 
-    public function favorite(){
+    public function favorites(){
         return $this->hasMany(Favorites::class);
     }
 
-    public function cart(){
-        return $this->hasMany(Carts::class);
+    public function carts(){
+        return $this->hasMany(Carts::class, 'product_id');
     }
 
-    public function appointment(){
+    public function appointments(){
         return $this->hasMany(Appointments::class);
     }
 }

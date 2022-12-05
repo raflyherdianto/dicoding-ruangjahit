@@ -27,7 +27,6 @@ class UpdateUserRequest extends FormRequest
             'name'=>['nullable', 'string', 'max:255'],
             'username'=>['nullable', 'string', 'max:255', 'unique:users,username'],
             'email'=>['nullable', 'string', 'email', 'max:255', 'unique:users,email'],
-            'photo'=>['nullable', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
             'password'=>['nullable', 'confirmed'],
             'first_address'=>['nullable', 'string', 'max:255'],
             'second_address'=>['nullable', 'string', 'max:255'],

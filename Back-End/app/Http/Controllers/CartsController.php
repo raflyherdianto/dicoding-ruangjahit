@@ -60,29 +60,25 @@ class CartsController extends Controller
             'custom_size' => $request->custom_size,
         ]);
         $total_price = $product->price * $request->quantity;
-        $transaction = Transactions::where('user_id', auth()->user()->id)->where('status', 'CARTS')->first();
+        $transaction = Transactions::where('user_id', Auth::user()->id)->where('status', 'CARTS')->first();
         if (!$transaction) {
             $transaction = Transactions::create([
                 'user_id' => auth()->user()->id,
-                'status' => 'CARTS',
                 'insurance_price' => 10000,
                 'shipping_price' => 10000,
                 'total_price' => $total_price,
-                'resi' => mt_rand(10000000, 99999999)
+                'resi' => '0',
+                'code' => 'TR'.mt_rand(10000000, 99999999),
+                'product_id' => $product->id,
+                'quantity' => $request->quantity,
+                'price' => $product->price,
+                'custom_size' => $cart->custom_size,
+                'status'=> 'CARTS'
             ]);
         } else {
             $transaction->total_price += $total_price;
             $transaction->update();
         }
-
-        TransactionDetails::create([
-            'transaction_id' => $transaction->id,
-            'product_id' => $product->id,
-            'quantity' => $request->quantity,
-            'price' => $product->price,
-            'custom_size' => $cart->custom_size
-        ]);
-
         return new CartsResource($cart);
     }
 
@@ -151,10 +147,8 @@ class CartsController extends Controller
                 'message' => 'You are not authorized to make request',
             ], 403);
         }
-        $transaction = Transactions::where('user_id', auth()->user()->id)->orWhere('status', 'CARTS')->first();
-        $transaction_detail = TransactionDetails::where('transaction_id', $transaction->id)->first();
+        $transaction = Transactions::where('user_id', Auth::user()->id)->where('status', 'CARTS')->first();
         $transaction->delete();
-        $transaction_detail->delete();
         $cart->delete();
 
         return response()->json([
@@ -162,24 +156,24 @@ class CartsController extends Controller
         ], 200);
     }
 
-
-    public function checkout(){
+    public function checkout(Carts $cart){
         if (Auth::user()->roles != 'user') {
             return response()->json([
                 'message' => 'You are not authorized to make request',
             ], 403);
         }
-        $carts = Carts::where('user_id', Auth::user()->id)->get();
+        $carts = Carts::where('user_id', Auth::user()->id)->orWhere('id', $cart)->get();
         $total_price = 0;
         foreach ($carts as $cart) {
             $total_price += $cart->product->price * $cart->quantity;
         }
-        $transaction = Transactions::where('user_id', auth()->user()->id)->where('status', 'CARTS')->latest()->get();
+        $transaction = Transactions::where('user_id', Auth::user()->id)->orWhere('status', 'CARTS')->first();
         $transaction->status = 'PENDING';
-        $transaction->update();
+        $transaction->save();
+        $cart->delete();
 
         return response()->json([
-            'message' => 'Checkout success', '\nTotal price is ' . $total_price, '\nTransfer to BCA 1234567890 a/n PT. RuangJahit'
+            'message' => 'Checkout success','Your transaction code '. $transaction->code, 'Total price is ' . $total_price, 'Transfer to BCA 1234567890 a/n PT. RuangJahit', 'Please send your payment proof to Admin (08123456789)','Please Screenshot this page', 'Thank you for shopping with us'
         ], 200);
     }
 }

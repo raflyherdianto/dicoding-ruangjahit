@@ -11,11 +11,11 @@ class TransactionDetails extends Model
 
     protected $guarded = ['id'];
 
-    public function product(){
+    public function products(){
         return $this->belongsTo(Products::class);
     }
 
-    public function transaction(){
+    public function transactions(){
         return $this->belongsTo(Transactions::class);
     }
 }

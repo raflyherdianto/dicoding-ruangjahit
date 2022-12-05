@@ -20,6 +20,7 @@ class CreateTransactionDetailsTable extends Migration
             $table->integer('quantity');
             $table->bigInteger('price');
             $table->string('custom_size');
+            $table->enum('status', ['CARTS','PENDING', 'PROCESSED', 'SUCCESS', 'FAILED', 'SHIPPING']);
             $table->timestamps();
         });
     }

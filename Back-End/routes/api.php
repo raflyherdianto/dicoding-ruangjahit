@@ -40,6 +40,9 @@ Route::get('products/{product}', [ProductsController::class, 'show']);
 // Route get Reviews
 Route::get('reviews', [ReviewsController::class, 'index']);
 
+// Route get Reviews
+Route::get('images', [ImageProductsController::class, 'index']);
+
 
 // Prefix admin, namespace Admin
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
@@ -67,6 +70,9 @@ Route::middleware(['auth:sanctum', 'admin'])->group(function () {
     // Route resource Categories
     Route::resource('categories', CategoryProductsController::class)->except(['index', 'create', 'edit']);
 
+    // Route resource Categories
+    Route::resource('images', ImageProductsController::class)->except(['index', 'create', 'edit']);
+
     // Route resource Products
     Route::resource('products', ProductsController::class)->except(['index','indexAdmin', 'create', 'show', 'edit']);
 
@@ -92,5 +98,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     // Route add Carts
     Route::post('/carts/{product}', [CartsController::class, 'store']);
 
+    // Route Checkout Carts
+    Route::put('/carts/checkout/{cart} ', [CartsController::class, 'checkout']);
 });
 
