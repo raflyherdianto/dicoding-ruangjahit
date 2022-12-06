@@ -1,6 +1,7 @@
 /* eslint-disable func-names */
 /* eslint-disable no-var */
 /* eslint-disable vars-on-top */
+import 'bootstrap/dist/js/bootstrap.bundle';
 import 'regenerator-runtime';
 import '../styles/style.css';
 import '../styles/responsive.css';
@@ -19,8 +20,6 @@ window.addEventListener('hashchange', () => {
 window.addEventListener('load', () => {
   app.renderPage();
 });
-
-// modal detail product
 
 var myModal = document.getElementById('myModal');
 var myInput = document.getElementById('myInput');
