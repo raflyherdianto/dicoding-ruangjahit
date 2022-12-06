@@ -1,78 +1,9 @@
 @media screen and (max-width: 499px) {
-  .navbar ul{
-    flex-wrap: wrap;
-    width: 100%;
-  }
 
-  .navbar-toggle{
-    display: block;
-  }
-
-  .navbar-links{
-    display: none;
-    width: 100%;
-    text-align: center;
-  }
-
-  .active{
-    display: block;
-  }
-
-  .hero {
-    height: fit-content;
-    flex-direction: column;
-  }
-
-  .hero .left{
-    width: 100%;
-  }
-
-  .hero .left h1{
-    font-size: 20px;
-  }
-
-  .hero .left p{
-    font-size: 12px;
-  }
-
-  .hero .left .header-btn{
-    font-size: 12px;
-  }
-
-  .hero .right img {
-    display: none;
-  }
 }
 
 @media screen and (min-width: 650px) {
-  .app-bar {
-    grid-template-columns: 1fr auto;
-    padding: 8px 32px;
-  }
- 
-  .app-bar .app-bar__brand h1 {
-    font-size: 1.5em;
-  }
- 
-  .app-bar .app-bar__menu {
-    display: none;
-  }
- 
-  .app-bar .app-bar__navigation {
-    position: static;
-    width: 100%;
-  }
- 
-  .app-bar .app-bar__navigation ul li {
-    display: inline-block;
-  }
- 
-  .app-bar .app-bar__navigation ul li a {
-    display: inline-block;
-    width: 100px;
-    text-align: center;
-    margin: 0;
-  }
+
 }
 
 @media screen and (max-width: 1200px) {
@@ -139,5 +70,58 @@
     grid-template-rows: repeat(6, 1fr);
     padding: 40px;
     padding-top: 10px;
+  }
+}
+
+/* Responsive */
+
+@media screen and (max-width: 900px) {
+  .login {
+      border-radius: 10px 10px 0 0;
+  }
+  .register {
+      border-radius: 0 0 10px 10px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .hero-left h1{
+      font-size: 30px;
+  }
+
+  .hero-left p {
+      font-size: 15px;
+  }
+
+  .hero-left button{
+      font-size: 15px;
+  }
+
+  .first-main p {
+      font-size: 14px;
+  }
+}
+
+@media screen and (width: 768px) {
+  .hero-right img {
+      margin-left: 50px;
+  }
+  .order-list {
+      display: none;
+  }
+  #nav-orderstatus-tab {
+      display: block;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .user-profile .content {
+      text-align: center;
+  }
+  .order-list {
+      display: none;
+  }
+  #nav-orderstatus-tab {
+      display: block;
   }
 }

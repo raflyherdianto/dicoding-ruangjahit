@@ -4,9 +4,11 @@
 @import url('./component/sign-in.css');
 @import url('./component/sign-up.css');
 @import url('./component/product-page.css');
-@import url('./component/product-cart.css');
 @import url('./component/tailor-page.css');
 @import url('./component/favorite-page.css');
+@import url('./component/app-bar.css');
+@import url('./component/detail-product.css');
+@import url('./component/user-profile.css');
 
 *, html {
   padding: 0;
@@ -21,158 +23,34 @@ body {
   min-height: 100vh;
 }
 
- /* App Bar */
-
- .app-bar {
-  padding: 8px 16px;
-  background-color: #ffffff;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  position: sticky;
-  top: 0;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-  z-index: 99;
-}
- 
-.app-bar .app-bar__menu {
-  align-items: center;
-  padding: 5px;
-  
-}
- 
-.app-bar .app-bar__menu .btn-toggle {
-  background-color: transparent;
-  border: none;
-  font-size: 28px;
-  padding: 10px;
-  cursor: pointer;
-  color: #FF8A00;
-  float: right;
-}
-
-#hamburgerButton {
-  display: none;
-}
- 
-.app-bar .app-bar__brand {
-  display: flex;
-  align-items: center;
-}
- 
-.app-bar .app-bar__navigation {
-  position: absolute;
-  top: 80px;
-  left: -700px;
-  width: 100%;
-  padding-right: 30px;
-  align-items: center;
-  transition: all 0.3s;
-  background-color: #ffffff;
-  overflow: hidden;
-}
- 
-.app-bar .app-bar__navigation.open {
-  left: 0;
-  padding: 0 30px;
-}
-
-.app-bar .app-bar__navigation ul {
-  padding: 0;
-  text-align: center;
-  margin: 10px;
-}
-
-.app-bar .app-bar__navigation ul li a {
-  display: inline-block;
-  text-decoration: none;
-  text-align: center;
-  padding: 10px;
-}
-
-.app-bar .app-bar__navigation .nav-link:hover {
-  border-bottom: 3px solid #FF8A00;
-}
-
-.app-bar .login {
-  background-color: #FF8A00;
-  border-radius: 5px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.app-bar .login:hover {
-  background-color: #f1b26a;
-}
-
-.app-bar .app-bar__navigation .login a{
-  color: #ffffff;
-}
-
-.app-bar .register {
-  background-color: #f1b26a;
-  border-radius: 5px;
-}
-
-.app-bar .register:hover {
-  background-color: #FF8A00;
-}
-
-.app-bar .app-bar__navigation .register a{
-  color: #ffffff;
-}
-
-/* Hero Element */
-.rows {
-  display: flex;
-}
-
-.containers {
-  max-width: 90%;
-  margin: 0 auto;
-  padding: 50px;
-}
 
 .hero {
-  max-width: 100%;
   background-color: #FF8A00;
-  gap: 2em;
-  flex-wrap: wrap-reverse;
-  align-items: center;
 }
 
-.hero img {
-  max-width: 100%;
+.hero-left h1 {
+  font-weight: 900;
 }
 
-.hero>* {
-  flex: 1 1 25em;
+.first-main {
+  padding: 40px;
 }
 
-.hero h1 {
-  margin: 0;
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 1;
-}
-
-.hero p {
-  margin: 0;
-  font-weight: 500;
-  font-size: 20px;
-  padding: 1em 0;
-}
-
-.hero a {
-  font-weight: 700;
-  font-size: 20px;
-  padding: 0.3em 1em;
-  background-color: #fbfbfb;
+.first-main h1 {
+  text-align: center;
+  font-weight: 800;
   color: #FF8A00;
-  border-radius: 5px;
-  transition: 0.3s ease-in-out;
-  text-decoration: none;
+  margin-bottom: 40px;
 }
 
+.first-main p {
+  font-size: 20px;
+}
+
+.first-main .fm-right span{
+  color: #FF8A00;
+  font-weight: 800;
+}
 /* Main Content */
 main {
   flex: 1;
@@ -237,7 +115,6 @@ position: relative;
 font-size: 13px;
 font-weight: bold;
 width: 75%;
-cursor: pointer;
 }
 
 .first .price{
