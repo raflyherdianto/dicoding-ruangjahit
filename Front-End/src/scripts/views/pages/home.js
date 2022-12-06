@@ -44,7 +44,7 @@ const Home = {
                               <i class="fa fa-star-o rating-star"></i>
                               <span class="rating-number">4.8</span>
                             </div>
-                            <span class="btn-buy">Add to cart</span>
+                            <a href="#/product-cart" class="btn-buy">Add to cart</a>
                             
                           </div>
                       </div>
@@ -77,7 +77,7 @@ const Home = {
                             <i class="fa fa-star-o rating-star"></i>
                             <span class="rating-number">4.8</span>
                           </div>
-                          <span class="btn-buy">Add to cart</span>
+                          <a href="#/product-cart" class="btn-buy">Add to cart</a>
                           
                         </div>
                     </div>
@@ -109,7 +109,7 @@ const Home = {
                               <i class="fa fa-star-o rating-star"></i>
                               <span class="rating-number">4.8</span>
                             </div>
-                            <span class="btn-buy">Add to cart</span>
+                            <a href="#/product-cart" class="btn-buy">Add to cart</a>
                             
                           </div>
                       </div>
@@ -142,7 +142,7 @@ const Home = {
                             <i class="fa fa-star-o rating-star"></i>
                             <span class="rating-number">4.8</span>
                           </div>
-                          <span class="btn-buy">Add to cart</span>
+                          <a href="#/product-cart" class="btn-buy">Add to cart</a>
                           
                         </div>
                     </div>
@@ -174,7 +174,7 @@ const Home = {
                               <i class="fa fa-star-o rating-star"></i>
                               <span class="rating-number">4.8</span>
                             </div>
-                            <span class="btn-buy">Add to cart</span>
+                            <a href="#/product-cart" class="btn-buy">Add to cart</a>
                             
                           </div>
                       </div>
@@ -207,7 +207,7 @@ const Home = {
                             <i class="fa fa-star-o rating-star"></i>
                             <span class="rating-number">4.8</span>
                           </div>
-                          <span class="btn-buy">Add to cart</span>
+                          <a href="#/product-cart" class="btn-buy">Add to cart</a>
                           
                         </div>
                     </div>

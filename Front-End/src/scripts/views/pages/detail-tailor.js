@@ -14,9 +14,6 @@ const DetailTailor = {
             </small>
         </div>
         <div class="col-lg-2 col-md-3 col-12 pt-4">
-            <button type="button" class="btn btn-sub" data-bs-toggle="modal" data-bs-target="#edit-ProfileModal">
-                Edit Profile
-            </button>
             <button type="button" class="btn btn-sub mt-3" data-bs-toggle="modal" data-bs-target="#add-catalogueModal">
                 Request
             </button>
@@ -24,19 +21,6 @@ const DetailTailor = {
         </div>
     </div>
     <hr>
-    <div class="row container">
-        <div class="col-2">
-        <button type="button" class="btn btn-sub" data-bs-toggle="modal" data-bs-target="#add-productModal">
-            Add My Product
-        </button>
-        </div>
-        <div class="col-2">
-        <button type="button" class="btn btn-sub" data-bs-toggle="modal" data-bs-target="#add-catalogueModal">
-            Add My Catalogue
-        </button>
-        </div>
-        
-    </div>
     <div class="row">
         <div class="col-lg-8">
             <nav>
