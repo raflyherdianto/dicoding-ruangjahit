@@ -226,6 +226,51 @@ color: grey;
   color: #FF8A00;
 }
 
+/* Like Button */
+/*
+  Like
+*/
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #db0000;
+  
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+  
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.like svg {
+  width: 16px;
+  height: 16px;
+}
+
+.like svg path{
+  fill: #DBDDE5;
+  border: #DBDDE5;
+}
+
+.like-solid svg {
+  width: 16px;
+  height: 16px;
+}
+
+.like-solid svg path{
+  fill: #DBDDE5;
+}
+
+
+
 /* Footer */
 .row{
 	display: flex;
