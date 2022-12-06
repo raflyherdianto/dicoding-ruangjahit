@@ -2,12 +2,11 @@
 import UrlParser from '../../routes/url-parser';
 import ProductDataSource from '../../data/productdb-source';
 import { createProductDetailTemplate } from '../templates/template-creator';
-// import LikeButtonPresenter from '../../utils/like-button-presenter';
 
 const DetailProduct = {
   async render() {
     return `
-            <div class="product" id="product"></div>
+            <div class="detail-products" id="detail-products"></div>
         `;
   },
 
@@ -15,7 +14,7 @@ const DetailProduct = {
     // document.querySelector('hero-element').style.display = 'none';
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const product = await ProductDataSource.getProductDetail(url.id);
-    const productContainer = document.querySelector('#product');
+    const productContainer = document.querySelector('#detail-products');
     productContainer.innerHTML = createProductDetailTemplate(product);
   },
 };
