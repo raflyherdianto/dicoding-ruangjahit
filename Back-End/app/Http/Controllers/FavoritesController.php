@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Favorites;
 use App\Models\Products;
-use Illuminate\Http\Request;
+use App\Models\Favorites;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Resources\FavoritesResource;
 use App\Http\Requests\StoreFavoritesRequest;
@@ -19,7 +18,9 @@ class FavoritesController extends Controller
      */
     public function index()
     {
-        return new FavoritesResource(Favorites::with(['product'])->latest()->get());
+        if (Auth::user()->roles == 'user') {
+            return new FavoritesResource(Favorites::with(['product'])->where('user_id',Auth::user()->id)->latest()->get());
+        }
     }
 
     /**
@@ -38,17 +39,24 @@ class FavoritesController extends Controller
      * @param  \App\Http\Requests\StoreFavoritesRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreFavoritesRequest $request)
+    public function store(StoreFavoritesRequest $request, Products $product)
     {
-        $request->validated($request->all());
-
-        $favorite = favorites::create([
-            'user_id' => Auth::user()->id,
-            'product_id' => $request->product_id,
-            'status' => $request->status,
-        ]);
-
-        return new FavoritesResource($favorite);
+        if(Auth::user()->roles == 'user'){
+            $favorite = Favorites::where('user_id', Auth::user()->id)->where('product_id', $request->product_id)->first();
+            if($favorite){
+                return response()->json([
+                    'message' => 'Product already in your favorite list'
+                ], 400);
+            } else {
+                $request->validated($request->all());
+                $favorite = Favorites::create([
+                    'user_id' => Auth::user()->id,
+                    'product_id' => $product->id,
+                    'status'=> 1,
+                ]);
+                return new FavoritesResource($favorite);
+            }
+        }
     }
 
     /**
@@ -59,13 +67,7 @@ class FavoritesController extends Controller
      */
     public function show(Favorites $favorites)
     {
-        if(!$favorite->id) {
-            return response()->json([
-                'message' => 'Favorite not found'
-            ], 404);
-        } else {
-            return new FavoritesResource($favorite);
-        }
+        //
     }
 
     /**
@@ -97,17 +99,13 @@ class FavoritesController extends Controller
      * @param  \App\Models\Favorites  $favorites
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Favorites $favorites)
+    public function destroy(Favorites $favorite)
     {
-        if (Auth::user()->id == $favorite->user_id) {
+        if(Auth::user()->roles == 'user'){
             $favorite->delete();
             return response()->json([
-                'message' => 'Remove product from favorite success'
+                'message' => 'Product removed from your favorite list'
             ], 200);
-        } else {
-            return response()->json([
-                'message' => 'You are not authorized to make request',
-            ], 403);
         }
     }
 }

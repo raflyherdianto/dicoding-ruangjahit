@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Products;
+use App\Models\Appointments;
 use App\Models\Transactions;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Resources\TransactionsResource;
 use App\Http\Requests\StoreTransactionsRequest;
@@ -19,11 +21,14 @@ class TransactionsController extends Controller
     public function index()
     {
         if (Auth::user()->roles == 'user') {
-            return new TransactionsResource(Transactions::with(['product'])->where('user_id',Auth::user()->id)->latest()->get());
-        } else {
-            $admin = Products::where('user_id', Auth::user()->id)->first();
-            return new TransactionsResource(Transactions::with(['product'])->where('product_id', $admin->id)->latest()->get());
+            return new TransactionsResource(Transactions::with(['product'])->where('user_id',Auth::user()->id)->whereNotIn('status', ['CARTS'])->latest()->get());
         }
+    }
+
+    public function indexAdmin()
+    {
+        $admin = Products::where('user_id', Auth::user()->id)->first();
+        return new TransactionsResource(Transactions::with(['product'])->where('product_id', $admin->id)->whereNotIn('status', ['CARTS'])->latest()->get());
     }
 
     /**
@@ -76,9 +81,29 @@ class TransactionsController extends Controller
      * @param  \App\Models\Transactions  $transactions
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateTransactionsRequest $request, Transactions $transactions)
+    public function update(Request $request, Transactions $transaction)
     {
-        //
+        if (Auth::user()->roles != 'admin') {
+            return response()->json([
+                'message' => 'You are not authorized to make request',
+            ], 403);
+        }
+        $transaction->update($request->all());
+        if ($transaction->status == 'PROCESSED') {
+            $product = Products::where('id', $transaction->product_id)->first();
+            $product->stock = $product->stock - $transaction->quantity;
+            $product->save();
+            $appointment = Appointments::where('transaction_id', $transaction->id)->first();
+            $appointment->status = '-';
+            $appointment->save();
+        } else if ($transaction->status == 'FAILED') {
+            $appointment = Appointments::where('transaction_id', $transaction->id)->first();
+            $appointment->delete();
+        } else if ($transaction->status == 'SUCCESS'){
+            $appointment = Appointments::where('transaction_id', $transaction->id)->first();
+            $appointment->delete();
+        }
+        return new TransactionsResource($transaction);
     }
 
     /**

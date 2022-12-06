@@ -104,13 +104,19 @@ class ProductsController extends Controller
      */
     public function update(Request $request, Products $product)
     {
-        if (Auth::user()->roles != 'admin') {
+        if (Auth::user()->roles == 'admin') {
+            $admin = Products::where('user_id', Auth::user()->id)->first();
+            if ($admin->id != $product->id) {
+                return response()->json([
+                    'message' => 'You are not authorized to make request',
+                ], 403);
+            }
+            $product->update($request->all());
+        } else {
             return response()->json([
                 'message' => 'You are not authorized to make request',
             ], 403);
         }
-        $product->update($request->all());
-
         return new ProductsResource($product);
     }
 
@@ -120,15 +126,22 @@ class ProductsController extends Controller
      * @param  \App\Models\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Products $product)
+    public function destroy($id)
     {
-        if (Auth::user()->roles != 'admin') {
+        $product = Products::find($id);
+        if (Auth::user()->roles == 'admin') {
+            $admin = Products::where('user_id', Auth::user()->id)->first();
+            if ($admin->id != $product->id) {
+                return response()->json([
+                    'message' => 'You are not authorized to make request',
+                ], 403);
+            }
+            $product->delete();
+        } else {
             return response()->json([
                 'message' => 'You are not authorized to make request',
             ], 403);
         }
-        $product->delete();
-
         return response()->json([
             'message' => 'Product has been deleted'
         ], 200);

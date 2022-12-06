@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Products;
 use App\Models\Appointments;
+use App\Models\Transactions;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Resources\AppointmentsResource;
 use App\Http\Requests\StoreAppointmentsRequest;
 use App\Http\Requests\UpdateAppointmentsRequest;
+use Illuminate\Http\Request;
 
 class AppointmentsController extends Controller
 {
@@ -15,7 +20,19 @@ class AppointmentsController extends Controller
      */
     public function index()
     {
-        return new AppointmentsResource(Appointments::get());
+        if (Auth::user()->roles == 'user') {
+            $user = Transactions::where('user_id', Auth::user()->id)->first();
+            return new AppointmentsResource(Appointments::with(['transaction'])->where('transaction_id',$user->id)->whereNotIn('status', ['CARTS', 'PENDING'])->latest()->get());
+        }
+    }
+
+    public function indexAdmin()
+    {
+        if (Auth::user()->roles == 'admin') {
+            $admin = Products::where('user_id', auth()->user()->id)->first();
+            $admine = Transactions::where('product_id', $admin->id)->first();
+            return new AppointmentsResource(Appointments::with(['transaction'])->where('transaction_id', $admine->id)->whereNotIn('status', ['CARTS'])->latest()->get());
+        }
     }
 
     /**
@@ -36,16 +53,7 @@ class AppointmentsController extends Controller
      */
     public function store(StoreAppointmentsRequest $request)
     {
-        $request->validated($request->all());
-
-        $appointment = appointments::create([
-            'user_id' => Auth::user()->id,
-            'product_id' => $request->product_id,
-            'deadline' => $request->deadline,
-            'status' => $request->status,
-        ]);
-
-        return new AppointmentsResource($appointment);
+        //
     }
 
     /**
@@ -56,13 +64,7 @@ class AppointmentsController extends Controller
      */
     public function show(Appointments $appointments)
     {
-        if(!$appointment->id) {
-            return response()->json([
-                'message' => 'Appoinments not found'
-            ], 404);
-        } else {
-            return new AppointmentsResource($appointment);
-        }
+        //
     }
 
     /**
@@ -83,9 +85,25 @@ class AppointmentsController extends Controller
      * @param  \App\Models\Appointments  $appointments
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateAppointmentsRequest $request, Appointments $appointments)
+    public function update(Request $request, $id)
     {
-        //
+        $appointment = Appointments::findOrFail($id);
+        if (Auth::user()->roles == 'admin') {
+            $admin = Products::where('user_id', auth()->user()->id)->first();
+            $admine = Transactions::where('product_id', $admin->id)->first();
+            $appointmentse = Appointments::where('transaction_id', $admine->id)->first();
+            if ($appointmentse->id != $appointment->id) {
+                return response()->json([
+                    'message' => 'You are not authorized to make request',
+                ], 403);
+            }
+            $appointment->update($request->all());
+        } else {
+            return response()->json([
+                'message' => 'You are not authorized to make request',
+            ], 403);
+        }
+        return new AppointmentsResource($appointment);
     }
 
     /**
@@ -96,15 +114,6 @@ class AppointmentsController extends Controller
      */
     public function destroy(Appointments $appointments)
     {
-        if (Auth::user()->id == $appointment->user_id) {
-            $appointment->delete();
-            return response()->json([
-                'message' => 'Cancelling an Appointment success'
-            ], 200);
-        } else {
-            return response()->json([
-                'message' => 'You are not authorized to make request',
-            ], 403);
-        }
+        //
     }
 }

@@ -24,9 +24,9 @@ class StoreFavoritesRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_id' => ['required', 'integer'],
-            'product_id' => ['required', 'integer'],
-            'status' => ['required', 'integer'],
+            'product_id' => 'nullable|integer',
+            'user_id' => 'nullable|integer',
+            'status'=>'nullable|boolean',
         ];
     }
 }

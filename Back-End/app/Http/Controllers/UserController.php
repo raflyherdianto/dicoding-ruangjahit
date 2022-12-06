@@ -18,4 +18,12 @@ class UserController extends Controller
 
         return new UsersResource($user);
     }
+
+    public function index(){
+        return new UsersResource(User::with(['products'])->whereNotNull('store_name')->latest()->get());
+    }
+
+    public function indexTailor(User $user){
+        return new UsersResource(User::with(['products'])->where('id', $user->id)->where('roles', 'admin')->latest()->get());
+    }
 }

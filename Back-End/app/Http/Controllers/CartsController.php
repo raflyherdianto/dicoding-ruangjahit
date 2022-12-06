@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Carts;
 use App\Models\Products;
+use App\Models\Appointments;
 use App\Models\Transactions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -77,6 +78,14 @@ class CartsController extends Controller
         } else {
             $transaction->total_price += $total_price;
             $transaction->update();
+        }
+        if ($cart->custom_size != null){
+            $appointment = Appointments::create([
+                'transaction_id' => $transaction->id,
+                'deadline' => $request->deadline,
+                'status' => 'CARTS',
+            ]);
+            $appointment->update();
         }
         return new CartsResource($cart);
     }

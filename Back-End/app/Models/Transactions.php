@@ -18,4 +18,8 @@ class Transactions extends Model
     public function product(){
         return $this->belongsTo(Products::class);
     }
+
+    public function appointment(){
+        return $this->hasOne(Appointments::class);
+    }
 }

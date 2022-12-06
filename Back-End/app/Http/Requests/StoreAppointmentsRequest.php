@@ -24,10 +24,9 @@ class StoreAppointmentsRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_id' => ['required', 'integer'],
-            'product_id' => ['required', 'integer'],
-            'deadline' => ['required', 'date'],
-            'status' => ['required', 'integer'],
+            'transaction_id'=>'nullable|integer',
+            'deadline'=>'nullable|string',
+            'status' => 'required|string',
         ];
     }
 }

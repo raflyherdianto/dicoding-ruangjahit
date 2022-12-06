@@ -34,6 +34,11 @@ use App\Http\Controllers\CategoryProductsController;
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
+// Route get Tailor
+Route::get('/tailors', [UserController::class, 'index']);
+// Route get Details Tailor
+Route::get('/tailors/{user}', [UserController::class, 'indexTailor']);
+
 // Route get Categories
 Route::get('categories', [CategoryProductsController::class, 'index']);
 
@@ -53,11 +58,6 @@ Route::get('/provinces', [IndoRegionController::class, 'indexProvince']);
 // Route get Regency
 Route::get('/regencies', [IndoRegionController::class, 'indexRegency']);
 
-// Route get Favorites
-Route::get('/favorites', [FavoritesController::class, 'index']);
-
-// Route get Appointments
-Route::get('/appointments', [AppointmentsController::class, 'index']);
 
 // Prefix admin, namespace Admin
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
@@ -78,10 +78,16 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         // Route get Admin Image Products
         Route::get('images', [ImageProductsController::class, 'indexAdmin']);
 
+        // Route get Transactions
+        Route::get('transactions', [TransactionsController::class, 'indexAdmin']);
+
+        // Route get Admin Appointments
+        Route::get('appointments', [AppointmentsController::class, 'indexAdmin']);
+
         // Route Logout Admin
         Route::post('/logout', [AdminController::class, 'logout']);
     });
-  });
+});
 
 // Middleware Admin
 Route::middleware(['auth:sanctum', 'admin'])->group(function () {
@@ -89,7 +95,7 @@ Route::middleware(['auth:sanctum', 'admin'])->group(function () {
     // Route resource Categories
     Route::resource('categories', CategoryProductsController::class)->except(['index', 'create', 'edit']);
 
-    // Route resource Categories
+    // Route resource Image Products
     Route::resource('images', ImageProductsController::class)->except(['index', 'create', 'edit']);
 
     // Route resource Products
@@ -99,7 +105,10 @@ Route::middleware(['auth:sanctum', 'admin'])->group(function () {
     Route::resource('reviews', ReviewsController::class)->except(['index', 'create', 'show', 'edit', 'store', 'update']);
 
     // Route Resource Transaction
-    Route::resource('transactions', TransactionsController::class)->except(['create', 'edit']);
+    Route::resource('appointments', AppointmentsController::class)->except(['create', 'edit', 'index', 'indexAdmin']);
+
+    // Route Resource Transaction
+    Route::resource('transactions', TransactionsController::class)->except(['create', 'edit', 'index', 'indexAdmin']);
 });
 
 // Middleware User
@@ -122,11 +131,17 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     // Route Checkout Carts
     Route::put('/checkout/{cart}', [CartsController::class, 'checkout']);
 
-    // Route add Favorite
-    Route::post('/favorites', [FavoritesController::class, 'store']);
+    // Route get User Appointment
+    Route::get('appointments', [AppointmentsController::class, 'index']);
 
-    // Route add Appointment
-    Route::post('/appointments', [AppointmentsController::class, 'store']);
+    // Route get User Favorite
+    Route::get('favorites', [FavoritesController::class, 'index']);
+
+    // Route add User Favorite
+    Route::post('/favorites/{product}', [FavoritesController::class, 'store']);
+
+    // Route delete User Favorite
+    Route::delete('favorites', [FavoritesController::class, 'destroy']);
 
     // Route Resource Transaction
     Route::resource('transactions', TransactionsController::class)->except(['create', 'edit', 'update', 'store', 'destroy']);
