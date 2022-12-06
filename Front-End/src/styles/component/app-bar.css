@@ -1,0 +1,40 @@
+.app-bar a {
+    text-decoration: none;
+    color: #000;
+    text-align: center;
+}
+
+.app-bar li {
+    list-style: none;
+}
+
+.navbar-toggler span {
+    /* background-color: #000; */
+    font-size: 34px;
+    color: #FF8A00;
+    padding-top: 5px;
+}
+
+
+.app-bar__navigation {
+    background-color: white;
+}
+
+
+.login {
+    text-align: center;
+    background-color: #FF8A00;
+    padding: 10px;
+    min-width: 100px;
+    /* margin-right: 40px; */
+    border-radius: 10px 0 0 10px;
+}
+
+.register {
+    text-align: center;
+    background-color: #ff6600;
+    padding: 10px;
+    min-width: 100px;
+    border-radius: 0 10px 10px 0;
+    /* margin-right: 40px;    */
+}
