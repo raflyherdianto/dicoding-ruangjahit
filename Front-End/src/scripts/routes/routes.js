@@ -8,6 +8,7 @@ import SignUp from '../views/pages/sign-up';
 import DetailProduct from '../views/pages/detail-product';
 import UserProfile from '../views/pages/user-profile';
 import DetailTailor from '../views/pages/detail-tailor';
+import ProductCart from '../views/pages/product-cart';
 
 const routes = {
   '/': Home, // default page
@@ -15,6 +16,7 @@ const routes = {
   '/product': Product,
   '/tailor': Tailor,
   '/favorite': Favorite,
+  '/product-cart': ProductCart,
   '/about-us': AboutUs,
   '/sign-in': SignIn,
   '/sign-up': SignUp,
