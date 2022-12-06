@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Favorites;
+use App\Models\Products;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Resources\FavoritesResource;
 use App\Http\Requests\StoreFavoritesRequest;
 use App\Http\Requests\UpdateFavoritesRequest;
 
@@ -15,7 +19,7 @@ class FavoritesController extends Controller
      */
     public function index()
     {
-        //
+        return new FavoritesResource(Favorites::with(['product'])->latest()->get());
     }
 
     /**
@@ -36,7 +40,15 @@ class FavoritesController extends Controller
      */
     public function store(StoreFavoritesRequest $request)
     {
-        //
+        $request->validated($request->all());
+
+        $favorite = favorites::create([
+            'user_id' => Auth::user()->id,
+            'product_id' => $request->product_id,
+            'status' => $request->status,
+        ]);
+
+        return new FavoritesResource($favorite);
     }
 
     /**
@@ -47,7 +59,13 @@ class FavoritesController extends Controller
      */
     public function show(Favorites $favorites)
     {
-        //
+        if(!$favorite->id) {
+            return response()->json([
+                'message' => 'Favorite not found'
+            ], 404);
+        } else {
+            return new FavoritesResource($favorite);
+        }
     }
 
     /**
@@ -81,6 +99,15 @@ class FavoritesController extends Controller
      */
     public function destroy(Favorites $favorites)
     {
-        //
+        if (Auth::user()->id == $favorite->user_id) {
+            $favorite->delete();
+            return response()->json([
+                'message' => 'Remove product from favorite success'
+            ], 200);
+        } else {
+            return response()->json([
+                'message' => 'You are not authorized to make request',
+            ], 403);
+        }
     }
 }

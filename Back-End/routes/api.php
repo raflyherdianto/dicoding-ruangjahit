@@ -8,7 +8,9 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartsController;
 use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\FavoritesController;
 use App\Http\Controllers\IndoRegionController;
+use App\Http\Controllers\AppointmentsController;
 use App\Http\Controllers\TransactionsController;
 use App\Http\Controllers\ImageProductsController;
 use App\Http\Controllers\CategoryProductsController;
@@ -51,6 +53,11 @@ Route::get('/provinces', [IndoRegionController::class, 'indexProvince']);
 // Route get Regency
 Route::get('/regencies', [IndoRegionController::class, 'indexRegency']);
 
+// Route get Favorites
+Route::get('/favorites', [FavoritesController::class, 'index']);
+
+// Route get Appointments
+Route::get('/appointments', [AppointmentsController::class, 'index']);
 
 // Prefix admin, namespace Admin
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
@@ -114,6 +121,12 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     // Route Checkout Carts
     Route::put('/checkout/{cart}', [CartsController::class, 'checkout']);
+
+    // Route add Favorite
+    Route::post('/favorites', [FavoritesController::class, 'store']);
+
+    // Route add Appointment
+    Route::post('/appointments', [AppointmentsController::class, 'store']);
 
     // Route Resource Transaction
     Route::resource('transactions', TransactionsController::class)->except(['create', 'edit', 'update', 'store', 'destroy']);
