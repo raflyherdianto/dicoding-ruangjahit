@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Products;
 use App\Models\Transactions;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Resources\TransactionsResource;
 use App\Http\Requests\StoreTransactionsRequest;
 use App\Http\Requests\UpdateTransactionsRequest;
 
@@ -15,7 +18,12 @@ class TransactionsController extends Controller
      */
     public function index()
     {
-        //
+        if (Auth::user()->roles == 'user') {
+            return new TransactionsResource(Transactions::with(['product'])->where('user_id',Auth::user()->id)->latest()->get());
+        } else {
+            $admin = Products::where('user_id', Auth::user()->id)->first();
+            return new TransactionsResource(Transactions::with(['product'])->where('product_id', $admin->id)->latest()->get());
+        }
     }
 
     /**

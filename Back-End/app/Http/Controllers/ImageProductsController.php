@@ -6,6 +6,7 @@ use App\Models\Products;
 use Illuminate\Http\Request;
 use App\Models\ImageProducts;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Resources\ImageProductsResource;
 use App\Http\Requests\StoreImageProductsRequest;
@@ -20,9 +21,15 @@ class ImageProductsController extends Controller
      */
     public function index()
     {
-        return ImageProductsResource::collection(
-            ImageProducts::all()
-        );
+        return new ImageProductsResource(ImageProducts::all());
+    }
+
+    public function indexAdmin()
+    {
+        if (Auth::user()->roles != 'user') {
+            $admin = Products::where('user_id', Auth::user()->id)->first();
+            return new ImageProductsResource(ImageProducts::where('product_id', $admin->id)->latest()->get());
+        }
     }
 
     /**
@@ -58,7 +65,7 @@ class ImageProductsController extends Controller
             $image = $request->file('image');
             $image->store('image-products');
             $imageProduct = ImageProducts::create([
-                'image' => '/storage/'.'image-products/'.$image->hashName(),
+                'image' => env('APP_URL').'/storage/'.'image-products/'.$image->hashName(),
                 'product_id' => $request->product_id,
             ]);
 
@@ -108,7 +115,23 @@ class ImageProductsController extends Controller
     public function update(Request $request, ImageProducts $imageProduct)
     {
         if (Auth::user()->roles == 'admin') {
-            $imageProduct->update($request->all());
+            $validator = Validator::make($request->all(), [
+                'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            ]);
+
+            if ($validator->fails()) {
+                return response()->json([
+                    'message' => 'Validation Failed',
+                    'errors' => $validator->errors(),
+                ], 422);
+            }
+
+            $image = $request->file('image');
+            Storage::delete($imageProduct);
+            $image->store('image-products');
+            $imageProduct->update([
+                'image' => env('APP_URL').'/storage/'.'image-products/'.$image->hashName(),
+            ]);
 
             return new ImageProductsResource($imageProduct);
         } else {
@@ -124,14 +147,23 @@ class ImageProductsController extends Controller
      * @param  \App\Models\ImageProducts  $imageProducts
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ImageProducts $imageProduct)
+    public function destroy($id)
     {
         if (Auth::user()->roles == 'admin') {
-            $imageProduct->delete();
-
-            return response()->json([
-                'message' => 'Image has been deleted'
-            ], 200);
+            $imageProduct = ImageProducts::find($id);
+            $admin = Products::where('user_id', Auth::user()->id)->first();
+            $image = ImageProducts::where('product_id', $admin->id)->first();
+            if ($imageProduct->id == $image->id) {
+                Storage::delete($imageProduct->image);
+                $imageProduct->delete();
+                return response()->json([
+                    'message' => 'Image deleted successfully'
+                ], 200);
+            } else {
+                return response()->json([
+                    'message' => 'You are not authorized to make request'
+                ], 401);
+            }
         } else {
             return response()->json([
                 'message' => 'You are not authorized to make request'

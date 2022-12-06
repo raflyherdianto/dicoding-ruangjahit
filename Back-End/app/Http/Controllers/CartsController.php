@@ -6,7 +6,6 @@ use App\Models\Carts;
 use App\Models\Products;
 use App\Models\Transactions;
 use Illuminate\Http\Request;
-use App\Models\TransactionDetails;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Resources\CartsResource;
 use App\Http\Requests\StoreCartsRequest;
