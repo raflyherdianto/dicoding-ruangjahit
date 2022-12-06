@@ -21,7 +21,7 @@ const Tailor = {
                     <div class="card-body">
                         <h5 class="card-title">Cameron Williamson</h5>
                         <p class="card-text">4140 Parker Rd. Allentown, New Mexico 31134</p>
-                        <a href="#" class="btn-detail">Detail</a>
+                        <a href="#/detail-tailor" class="btn-detail">Detail</a>
                     </div>
                 </div>
 
@@ -30,7 +30,7 @@ const Tailor = {
                     <div class="card-body">
                         <h5 class="card-title">Cameron Williamson</h5>
                         <p class="card-text">4140 Parker Rd. Allentown, New Mexico 31134</p>
-                        <a href="#" class="btn-detail">Detail</a>
+                        <a href="#/detail-tailor" class="btn-detail">Detail</a>
                     </div>
                 </div>
 
@@ -39,7 +39,7 @@ const Tailor = {
                     <div class="card-body">
                         <h5 class="card-title">Cameron Williamson</h5>
                         <p class="card-text">4140 Parker Rd. Allentown, New Mexico 31134</p>
-                        <a href="#" class="btn-detail">Detail</a>
+                        <a href="#/detail-tailor" class="btn-detail">Detail</a>
                     </div>
                 </div>
 
@@ -48,7 +48,7 @@ const Tailor = {
                     <div class="card-body">
                         <h5 class="card-title">Cameron Williamson</h5>
                         <p class="card-text">4140 Parker Rd. Allentown, New Mexico 31134</p>
-                        <a href="#" class="btn-detail">Detail</a>
+                        <a href="#/detail-tailor" class="btn-detail">Detail</a>
                     </div>
                 </div>
 
@@ -57,7 +57,7 @@ const Tailor = {
                     <div class="card-body">
                         <h5 class="card-title">Cameron Williamson</h5>
                         <p class="card-text">4140 Parker Rd. Allentown, New Mexico 31134</p>
-                        <a href="#" class="btn-detail">Detail</a>
+                        <a href="#/detail-tailor" class="btn-detail">Detail</a>
                     </div>
                 </div>
             </div>

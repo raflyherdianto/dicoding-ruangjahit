@@ -1,16 +1,19 @@
 const Home = {
   async render() {
     return `
-    <section class="hero rows containers">
-      <div>
-        <h1>Buat Desain Impianmu<br>bersama RuangJahit!</h1>
-        <p>Kami hadir untuk membantu Anda dalam menemukan jasa penjahit terbaik dan memberikan ruang untuk jasa penjahit agar dapat lebih dikenal oleh banyak orang. </p>
-        <a href="#/product" class="hero-btn">Pesan Sekarang!</a>
-      </div>
-      <div class="rows">
-        <img src="./assets/header.png" width="650px" alt="">
-      </div>
-    </section>
+        <div class="container-fluid hero">
+          <div class="row">
+              <div class="col-lg-6 col-md-12 p-5 hero-left">
+                  <h1>Buat Desain Impianmu
+                      bersama RuangJahit!</h1>
+                  <p class="lead ">Kami hadir untuk membantu Anda dalam menemukan jasa penjahit terbaik dan memberikan ruang untuk jasa penjahit agar dapat lebih dikenal oleh banyak orang.</p>
+                  <button type="button" class="btn bg-white text-warning font-weight-bolder">Pesan Sekarang!</button>
+              </div>
+              <div class="col-lg-6 col-md-12 hero-right">
+                  <img src="./assets/header.png" class="img-fluid align-content-between" alt="">
+              </div>
+          </div>
+        </div>
 
     <div class="title-section">
       <h2>Top Selling Item</h2>
@@ -18,11 +21,46 @@ const Home = {
     <section class="first">    
           <div class="row g-2">
                 <div class="col-lg-2 col-12 me-1">
+                  <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <div class="card">
+                      <div class="image-container">
+                        <div class="header-product">
+                        
+                          <div class="d-flex justify-content-between align-items-center">
+                            <span class="like-btn"><i class="bi bi-bookmark-heart"></i></span>
+                          </div>
+                        </div>
+                        <img src="./product/product1/1.jpg" class="img-fluid rounded thumbnail-image">
+                      </div>
+
+                      <div class="product-detail-container p-2">
+                          <div class="justify-content-between align-items-center">
+                            <h5 class="product-name">Blouse</h5>
+                            <p class="price">IDR 100.000</p>
+                          </div>
+        
+                          <div class="d-flex justify-content-between align-items-center pt-1">
+                            <div>
+                              <i class="fa fa-star-o rating-star"></i>
+                              <span class="rating-number">4.8</span>
+                            </div>
+                            <span class="btn-buy">Add to cart</span>
+                            
+                          </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-lg-2 col-12 me-1">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                   <div class="card">
                     <div class="image-container">
                       <div class="header-product">
+                      
                         <div class="d-flex justify-content-between align-items-center">
-                          <a href="#" class="like-btn"><i class="bi bi-bookmark-heart"></i></a>
+                          <span class="like-btn"><i class="bi bi-bookmark-heart"></i></span>
                         </div>
                       </div>
                       <img src="./product/product1/1.jpg" class="img-fluid rounded thumbnail-image">
@@ -30,56 +68,64 @@ const Home = {
 
                     <div class="product-detail-container p-2">
                         <div class="justify-content-between align-items-center">
-                          <h5 class="product-name" href="#" data-bs-toggle="modal" data-bs-target="#detailProduct">Blouse</h5>
+                          <h5 class="product-name">Blouse</h5>
                           <p class="price">IDR 100.000</p>
                         </div>
-
+      
                         <div class="d-flex justify-content-between align-items-center pt-1">
                           <div>
                             <i class="fa fa-star-o rating-star"></i>
                             <span class="rating-number">4.8</span>
                           </div>
-                          <a href="#/product-cart" class="btn-buy">Add to cart</a>
+                          <span class="btn-buy">Add to cart</span>
+                          
                         </div>
                     </div>
                   </div>
-                </div>
-              </div>
-
-              <div class="col-lg-2 col-12 me-1">
-                <div class="card">
-                  <div class="image-container">
-                    <div class="header-product">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <a href="#" class="like-btn"><i class="bi bi-bookmark-heart"></i></a>
-                      </div>
-                    </div>
-                    <img src="./product/product1/1.jpg" class="img-fluid rounded thumbnail-image">
-                  </div>
-
-                  <div class="product-detail-container p-2">
-                      <div class="justify-content-between align-items-center">
-                        <h5 class="product-name" href="#" data-bs-toggle="modal" data-bs-target="#detailProduct">Blouse</h5>
-                        <p class="price">IDR 100.000</p>
-                      </div>
-
-                      <div class="d-flex justify-content-between align-items-center pt-1">
-                        <div>
-                          <i class="fa fa-star-o rating-star"></i>
-                          <span class="rating-number">4.8</span>
-                        </div>
-                        <a href="#/product-cart" class="btn-buy">Add to cart</a>
-                      </div>
-                  </div>
-                </div>
+                </a>
               </div>
               
                 <div class="col-lg-2 col-12 me-1">
+                  <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <div class="card">
+                      <div class="image-container">
+                        <div class="header-product">
+                        
+                          <div class="d-flex justify-content-between align-items-center">
+                            <span class="like-btn"><i class="bi bi-bookmark-heart"></i></span>
+                          </div>
+                        </div>
+                        <img src="./product/product1/1.jpg" class="img-fluid rounded thumbnail-image">
+                      </div>
+
+                      <div class="product-detail-container p-2">
+                          <div class="justify-content-between align-items-center">
+                            <h5 class="product-name">Blouse</h5>
+                            <p class="price">IDR 100.000</p>
+                          </div>
+        
+                          <div class="d-flex justify-content-between align-items-center pt-1">
+                            <div>
+                              <i class="fa fa-star-o rating-star"></i>
+                              <span class="rating-number">4.8</span>
+                            </div>
+                            <span class="btn-buy">Add to cart</span>
+                            
+                          </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-lg-2 col-12 me-1">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                   <div class="card">
                     <div class="image-container">
                       <div class="header-product">
+                      
                         <div class="d-flex justify-content-between align-items-center">
-                          <a href="#" class="like-btn"><i class="bi bi-bookmark-heart"></i></a>
+                          <span class="like-btn"><i class="bi bi-bookmark-heart"></i></span>
                         </div>
                       </div>
                       <img src="./product/product1/1.jpg" class="img-fluid rounded thumbnail-image">
@@ -87,56 +133,64 @@ const Home = {
 
                     <div class="product-detail-container p-2">
                         <div class="justify-content-between align-items-center">
-                          <h5 class="product-name" href="#" data-bs-toggle="modal" data-bs-target="#detailProduct">Blouse</h5>
+                          <h5 class="product-name">Blouse</h5>
                           <p class="price">IDR 100.000</p>
                         </div>
-
+      
                         <div class="d-flex justify-content-between align-items-center pt-1">
                           <div>
                             <i class="fa fa-star-o rating-star"></i>
                             <span class="rating-number">4.8</span>
                           </div>
-                          <a href="#/product-cart" class="btn-buy">Add to cart</a>
+                          <span class="btn-buy">Add to cart</span>
+                          
                         </div>
                     </div>
                   </div>
-                </div>
-              </div>
-
-              <div class="col-lg-2 col-12 me-1">
-                <div class="card">
-                  <div class="image-container">
-                    <div class="header-product">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <a href="#" class="like-btn"><i class="bi bi-bookmark-heart"></i></a>
-                      </div>
-                    </div>
-                    <img src="./product/product1/1.jpg" class="img-fluid rounded thumbnail-image">
-                  </div>
-
-                  <div class="product-detail-container p-2">
-                      <div class="justify-content-between align-items-center">
-                        <h5 class="product-name" href="#" data-bs-toggle="modal" data-bs-target="#detailProduct">Blouse</h5>
-                        <p class="price">IDR 100.000</p>
-                      </div>
-
-                      <div class="d-flex justify-content-between align-items-center pt-1">
-                        <div>
-                          <i class="fa fa-star-o rating-star"></i>
-                          <span class="rating-number">4.8</span>
-                        </div>
-                        <a href="#/product-cart" class="btn-buy">Add to cart</a>
-                      </div>
-                  </div>
-                </div>
+                </a>
               </div>
 
                 <div class="col-lg-2 col-12 me-1">
+                  <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <div class="card">
+                      <div class="image-container">
+                        <div class="header-product">
+                        
+                          <div class="d-flex justify-content-between align-items-center">
+                            <span class="like-btn"><i class="bi bi-bookmark-heart"></i></span>
+                          </div>
+                        </div>
+                        <img src="./product/product1/1.jpg" class="img-fluid rounded thumbnail-image">
+                      </div>
+
+                      <div class="product-detail-container p-2">
+                          <div class="justify-content-between align-items-center">
+                            <h5 class="product-name">Blouse</h5>
+                            <p class="price">IDR 100.000</p>
+                          </div>
+        
+                          <div class="d-flex justify-content-between align-items-center pt-1">
+                            <div>
+                              <i class="fa fa-star-o rating-star"></i>
+                              <span class="rating-number">4.8</span>
+                            </div>
+                            <span class="btn-buy">Add to cart</span>
+                            
+                          </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-lg-2 col-12 me-1">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                   <div class="card">
                     <div class="image-container">
                       <div class="header-product">
+                      
                         <div class="d-flex justify-content-between align-items-center">
-                          <a href="#" class="like-btn"><i class="bi bi-bookmark-heart"></i></a>
+                          <span class="like-btn"><i class="bi bi-bookmark-heart"></i></span>
                         </div>
                       </div>
                       <img src="./product/product1/1.jpg" class="img-fluid rounded thumbnail-image">
@@ -144,75 +198,39 @@ const Home = {
 
                     <div class="product-detail-container p-2">
                         <div class="justify-content-between align-items-center">
-                          <h5 class="product-name" href="#" data-bs-toggle="modal" data-bs-target="#detailProduct">Blouse</h5>
+                          <h5 class="product-name">Blouse</h5>
                           <p class="price">IDR 100.000</p>
                         </div>
-
+      
                         <div class="d-flex justify-content-between align-items-center pt-1">
                           <div>
                             <i class="fa fa-star-o rating-star"></i>
                             <span class="rating-number">4.8</span>
                           </div>
-                          <a href="#/product-cart" class="btn-buy">Add to cart</a>
+                          <span class="btn-buy">Add to cart</span>
+                          
                         </div>
                     </div>
                   </div>
-                </div>
-              </div>
-
-              <div class="col-lg-2 col-12 me-1">
-                <div class="card">
-                  <div class="image-container">
-                    <div class="header-product">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <a href="#" class="like-btn"><i class="bi bi-bookmark-heart"></i></a>
-                      </div>
-                    </div>
-                    <img src="./product/product1/1.jpg" class="img-fluid rounded thumbnail-image">
-                  </div>
-
-                  <div class="product-detail-container p-2">
-                      <div class="justify-content-between align-items-center">
-                        <h5 class="product-name" href="#" data-bs-toggle="modal" data-bs-target="#detailProduct">Blouse</h5>
-                        <p class="price">IDR 100.000</p>
-                      </div>
-
-                      <div class="d-flex justify-content-between align-items-center pt-1">
-                        <div>
-                          <i class="fa fa-star-o rating-star"></i>
-                          <span class="rating-number">4.8</span>
-                        </div>
-                        <a href="#/product-cart" class="btn-buy">Add to cart</a>
-                      </div>
-                  </div>
-                </div>
+                </a>
               </div>
           </div>
     </section>
 
-    <section class="second">
-    <h1>Layanan yang Kami Tawarkan</h1>
-    
-    <div class="sec-body">
-      <div class="sec-img">
-      <img src="../assets/ruangjahit-image-1.jpg" alt="RuangJahit Image">
-      </div>
+    <div class="container-fluid first-main pb-5">
+        <h1 class="tagline">Mengapa harus RuangJahit??</h1>
+        <div class="row">
+            <div class="col-lg-6 col-md-12 fm-left">
+                <img src="./assets/ruangjahit-image-1.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-6 col-md-12 fm-right pt-3">
+                <p><span>RuangJahit</span> adalah website yang menghubungkan Pelanggan dan Penyedia Jasa Jahit baik individu maupun UMKM agar dapat memperluas potensi Penyedia Jasa Jahit untuk dapat dikenal banyak orang dan memudahkan Pelanggan dalam menemukan informasi Penyedia Jasa Jahit terbaik.</p>
 
-      <div>
-      <h3>Layanan Produk</h3>
-      <ul>
-        <li>Kami hadir untuk membantu Anda dalam menyediakan informasi Penyedia Layanan Jahit berdasarkan rating atau lokasi.</li>
-        <br>
-        <li>Tingkatkan penjualan Anda dengan mendaftarkan produk Anda di RuangJahit.</li>
-      </ul>
-
-      <h3>Layanan Jasa</h3>
-      <p>
-        Bergabunglah bersama kami untuk membantu lebih banyak pelanggan dalam menemukan Layanan Jahit terbaik.
-      </p>
-      </div>
+                <p>Kami hadir untuk membantu Anda dalam menyediakan informasi Penyedia Layanan Jahit berdasarkan rating atau lokasi.</p>
+                <p>Bergabunglah bersama kami untuk membantu lebih banyak pelanggan dalam menemukan Layanan Jahit terbaik.</p>
+            </div>
+        </div>
     </div>
-    </section>
 
     <div class="title-section">
       <h2>Our Top Tailor</h2>

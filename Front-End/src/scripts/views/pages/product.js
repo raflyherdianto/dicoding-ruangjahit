@@ -1,3 +1,6 @@
+import ProductDataSource from '../../data/productdb-source';
+import { createProductItemTemplate } from '../templates/template-creator';
+
 const Product = {
   async render() {
     return `
@@ -14,144 +17,10 @@ const Product = {
 
         <div class="products-content">
           <div class="product">
-            <div class="row g-2 pt-3">
-              <div class="col-lg-2 col-sm-6 me-3 pb-4">
-                <div class="card">
-                  <div class="image-container">
-                    <div class="header-product">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <a href="#" class="like-btn"><i class="bi bi-bookmark-heart"></i></a>
-                      </div>
-                    </div>
-                    <img src="./product/product1/1.jpg" class="img-fluid rounded thumbnail-image">
-                  </div>
-    
-                  <div class="product-detail-container p-2">
-                      <div class="justify-content-between align-items-center">
-                        <h5 class="product-name" href="#" data-bs-toggle="modal" data-bs-target="#detailProduct">Blouse</h5>
-                        <p class="price">IDR 100.000</p>
-                      </div>
-    
-                      <div class="d-flex justify-content-between align-items-center pt-1">
-                        <div>
-                          <i class="fa fa-star-o rating-star"></i>
-                          <span class="rating-number">4.8</span>
-                        </div>
-                        <a href="#/product-cart" class="btn-buy">Add to cart</a>
-                      </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-2 col-sm-6 me-3 pb-4">
-                <div class="card">
-                  <div class="image-container">
-                    <div class="header-product">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <a href="#" class="like-btn"><i class="bi bi-bookmark-heart"></i></a>
-                      </div>
-                    </div>
-                    <img src="./product/product1/1.jpg" class="img-fluid rounded thumbnail-image">
-                  </div>
-
-                  <div class="product-detail-container p-2">
-                      <div class="justify-content-between align-items-center">
-                        <h5 class="product-name" href="#" data-bs-toggle="modal" data-bs-target="#detailProduct">Blouse</h5>
-                        <p class="price">IDR 100.000</p>
-                      </div>
-
-                      <div class="d-flex justify-content-between align-items-center pt-1">
-                        <div>
-                          <i class="fa fa-star-o rating-star"></i>
-                          <span class="rating-number">4.8</span>
-                        </div>
-                        <a href="#/product-cart" class="btn-buy">Add to cart</a>
-                      </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-2 col-sm-6 me-3 pb-4">
-                <div class="card">
-                  <div class="image-container">
-                    <div class="header-product">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <a href="#" class="like-btn"><i class="bi bi-bookmark-heart"></i></a>
-                      </div>
-                    </div>
-                    <img src="./product/product1/1.jpg" class="img-fluid rounded thumbnail-image">
-                  </div>
-
-                  <div class="product-detail-container p-2">
-                      <div class="justify-content-between align-items-center">
-                        <h5 class="product-name" href="#" data-bs-toggle="modal" data-bs-target="#detailProduct">Blouse</h5>
-                        <p class="price">IDR 100.000</p>
-                      </div>
-
-                      <div class="d-flex justify-content-between align-items-center pt-1">
-                        <div>
-                          <i class="fa fa-star-o rating-star"></i>
-                          <span class="rating-number">4.8</span>
-                        </div>
-                        <a href="#/product-cart" class="btn-buy">Add to cart</a>
-                      </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-2 col-sm-6 me-3 pb-4">
-                <div class="card">
-                  <div class="image-container">
-                    <div class="header-product">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <a href="#" class="like-btn"><i class="bi bi-bookmark-heart"></i></a>
-                      </div>
-                    </div>
-                    <img src="./product/product1/1.jpg" class="img-fluid rounded thumbnail-image">
-                  </div>
-
-                  <div class="product-detail-container p-2">
-                      <div class="justify-content-between align-items-center">
-                        <h5 class="product-name" href="#" data-bs-toggle="modal" data-bs-target="#detailProduct">Blouse</h5>
-                        <p class="price">IDR 100.000</p>
-                      </div>
-
-                      <div class="d-flex justify-content-between align-items-center pt-1">
-                        <div>
-                          <i class="fa fa-star-o rating-star"></i>
-                          <span class="rating-number">4.8</span>
-                        </div>
-                        <a href="#/product-cart" class="btn-buy">Add to cart</a>
-                      </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-2 col-sm-6 me-3 pb-4">
-                <div class="card">
-                  <div class="image-container">
-                    <div class="header-product">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <a href="#" class="like-btn"><i class="bi bi-bookmark-heart"></i></a>
-                      </div>
-                    </div>
-                    <img src="./product/product1/1.jpg" class="img-fluid rounded thumbnail-image">
-                  </div>
-
-                  <div class="product-detail-container p-2">
-                      <div class="justify-content-between align-items-center">
-                        <h5 class="product-name" href="#" data-bs-toggle="modal" data-bs-target="#detailProduct">Blouse</h5>
-                        <p class="price">IDR 100.000</p>
-                      </div>
-
-                      <div class="d-flex justify-content-between align-items-center pt-1">
-                        <div>
-                          <i class="fa fa-star-o rating-star"></i>
-                          <span class="rating-number">4.8</span>
-                        </div>
-                        <a href="#/product-cart" class="btn-buy">Add to cart</a>
-                      </div>
-                  </div>
-                </div>
-              </div>
+            <div class="row" id="products">
             </div>
           </div>
+          
 
           <aside>
             <h5>Filter Search</h5>
@@ -224,7 +93,7 @@ const Product = {
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="detailProductLabel">Filter Search</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Filter Search</h5>
             </div>
             <div class="modal-body">
               <div class="category-filter">
@@ -290,103 +159,17 @@ const Product = {
           </div>
         </div>
       </div>
-
-      <!-- Modal Detail Product -->
-      <div class="modal fade" id="detailProduct" tabindex="-1" aria-labelledby="detailProductLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content p-4">
-            <div class="row">
-            <h5 class="text-center mb-2">Detail Product</h5>
-            <hr class="mb-5">
-              <div class="col-md-5">
-                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <img src="./product/product1/1.jpg" class="d-block w-100 pb-1" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="./product/product1/2.jpg" class="d-block w-100 pb-1" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="./product/product1/3.jpg" class="d-block w-100 pb-1" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="./product/product1/4.jpg" class="d-block w-100 pb-1" alt="...">
-                    </div>
-                  </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                  </button>
-                </div>
-
-                <div class="small-img-group">
-                  <div class="small-img-col">
-                    <img src="./product/product1/1.jpg" width="100%" class="small-img" alt="...">
-                  </div>
-                  <div class="small-img-col">
-                    <img src="./product/product1/2.jpg" width="100%" class="small-img" alt="...">
-                  </div>
-                  <div class="small-img-col">
-                    <img src="./product/product1/3.jpg" width="100%" class="small-img" alt="...">
-                  </div>
-                  <div class="small-img-col">
-                    <img src="./product/product1/4.jpg" width="100%" class="small-img" alt="...">
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-7">
-                <h2>Blouse Wanita</h2>
-                <div class="detail-product">
-                  <p><b>Rating:</b> 5<span class="fa fa-star checked"></span>(200)</p>
-                  <p class="price">IDR 100.000</p>
-                  <p><b>Availibility:</b> In Stock</p>
-                  <p><b>Category:</b> Women</p>
-                  <p><b>Brand:</b> Chaya Hijab</p>
-                  <p><b>Designer:</b> Chaya Syaqila</p>
-                  <p><b>Tailor:</b> Chaya Syaqila</p>
-                </div>
-                <div class="size-chart pb-3">
-                  <input type="radio" class="btn-check input-size" name="options" id="s" autocomplete="off">
-                  <label class="btn form-size" for="s">S</label>
-                  
-                  <input type="radio" class="btn-check input-size" name="options" id="m" autocomplete="off">
-                  <label class="btn form-size" for="m">M</label>
-
-                  <input type="radio" class="btn-check input-size" name="options" id="l" autocomplete="off">
-                  <label class="btn form-size" for="l">L</label>
-
-                  <input type="radio" class="btn-check input-size" name="options" id="xl" autocomplete="off">
-                  <label class="btn form-size" for="xl">XL</label>
-                </div>
-                <div class="quantity">
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Quantity</span>
-                    <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                  </div>
-                </div>
-                <div class="btn-product">
-                  <input type="submit" name="search" class="buy-now" value="Buy Now">
-                  <input type="submit" name="search" class="add-cart" value="Add to cart">
-                </div>
-              </div>
-              <div class="col-12 pt-3 pb-0">
-              <h5>Description</h5>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo numquam alias velit officia expedita consectetur perspiciatis, ad exercitationem vero tenetur. Accusantium aliquam culpa numquam asperiores aliquid, repellendus praesentium quos minus?</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     `;
   },
 
   async afterRender() {
     // Fungsi ini akan dipanggil setelah render()
+    // document.querySelector('hero-element').style.display = 'inline';
+    const products = await ProductDataSource.getAllProduct();
+    const productContainer = document.querySelector('#products');
+    products.forEach((product) => {
+      productContainer.innerHTML += createProductItemTemplate(product);
+    });
   },
 };
 
