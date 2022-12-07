@@ -209,6 +209,11 @@
     <main>
         <div id="content">
             <article class="card">
+                <h2 id="account">Main Link</h2>
+                <h2 style="text-align: center"><strong>https://backend-ruangjahit-production.up.railway.app/api</strong></h2>
+            </article>
+            <article class="card">
+            <article class="card">
                 <h2 id="account">Account</h2>
                 <h2><strong>Register</strong></h2>
                 <p><em>Mendaftarkan akun pengguna/admin</em></p>
