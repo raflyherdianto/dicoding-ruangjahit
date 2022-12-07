@@ -1,6 +1,6 @@
 import ProductDataSource from '../../data/productdb-source';
 import { createProductItemTemplate } from '../templates/template-creator';
-import '../../components/search-bar';
+import '../element/search-bar';
 
 const Product = {
   async render() {

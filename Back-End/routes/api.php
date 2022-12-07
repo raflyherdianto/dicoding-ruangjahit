@@ -34,9 +34,6 @@ use App\Http\Controllers\CategoryProductsController;
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
-// Route get All User
-Route::get('/users', [AuthController::class, 'index']);
-
 // Route get Tailor
 Route::get('/tailors', [UserController::class, 'index']);
 // Route get Details Tailor

@@ -2,8 +2,8 @@ import DrawerInitiator from '../utils/drawer-initiator';
 import UrlParser from '../routes/url-parser';
 import routes from '../routes/routes';
 
-import '../components/app-bar';
-import '../components/footer';
+import './element/app-bar';
+import './element/footer';
 
 class App {
   constructor({ button, drawer, content }) {
