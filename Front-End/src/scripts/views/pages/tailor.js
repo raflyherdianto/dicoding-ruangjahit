@@ -1,4 +1,4 @@
-import '../element/search-bar';
+import '../../components/search-bar';
 
 const Tailor = {
   async render() {
