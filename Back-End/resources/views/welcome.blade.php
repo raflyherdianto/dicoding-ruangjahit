@@ -230,6 +230,12 @@
                     </tr>
                 </table>
                 <ul>
+                    <li><p><strong>Authorization</strong></p>
+                        <ul>
+                            <li>Bearer Token: User Login Token</li>
+                        </ul>
+                    </li>
+
                     <li><p><strong>Headers</strong></p>
                         <ul>
                             <li>Accept: <code>application/json</code></li>
@@ -258,6 +264,12 @@
                     </tr>
                 </table>
                 <ul>
+                    <li><p><strong>Authorization</strong></p>
+                        <ul>
+                            <li>Bearer Token: User Login Token</li>
+                        </ul>
+                    </li>
+
                     <li><p><strong>Headers</strong></p>
                         <ul>
                             <li>Accept: <code>application/json</code></li>
@@ -300,6 +312,12 @@
                     </tr>
                 </table>
                 <ul>
+                    <li><p><strong>Authorization</strong></p>
+                        <ul>
+                            <li>Bearer Token: User Login Token</li>
+                        </ul>
+                    </li>
+
                     <li><p><strong>Headers</strong></p>
                         <ul>
                             <li>Accept: <code>application/json</code></li>
@@ -391,6 +409,12 @@
                     </tr>
                 </table>
                 <ul>
+                    <li><p><strong>Authorization</strong></p>
+                        <ul>
+                            <li>Bearer Token: User Login Token</li>
+                        </ul>
+                    </li>
+
                     <li><p><strong>Headers</strong></p>
                         <ul>
                             <li>Accept: <code>application/json</code></li>
@@ -418,6 +442,12 @@
                     </tr>
                 </table>
                 <ul>
+                    <li><p><strong>Authorization</strong></p>
+                        <ul>
+                            <li>Bearer Token: User Login Token</li>
+                        </ul>
+                    </li>
+
                     <li><p><strong>Headers</strong></p>
                         <ul>
                             <li>Accept: <code>application/json</code></li>
@@ -478,6 +508,12 @@
                     </tr>
                 </table>
                 <ul>
+                    <li><p><strong>Authorization</strong></p>
+                        <ul>
+                            <li>Bearer Token: User Login Token</li>
+                        </ul>
+                    </li>
+
                     <li><p><strong>Headers</strong></p>
                         <ul>
                             <li>Accept: <code>application/json</code></li>
@@ -505,6 +541,12 @@
                     </tr>
                 </table>
                 <ul>
+                    <li><p><strong>Authorization</strong></p>
+                        <ul>
+                            <li>Bearer Token: User Login Token</li>
+                        </ul>
+                    </li>
+
                     <li><p><strong>Headers</strong></p>
                         <ul>
                             <li>Accept: <code>application/json</code></li>
@@ -565,6 +607,12 @@
                     </tr>
                 </table>
                 <ul>
+                    <li><p><strong>Authorization</strong></p>
+                        <ul>
+                            <li>Bearer Token: User Login Token</li>
+                        </ul>
+                    </li>
+
                     <li><p><strong>Headers</strong></p>
                         <ul>
                             <li>Accept: <code>application/json</code></li>
@@ -592,6 +640,12 @@
                     </tr>
                 </table>
                 <ul>
+                    <li><p><strong>Authorization</strong></p>
+                        <ul>
+                            <li>Bearer Token: User Login Token</li>
+                        </ul>
+                    </li>
+
                     <li><p><strong>Headers</strong></p>
                         <ul>
                             <li>Accept: <code>application/json</code></li>
@@ -638,6 +692,12 @@
                     </tr>
                 </table>
                 <ul>
+                    <li><p><strong>Authorization</strong></p>
+                        <ul>
+                            <li>Bearer Token: User Login Token</li>
+                        </ul>
+                    </li>
+
                     <li><p><strong>Headers</strong></p>
                         <ul>
                             <li>Accept: <code>application/json</code></li>
@@ -665,6 +725,12 @@
                     </tr>
                 </table>
                 <ul>
+                    <li><p><strong>Authorization</strong></p>
+                        <ul>
+                            <li>Bearer Token: User Login Token</li>
+                        </ul>
+                    </li>
+
                     <li><p><strong>Headers</strong></p>
                         <ul>
                             <li>Accept: <code>application/json</code></li>
@@ -725,6 +791,12 @@
                     </tr>
                 </table>
                 <ul>
+                    <li><p><strong>Authorization</strong></p>
+                        <ul>
+                            <li>Bearer Token: User Login Token</li>
+                        </ul>
+                    </li>
+
                     <li><p><strong>Headers</strong></p>
                         <ul>
                             <li>Accept: <code>application/json</code></li>
@@ -785,6 +857,12 @@
                     </tr>
                 </table>
                 <ul>
+                    <li><p><strong>Authorization</strong></p>
+                        <ul>
+                            <li>Bearer Token: User Login Token</li>
+                        </ul>
+                    </li>
+                    
                     <li><p><strong>Headers</strong></p>
                         <ul>
                             <li>Accept: <code>application/json</code></li>
