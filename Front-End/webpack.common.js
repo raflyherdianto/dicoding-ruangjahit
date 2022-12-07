@@ -5,10 +5,11 @@ const path = require('path');
 module.exports = {
   entry: {
     app: path.resolve(__dirname, 'src/scripts/index.js'),
+    sw: path.resolve(__dirname, 'src/scripts/sw.js'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     clean: true,
   },
   module: {
