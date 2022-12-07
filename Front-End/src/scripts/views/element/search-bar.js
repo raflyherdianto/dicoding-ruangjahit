@@ -14,7 +14,7 @@ class SearchBar extends HTMLElement {
   }
 
   get value() {
-    return this.shadowDOM.querySelector('#searchTailor').value;
+    return this.shadowDOM.querySelector('#searchElement').value;
   }
 
   render() {
@@ -81,8 +81,8 @@ class SearchBar extends HTMLElement {
         </style>
 
         <div class="search-box">
-            <input type="search" id="searchTailor" placeholder="Search">
-            <button id="searchTailor" type="submit">
+            <input type="search" id="searchElement" placeholder="Search">
+            <button id="searchElementButton" type="submit">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
               <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 
               1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
@@ -91,7 +91,7 @@ class SearchBar extends HTMLElement {
         </div>
      `;
 
-    this.shadowDOM.querySelector('#searchTailor').addEventListener('click', this._clickEvent);
+    this.shadowDOM.querySelector('#searchElementButton').addEventListener('click', this._clickEvent);
   }
 }
 
