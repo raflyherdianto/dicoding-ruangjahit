@@ -7,12 +7,17 @@ use Illuminate\Http\Request;
 use App\Traits\HttpResponses;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Resources\UsersResource;
 use App\Http\Requests\LoginUserRequest;
 use App\Http\Requests\StoreUserRequest;
 
 class AuthController extends Controller
 {
     use HttpResponses;
+
+    public function index(){
+        return new UsersResource(User::latest()->get());
+    }
 
     public function login(LoginUserRequest $request) {
         $request->validated($request->all());
