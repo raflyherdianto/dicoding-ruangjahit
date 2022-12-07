@@ -112,7 +112,7 @@
         text-align: justify;
     }
 
-    #account, #products, #categories, #reviews, #appointments, #carts, #favorites, #links{
+    #account, #products, #categories, #reviews, #appointments, #carts, #favorites, #links, #mainlink{
         font-size: 2.5rem;
         text-align: center;
     }
@@ -209,10 +209,9 @@
     <main>
         <div id="content">
             <article class="card">
-                <h2 id="account">Main Link</h2>
+                <h2 id="mainlink">Main Link</h2>
                 <h2 style="text-align: center"><strong>https://backend-ruangjahit-production.up.railway.app/api</strong></h2>
             </article>
-            <article class="card">
             <article class="card">
                 <h2 id="account">Account</h2>
                 <h2><strong>Register</strong></h2>
