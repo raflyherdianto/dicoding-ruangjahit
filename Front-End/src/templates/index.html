@@ -120,9 +120,11 @@
 
     // Logout
     const Logout = () => {
-    let key = JSON.stringify(localStorage.getItem('token'));
+    // let key = JSON.stringify(localStorage.getItem('token'));
 
-        let token = JSON.parse(key);
+    //     let token = JSON.parse(key);
+        token = localStorage.getItem('token');
+        console.log(token);
 
         fetch('https://backend-ruangjahit-production.up.railway.app/api/logout', {
             method: 'POST',
@@ -132,6 +134,16 @@
                 'Authorization': `Bearer ${token}`,
             },
         })
+        .then((response) => response.json().then((data) => {
+            console.log(response.status);
+            if (response.status == 200) {
+                alert('Logout Success');
+                window.location = "/sign-in";
+                localStorage.removeItem('token');
+            } else {
+                alert('Logout Gagal');
+            }
+        }))
     };
 
     </script>
