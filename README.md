@@ -71,7 +71,7 @@ Berikut Resources yang dibutuhkan dalam pengembangan Website FoodIntake :
 <ul>
   <li>Bahasa Pemograman :</li>
     <ul>
-      <li>Javascript</li>
+      <li>JavaScript</li>
       <li>PHP</li>
     </ul>
   <li>Komponen Pendukung :</li>
@@ -89,7 +89,7 @@ Berikut Resources yang dibutuhkan dalam pengembangan Website FoodIntake :
       <li>Visual Studio Code</li>
       <li>FIGMA</li>
       <li>Github</li>
-      <li>Heroku Hosting</li>
+      <li>Railway.app</li>
       <li>Draw.io</li>
     </ul>
   <li>Library :</li>
@@ -100,7 +100,7 @@ Berikut Resources yang dibutuhkan dalam pengembangan Website FoodIntake :
   <li>Manajemen Proyek :</li>
     <ul>
       <li>Google Meet</li>
-      <li>WhatssApp</li>
+      <li>WhatsApp</li>
       <li>GitHub</li>
     </ul>
 </ul>
