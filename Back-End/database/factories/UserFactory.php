@@ -17,9 +17,20 @@ class UserFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            'remember_token' => Str::random(10),
+            'username' => $this->faker->unique()->userName(),
+            'password' => 'cobacoba', // password
+            'first_address' => $this->faker->address(),
+            'province_id' => $this->faker->numberBetween(1, 34),
+            'regency_id' => $this->faker->numberBetween(1, 50),
+            'zip_code' => $this->faker->postcode(),
+            'first_phone' => $this->faker->unique()->phoneNumber(),
+            'roles' => $this->faker->randomElement(['admin', 'user']),
+            'store_name' => $this->faker->unique()->company(),
+            'bank_name' => $this->faker->randomElement(['BNI', 'BRI', 'BCA', 'Mandiri']),
+            'bank_account' => $this->faker->unique()->bankAccountNumber(),
+            'open_time' => $this->faker->time(),
+            'close_time' => $this->faker->time(),
+            'store_status' => $this->faker->randomElement(['OPEN', 'CLOSED']),
         ];
     }
 

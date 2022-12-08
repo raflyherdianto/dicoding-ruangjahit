@@ -20,7 +20,7 @@ class UserController extends Controller
     }
 
     public function index(){
-        return new UsersResource(User::with(['products'])->whereNotNull('store_name')->latest()->get());
+        return new UsersResource(User::with(['products'])->whereNotNull('store_name', 'bank_name', 'bank_account', 'open_time', 'close_time', 'store_status')->latest()->get());
     }
 
     public function indexTailor(User $user){

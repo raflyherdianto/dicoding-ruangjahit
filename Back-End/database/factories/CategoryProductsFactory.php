@@ -15,7 +15,7 @@ class CategoryProductsFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
+            'name' => $this->faker->languageCode(),
             'slug' => $this->faker->slug(),
         ];
     }

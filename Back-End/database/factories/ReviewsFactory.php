@@ -14,7 +14,10 @@ class ReviewsFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'user_id' => $this->faker->numberBetween(1, 25),
+            'product_id' => $this->faker->numberBetween(1, 25),
+            'star' => $this->faker->numberBetween(1, 5),
+            'description' => $this->faker->text(),
         ];
     }
 }

@@ -14,7 +14,8 @@ class ImageProductsFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'product_id' => $this->faker->numberBetween(1, 25),
+            'image' => $this->faker->imageUrl(640, 480, 'cats', true, 'Faker'),
         ];
     }
 }

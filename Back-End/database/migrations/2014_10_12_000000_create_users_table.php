@@ -24,10 +24,10 @@ class CreateUsersTable extends Migration
             $table->foreignId('province_id');
             $table->foreignId('regency_id');
             $table->string('zip_code');
-            $table->string('first_phone');
+            $table->string('first_phone')->unique();
             $table->string('second_phone')->nullable();
             $table->enum('roles', ['admin', 'user'])->default('user');
-            $table->string('store_name')->nullable();
+            $table->string('store_name')->nullable()->unique();
             $table->string('bank_name')->nullable();
             $table->string('bank_account')->unique()->nullable();
             $table->string('open_time')->nullable();
