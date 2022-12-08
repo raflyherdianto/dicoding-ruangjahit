@@ -41,7 +41,13 @@
                     'Content-type': 'application/json',
                 },
                 body: data
-            }).then(function(response) {
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                localStorage.setItem('token', data.data.token)
+            })
+            .then(function(response) {
                 return response.json().then(function(data) {
                     console.log(response.status);
                     if (response.status == 200) {
@@ -49,6 +55,7 @@
                         window.location = "#/user-home";
                         username.value = "";
                         password.value = "";
+                        localStorage.setItem('token', data.data.token)
                     } else {
                         console.log(data);
                         alert('Login Gagal ' + data.message);
