@@ -42,11 +42,6 @@
                 },
                 body: data
             })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-                localStorage.setItem('token', data.data.token)
-            })
             .then(function(response) {
                 return response.json().then(function(data) {
                     console.log(response.status);
@@ -55,12 +50,13 @@
                         window.location = "#/user-home";
                         username.value = "";
                         password.value = "";
+                        localStorage.setItem('token', data.data.token);
                     } else {
-                        console.log(data);
-                        alert('Login Gagal ' + data.message);
+                        alert('Login Gagal');
                     }
                 });
-            }).catch(function(error) {
+            })
+            .catch(function(error) {
                 alert('Error, Terjadi kesalahan ' + error);
             });
         }
