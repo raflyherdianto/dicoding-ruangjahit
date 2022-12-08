@@ -55,7 +55,7 @@
     nav a {
         color: #2E2252;
         font-size: 18px;
-        font-weight: 400;   
+        font-weight: 400;
         text-decoration: none;
     }
 
@@ -164,7 +164,7 @@
             float: none;
             width: 100%;
         }
-        
+
         main{
             padding: 0px;
             overflow: auto;
@@ -205,7 +205,7 @@
             </div>
         </nav>
     </header>
-    
+
     <main>
         <div id="content">
             <article class="card">
@@ -861,7 +861,7 @@
                             <li>Bearer Token: User Login Token</li>
                         </ul>
                     </li>
-                    
+
                     <li><p><strong>Headers</strong></p>
                         <ul>
                             <li>Accept: <code>application/json</code></li>

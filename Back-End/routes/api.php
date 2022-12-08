@@ -145,5 +145,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     // Route Resource Transaction
     Route::resource('transactions', TransactionsController::class)->except(['create', 'edit', 'update', 'store', 'destroy']);
+
+    Route::post('/logout', [AuthController::class, 'logout']);
 });
 
