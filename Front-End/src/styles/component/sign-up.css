@@ -19,15 +19,21 @@
     padding: 24px;
 }
 
+.container-signup .signup-input .form-select,
 .container-signup .signup-input input[type=text], input[type=email], input[type=password], input[type=number] {
     width: 100%;
     background-color: #D9D9D9;
     border: none;
     padding: 8px;
     margin-bottom: 12px;
+    border-radius: 5px;
 }
 
-.container-signup .signup-input input[type=submit] {
+::placeholder {
+    color: black;
+}
+
+.container-signup .signup-input button {
     padding: 12px 24px;
     background: #FF8A00;
     border: none;
