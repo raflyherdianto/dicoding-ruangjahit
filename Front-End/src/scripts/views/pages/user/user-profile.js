@@ -19,7 +19,7 @@ const UserProfile = {
                 <button type="button" class="btn btn-sub" data-bs-toggle="modal" data-bs-target="#edit-ProfileModal">
                     Edit Profile
                 </button>
-                <button type="button" class="btn btn-sub" onclick="Logout()"">
+                <button id="btn-logout" type="button" class="btn btn-sub" onclick="Logout()">
                     Logout
                 </button>
                 

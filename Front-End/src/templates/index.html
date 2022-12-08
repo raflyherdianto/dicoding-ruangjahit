@@ -120,9 +120,18 @@
 
     // Logout
     const Logout = () => {
-    window.localStorage.clear();
-    // window.location.reload(true);
-    window.location.replace('#/home');
+    let key = JSON.stringify(localStorage.getItem('token'));
+
+        let token = JSON.parse(key);
+
+        fetch('https://backend-ruangjahit-production.up.railway.app/api/logout', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': `Bearer ${token}`,
+            },
+        })
     };
 
     </script>
