@@ -1,3 +1,7 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-shadow */
+/* eslint-disable eqeqeq */
+/* eslint-disable camelcase */
 /* eslint-disable func-names */
 /* eslint-disable no-var */
 /* eslint-disable vars-on-top */
@@ -5,8 +9,10 @@ import 'bootstrap/dist/js/bootstrap.bundle';
 import 'regenerator-runtime';
 import '../styles/style.css';
 import '../styles/responsive.css';
-import App from './views/app';
+
 import swRegister from './utils/sw-register';
+// eslint-disable-next-line import/no-cycle
+import App from './views/app';
 
 const app = new App({
   button: document.querySelector('#hamburgerButton'),

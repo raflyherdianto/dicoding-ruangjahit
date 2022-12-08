@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable eol-last */
 
-class AppBar extends HTMLElement {
+class AppBarTailor extends HTMLElement {
   connectedCallback() {
     this.render();
   }
@@ -20,20 +20,17 @@ class AppBar extends HTMLElement {
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                      <a class="nav-link" aria-current="page" href="#/home">Home</a>
+                      <a class="nav-link" aria-current="page" href="#/tailor-home">Home</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#/product">Product</a>
+                      <a class="nav-link" href="#/tailor-product">Product</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#/tailor">Tailor</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#/about-us">About Us</a>
+                      <a class="nav-link" href="#/tailor-about-us">About Us</a>
                     </li>
                   </ul>
-                  <li class="login"><a href="#/sign-in" class="text-white">Masuk</a></li>
-                  <li class="register"><a href="#/sign-up" class="text-white">Daftar</a></li>
+                  <li class="login"><a href="#/product-cart" class="text-white"><i class="bi bi-bag-fill"></i></a></li>
+                  <li class="register"><a href="#/tailor-profile" class="text-white"><i class="bi bi-person-circle"></i></a></li>
                 </div>
               </div>
         </nav>
@@ -42,4 +39,4 @@ class AppBar extends HTMLElement {
   }
 }
 
-customElements.define('app-bar', AppBar);
+customElements.define('app-bar-tailor', AppBarTailor);
