@@ -55,7 +55,6 @@
                         window.location = "#/user-home";
                         username.value = "";
                         password.value = "";
-                        localStorage.setItem('token', data.data.token)
                     } else {
                         console.log(data);
                         alert('Login Gagal ' + data.message);
