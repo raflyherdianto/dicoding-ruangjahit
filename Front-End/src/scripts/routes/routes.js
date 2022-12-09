@@ -40,7 +40,7 @@ const routes = {
   '/sign-in-tailor': SignInTailor,
   '/sign-up-tailor': SignUpTailor,
   '/detail-product/:id': DetailProduct,
-  '/detail-tailor': DetailTailor,
+  '/detail-tailor/:id': DetailTailor,
 
   // After Login TAILOR
   '/tailor-home': HomeTailor,

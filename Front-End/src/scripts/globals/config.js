@@ -1,11 +1,7 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable eol-last */
 const CONFIG = {
-  AUTH_TOKEN: 12345,
-  API_BASE_URL: 'https://restaurant-api.dicoding.dev',
-  SMALL_BASE_IMAGE_URL: 'https://restaurant-api.dicoding.dev/images/small/',
-  MEDIUM_BASE_IMAGE_URL: 'https://restaurant-api.dicoding.dev/images/medium/',
-  LARGE_BASE_IMAGE_URL: 'https://restaurant-api.dicoding.dev/images/large/',
+  API_BASE_URL: 'https://backend-ruangjahit-production.up.railway.app/api',
   DEFAULT_LANGUAGE: 'en-us',
   CACHE_NAME: 'RuangJahit',
   DATABASE_NAME: 'ruangjahit-database',

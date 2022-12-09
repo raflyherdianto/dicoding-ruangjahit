@@ -1,3 +1,5 @@
+import TailorDataSource from '../../../data/tailordb-source';
+import { createTailorItemTemplate } from '../../templates/template-creator';
 import '../../components/search-bar';
 
 const Tailor = {
@@ -16,53 +18,12 @@ const Tailor = {
         </div> 
 
         <div class="tailors-content">
-            <div class="tailor-list">
-                <div class="card">
-                    <img src="./tailors/tailor1.jpg" class="img-fluid float-start rounded-circle p-2" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Cameron Williamson</h5>
-                        <p class="card-text">4140 Parker Rd. Allentown, New Mexico 31134</p>
-                        <a href="#/detail-tailor" class="btn-detail">Detail</a>
-                    </div>
-                </div>
+          <div class="tailor">
+              <div class="row" id="tailors">
 
-                <div class="card">
-                    <img src="./tailors/tailor1.jpg" class="img-fluid float-start rounded-circle p-2" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Cameron Williamson</h5>
-                        <p class="card-text">4140 Parker Rd. Allentown, New Mexico 31134</p>
-                        <a href="#/detail-tailor" class="btn-detail">Detail</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="./tailors/tailor1.jpg" class="img-fluid float-start rounded-circle p-2" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Cameron Williamson</h5>
-                        <p class="card-text">4140 Parker Rd. Allentown, New Mexico 31134</p>
-                        <a href="#/detail-tailor" class="btn-detail">Detail</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="./tailors/tailor1.jpg" class="img-fluid float-start rounded-circle p-2" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Cameron Williamson</h5>
-                        <p class="card-text">4140 Parker Rd. Allentown, New Mexico 31134</p>
-                        <a href="#/detail-tailor" class="btn-detail">Detail</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="./tailors/tailor1.jpg" class="img-fluid float-start rounded-circle p-2" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Cameron Williamson</h5>
-                        <p class="card-text">4140 Parker Rd. Allentown, New Mexico 31134</p>
-                        <a href="#/detail-tailor" class="btn-detail">Detail</a>
-                    </div>
-                </div>
-            </div>
-
+              </div>
+          </div>
+          
           <aside>
             <h5>Filter Search</h5>
             <div class="category-filter">
@@ -205,6 +166,11 @@ const Tailor = {
 
   async afterRender() {
     // Fungsi ini akan dipanggil setelah render()
+    const tailors = await TailorDataSource.getAllTailor();
+    const tailorContainer = document.querySelector('#tailors');
+    tailors.forEach((tailor) => {
+      tailorContainer.innerHTML += createTailorItemTemplate(tailor);
+    });
   },
 };
 
