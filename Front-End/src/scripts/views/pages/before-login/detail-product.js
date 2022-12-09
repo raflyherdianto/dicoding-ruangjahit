@@ -7,7 +7,8 @@ import LikeButtonPresenter from '../../../utils/like-button-presenter';
 const DetailProduct = {
   async render() {
     return `
-            <div class="detail-products" id="detail-products">
+    <app-bar></app-bar>
+            <div class="detail-products pt-5" id="detail-products">
             </div>
             <div class="container form-rating">
               <h5 class="sub-title">Comment and Rate</h5>
