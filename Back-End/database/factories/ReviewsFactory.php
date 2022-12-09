@@ -18,6 +18,8 @@ class ReviewsFactory extends Factory
             'product_id' => $this->faker->numberBetween(1, 25),
             'star' => $this->faker->numberBetween(1, 5),
             'description' => $this->faker->text(),
+            'created_at'=> $this->faker->dateTimeThisYear($max = 'now', $timezone = 'Asia/Jakarta'),
+            'updated_at'=> $this->faker->dateTimeThisYear($max = 'now', $timezone = 'Asia/Jakarta'),
         ];
     }
 }

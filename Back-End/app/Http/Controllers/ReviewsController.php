@@ -58,6 +58,9 @@ class ReviewsController extends Controller
         $product->rating = $rating;
         $product->update();
 
+        return response()->json([
+            'message' => 'Review created successfully',
+        ], 201);
         return new ReviewsResource($review);
     }
 

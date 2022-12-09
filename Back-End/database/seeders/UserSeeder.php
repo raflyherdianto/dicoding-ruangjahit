@@ -32,6 +32,8 @@ class UserSeeder extends Seeder
                 'close_time' => '17:00:00',
                 'store_status' => 'OPEN',
                 'password' => bcrypt('cobacoba'),
+                'created_at'=> now(),
+                'updated_at'=> now(),
             ],
             [
                 'name' => 'Admin 02',
@@ -50,6 +52,8 @@ class UserSeeder extends Seeder
                 'close_time' => '17:00:00',
                 'store_status' => 'OPEN',
                 'password' => bcrypt('cobacoba'),
+                'created_at'=> now(),
+                'updated_at'=> now(),
             ],
             [
                 'name'=> 'User 01',
@@ -68,6 +72,8 @@ class UserSeeder extends Seeder
                 'close_time' => '17:00:00',
                 'store_status' => 'OPEN',
                 'password' => bcrypt('cobacoba'),
+                'created_at'=> now(),
+                'updated_at'=> now(),
             ],
             [
                 'name'=> 'User 02',
@@ -86,6 +92,8 @@ class UserSeeder extends Seeder
                 'close_time' => '17:00:00',
                 'store_status' => 'OPEN',
                 'password' => bcrypt('cobacoba'),
+                'created_at'=> now(),
+                'updated_at'=> now(),
             ],
         ];
 

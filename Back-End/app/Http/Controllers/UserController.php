@@ -16,14 +16,22 @@ class UserController extends Controller
 
         $user->update($request->all());
 
+        return response()->json([
+            'message' => 'Profile updated successfully'
+        ], 200);
         return new UsersResource($user);
     }
 
     public function index(){
-        return new UsersResource(User::with(['products'])->whereNotNull('store_name', 'bank_name', 'bank_account', 'open_time', 'close_time', 'store_status')->latest()->get());
+        return new UsersResource(User::with(['products'])->whereNotIn('roles', ['user'])->whereNotNull(['store_name', 'bank_account', 'bank_name', 'store_status', 'open_time', 'close_time'])->latest()->get());
     }
 
     public function indexTailor(User $user){
-        return new UsersResource(User::with(['products'])->where('id', $user->id)->where('roles', 'admin')->latest()->get());
+        if($user->roles == 'user'){
+            return response ()->json([
+                'message' => 'You are not allowed to access this page'
+            ], 403);
+        }
+        return new UsersResource(User::with(['products'])->where('id', $user->id)->latest()->get());
     }
 }

@@ -17,6 +17,8 @@ class CategoryProductsFactory extends Factory
         return [
             'name' => $this->faker->languageCode(),
             'slug' => $this->faker->slug(),
+            'created_at'=> $this->faker->dateTimeThisYear($max = 'now', $timezone = 'Asia/Jakarta'),
+            'updated_at'=> $this->faker->dateTimeThisYear($max = 'now', $timezone = 'Asia/Jakarta'),
         ];
     }
 }

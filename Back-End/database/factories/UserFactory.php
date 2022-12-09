@@ -15,10 +15,11 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
+            'name' => $this->faker->name($gender = 'female'),
             'email' => $this->faker->unique()->safeEmail(),
             'username' => $this->faker->unique()->userName(),
             'password' => 'cobacoba', // password
+            'photo'=> 'https://xsgames.co/randomusers/assets/avatars/female/'.mt_rand(0,78).'.jpg',
             'first_address' => $this->faker->address(),
             'province_id' => $this->faker->numberBetween(1, 34),
             'regency_id' => $this->faker->numberBetween(1, 50),
@@ -31,6 +32,8 @@ class UserFactory extends Factory
             'open_time' => $this->faker->time(),
             'close_time' => $this->faker->time(),
             'store_status' => $this->faker->randomElement(['OPEN', 'CLOSED']),
+            'created_at'=> $this->faker->dateTimeThisYear($max = 'now', $timezone = 'Asia/Jakarta'),
+            'updated_at'=> $this->faker->dateTimeThisYear($max = 'now', $timezone = 'Asia/Jakarta'),
         ];
     }
 

@@ -80,7 +80,7 @@ class ProductsController extends Controller
                 'message' => 'Product not found'
             ], 404);
         } else {
-            return new ProductsResource($product);
+            return new ProductsResource(Products::with(['category_product', 'reviews', 'image_products'])->where('id', $product->id)->first());
         }
     }
 
@@ -117,6 +117,9 @@ class ProductsController extends Controller
                 'message' => 'You are not authorized to make request',
             ], 403);
         }
+        return response()->json([
+            'message' => 'Product has been updated'
+        ], 200);
         return new ProductsResource($product);
     }
 

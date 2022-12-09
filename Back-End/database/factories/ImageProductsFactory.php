@@ -16,6 +16,8 @@ class ImageProductsFactory extends Factory
         return [
             'product_id' => $this->faker->numberBetween(1, 25),
             'image' => $this->faker->imageUrl(640, 480, 'cats', true, 'Faker'),
+            'created_at'=> $this->faker->dateTimeThisYear($max = 'now', $timezone = 'Asia/Jakarta'),
+            'updated_at'=> $this->faker->dateTimeThisYear($max = 'now', $timezone = 'Asia/Jakarta'),
         ];
     }
 }

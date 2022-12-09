@@ -24,6 +24,8 @@ class ProductsFactory extends Factory
             'stock'=> $this->faker->numberBetween(1, 100),
             'weight'=> $this->faker->numberBetween(1, 100),
             'size'=> $this->faker->randomElement(['S', 'M', 'L', 'XL', 'XXL', 'CUSTOM']),
+            'created_at'=> $this->faker->dateTimeThisYear($max = 'now', $timezone = 'Asia/Jakarta'),
+            'updated_at'=> $this->faker->dateTimeThisYear($max = 'now', $timezone = 'Asia/Jakarta'),
         ];
     }
 }
