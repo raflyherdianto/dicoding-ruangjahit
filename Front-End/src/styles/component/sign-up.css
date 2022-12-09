@@ -33,7 +33,7 @@
     color: black;
 }
 
-.container-signup .signup-input button {
+.container-signup .signup-input .btn-daftar {
     padding: 12px 24px;
     background: #FF8A00;
     border: none;

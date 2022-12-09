@@ -1,0 +1,143 @@
+.sidebar{
+  position:absolute;
+  height: 100%;
+  width: 240px;
+  background: #FF8A00;
+  transition: all 0.5s ease;
+}
+.sidebar.active{
+  width: 60px;
+}
+.sidebar .logo-details{
+  height: 80px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+}
+
+.sidebar .logo-details img{
+  padding: 5px;
+  margin-left: 20px;
+}
+.sidebar .logo-details .logo_name{
+  color: #FF8A00;
+  font-size: 24px;
+  font-weight: 900;
+}
+.sidebar .nav-links{
+  margin-top: 10px;
+}
+.sidebar .nav-links li{
+  position: relative;
+  list-style: none;
+  height: 50px;
+}
+.sidebar .nav-links li a{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+.sidebar .nav-links li a.active{
+  background: #db7501;
+}
+.sidebar .nav-links li a:hover{
+  background: #db7501;
+}
+.sidebar .nav-links li i{
+  min-width: 60px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+}
+.sidebar .nav-links li a .links_name{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.table-pane{
+  height: 520px;
+  overflow-y:scroll;
+  width:100%;
+}
+
+.title-tab {
+  z-index: 99;
+}
+
+.title-table {
+  font-size: 100px;
+  font-weight: 900;
+}
+
+.home-section{
+  position: relative;
+  background: #f5f5f5;
+  min-height: 100vh;
+  width: calc(100% - 240px);
+  left: 240px;
+  transition: all 0.5s ease;
+}
+.sidebar.active ~ .home-section{
+  width: calc(100% - 60px);
+  left: 60px;
+}
+.home-section .home-content{
+  position: relative;
+  padding-top: 20px;
+}
+
+/* Responsive Media Query */
+@media (max-width: 1240px) {
+  .sidebar{
+    width: 60px;
+  }
+  .sidebar.active{
+    width: 220px;
+  }
+  .home-section{
+    width: calc(100% - 60px);
+    left: 60px;
+  }
+  .sidebar.active ~ .home-section{
+    left: 220px;
+    width: calc(100% - 220px);
+    overflow: hidden;
+  }
+  .home-section nav{
+    width: calc(100% - 60px);
+    left: 60px;
+  }
+  .sidebar.active ~ .home-section nav{
+    width: calc(100% - 220px);
+    left: 220px;
+  }
+}
+
+@media (max-width: 700px) {
+  .sidebar .logo-details .logo_name{
+    display: none;
+  }
+
+  .sidebar .logo-details img{
+    margin-left: 5px;
+  }
+}
+
+@media (max-width: 400px) {
+  .sidebar .logo-details .logo_name{
+    display: none;
+  }
+  .sidebar .logo-details img{
+    margin-left: 5px;
+  }
+
+  .sidebar.active ~ .home-section{
+    left: 60px;
+    width: calc(100% - 60px);
+  }
+}

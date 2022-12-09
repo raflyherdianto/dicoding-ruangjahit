@@ -31,7 +31,7 @@
     color: rgb(32, 32, 32);
 }
 
-.container-signin .box-signin input[type=submit] {
+.container-signin .box-signin input[type=button] {
     padding: 12px 24px;
     background: #FF8A00;
     border: none;
@@ -75,7 +75,7 @@
     margin-bottom: 12px;
 }
 
-.container-signin .signin-input input[type=submit] {
+.container-signin .signin-input input[type=button] {
     padding: 12px 24px;
     background: #FF8A00;
     border: none;

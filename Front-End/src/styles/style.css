@@ -10,6 +10,7 @@
 @import url('./component/app-bar.css');
 @import url('./component/detail-product.css');
 @import url('./component/user-profile.css');
+@import url('./component/tailor-profile.css');
 
 *, html {
   padding: 0;
