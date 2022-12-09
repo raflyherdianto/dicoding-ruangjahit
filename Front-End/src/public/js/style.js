@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable prefer-destructuring */
 /* eslint-disable no-plusplus */
 /* eslint-disable no-unused-vars */
@@ -42,3 +43,6 @@ function result() {
   }
   commentRate.innerHTML = document.getElementById('comment').value;
 }
+
+// offcanvar cart
+const bsOffcanvas = new bootstrap.Offcanvas('#myOffcanvas');
