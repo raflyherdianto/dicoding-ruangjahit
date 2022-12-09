@@ -9,6 +9,7 @@ import 'bootstrap/dist/js/bootstrap.bundle';
 import 'regenerator-runtime';
 import '../styles/style.css';
 import '../styles/responsive.css';
+import './views/templates/template-creator';
 
 import swRegister from './utils/sw-register';
 // eslint-disable-next-line import/no-cycle

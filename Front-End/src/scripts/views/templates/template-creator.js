@@ -134,9 +134,9 @@ const createProductDetailTemplate = (product) => `
                             class="reviewer_photo"
                             >
                         <div class="review-content">
-                        <p class="reviewer_name">${review.name}</p>
-                        <p class="reviewer_date">${review.date}</p>
-                        <p class="reviewer_comment">"${review.review}"</p>
+                        <p class="reviewer_name" id="name">${review.name}</p>
+                        <p class="reviewer_date" id="rate">${review.date}</p>
+                        <p class="reviewer_comment" id="comment-rate">"${review.review}"</p>
                         </div>
                         `).join('<br>')}
                       </li>
