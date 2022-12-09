@@ -3,7 +3,7 @@ import '../../components/app-bar_user';
 const HomeLogin = {
   async render() {
     return `
-    <app-bar_user></app-bar_user>
+    <app-bar-user></app-bar-user>
         <div class="container-fluid hero">
           <div class="row">
               <div class="col-lg-6 col-md-12 p-5 hero-left">

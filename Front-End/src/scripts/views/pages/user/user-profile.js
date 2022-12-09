@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 const UserProfile = {
-    async render() {
-      return `
+  async render() {
+    return `
       <app-bar-user></app-bar-user>
       <div class="container pt-5 user-profile">
           <div class="row content">
@@ -89,12 +89,11 @@ const UserProfile = {
               </div>
           </div>
         `;
-    },
-  
-    async afterRender() {
-      // Fungsi ini akan dipanggil setelah render()
-    },
-  
-  };
-  export default UserProfile;
-  
+  },
+
+  async afterRender() {
+    // Fungsi ini akan dipanggil setelah render()
+  },
+
+};
+export default UserProfile;
