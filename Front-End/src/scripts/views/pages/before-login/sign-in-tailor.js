@@ -19,10 +19,10 @@ const SignInTailor = {
             <form action="#" class="signin-input" id="form-login">
                 <h3>Masuk Penjahit</h3>
                 <div class="input-field">
-                    <input type="text" id="username" name="username" placeholder="Nama Pengguna" required>
+                    <input type="text" id="username-tailor" name="username" placeholder="Nama Pengguna" required>
                 </div>
                 <div class="input-field">
-                    <input type="password" id="password" name="password" placeholder="Kata Sandi" required>
+                    <input type="password" id="password-tailor" name="password" placeholder="Kata Sandi" required>
                 </div>
                 <a href="#">Lupa kata sandi ?</a>
                 <input type="button" class="btn-masuk" id="btn-login" name="btn-login" onclick="LoginTailor()" value="Masuk">

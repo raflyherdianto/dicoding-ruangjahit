@@ -7,48 +7,48 @@ const SignUpTailor = {
             <form action="#" class="signup-input" id="form-regis">
                 <h3>Daftar Akun Penjahit</h3>
                 <div class="input-field">
-                    <input type="text" id="name" name="name" placeholder="Nama Lengkap" required>
+                    <input type="text" id="name_tailor" name="name_tailor" placeholder="Nama Lengkap" required>
                 </div>
   
                 <div class="input-field">
-                    <input type="text" id="username" name="username" placeholder="Nama Pengguna" required>
+                    <input type="text" id="username_tailor" name="username_tailor" placeholder="Nama Pengguna" required>
                 </div>
   
                 <div class="input-field">
-                    <input type="text" id="first_address" name="first_address" placeholder="Alamat" required>
+                    <input type="text" id="first_address_tailor" name="first_address_tailor" placeholder="Alamat" required>
                 </div>
   
                 <div class="input-field">
-                    <input type="number" id="first_phone" name="first_phone" placeholder="No. HP" required>
+                    <input type="number" id="first_phone_tailor" name="first_phone_tailor" placeholder="No. HP" required>
                 </div>
   
                 <select class="form-select" aria-label="Default select example">
                     <option selected>Provinsi</option>
-                    <option id="province_id" name="province_id" value="11">ACEH</option>
-                    <option id="province_id" name="province_id" value="12">SUMATERA UTARA</option>
-                    <option id="province_id" name="province_id" value="13">SUMATERA BARAT</option>
+                    <option id="province_id_tailor" name="province_id_tailor" value="11">ACEH</option>
+                    <option id="province_id_tailor" name="province_id_tailor" value="12">SUMATERA UTARA</option>
+                    <option id="province_id_tailor" name="province_id_tailor" value="13">SUMATERA BARAT</option>
                 </select>
 
                 <select class="form-select" aria-label="Default select example">
                     <option selected>Kabupaten</option>
-                    <option id="regency_id" name="regency_id" value="1101">KABUPATEN SIMEULUE</option>
-                    <option id="regency_id" name="regency_id" value="1102">KABUPATEN ACEH SINGKIL</option>
-                    <option id="regency_id" name="regency_id" value="1103">KABUPATEN ACEH SELATAN</option>
+                    <option id="regency_id_tailor" name="regency_id_tailor" value="1101">KABUPATEN SIMEULUE</option>
+                    <option id="regency_id_tailor" name="regency_id_tailor" value="1102">KABUPATEN ACEH SINGKIL</option>
+                    <option id="regency_id_tailor" name="regency_id_tailor" value="1103">KABUPATEN ACEH SELATAN</option>
                 </select>
 
                 <div class="input-field">
-                    <input type="number" id="zip_code" name="zip_code" placeholder="Kode Pos" required>
+                    <input type="number" id="zip_code_tailor" name="zip_code_tailor" placeholder="Kode Pos" required>
                 </div>
   
                 <div class="input-field">
-                    <input type="email" id="email" name="email" placeholder="E-mail" required>
+                    <input type="email" id="email_tailor" name="email_tailor" placeholder="E-mail" required>
                 </div>
   
                 <div class="input-field">
-                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <input type="password" id="password_tailor" name="password_tailor" placeholder="Password" required>
                 </div>
                 <div class="input-field">
-                    <input type="password" id="password_confirmation" name="password_confir" placeholder="Password Confirmation" required>
+                    <input type="password" id="password_confirmation_tailor" name="password_confir" placeholder="Password Confirmation" required>
                 </div>
                 
                 <button class="btn-daftar" type="button" id="btn-regis" onclick="RegistrationTailor()" value="Daftar">Daftar</button>
