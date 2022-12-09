@@ -171,22 +171,6 @@ const ProductUser = {
     products.forEach((product) => {
       productContainer.innerHTML += createProductItemTemplate(product);
     });
-
-    const searchElement = document.querySelector('search-bar');
-    const onButtonSearchClicked = async () => {
-      const searchValue = searchElement.value;
-      const filterProduct = products.filter((restaurants) => restaurants.name.toLowerCase().includes(searchValue));
-
-      if (filterProduct.length > 0) {
-        productContainer.innerHTML = '';
-        filterProduct.forEach((user) => {
-          productContainer.innerHTML += createProductItemTemplate(user);
-        });
-      } else {
-        productContainer.innerHTML = '<h5 class="text-warning fs-2">There are no products that match</h5>';
-      }
-    };
-    searchElement.clickEvent = onButtonSearchClicked;
   },
 };
 

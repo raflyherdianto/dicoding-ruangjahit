@@ -4,26 +4,24 @@ import CONFIG from '../../globals/config';
 const createProductItemTemplate = (product) => `
     <div class="card">
         <div class="image-container">
-        <div class="header-product">
-            <div class="d-flex justify-content-between align-items-center">
+            <div class="header-product">
+                <div class="d-flex justify-content-between align-items-center">
+                </div>
             </div>
         </div>
-        <img src="${CONFIG.LARGE_BASE_IMAGE_URL + product.pictureId}" class="img-fluid thumbnail-image">
-        </div>
 
-        <div class="product-detail-container p-2">
+        <div class="product-detail-constainer p-2">
             <div class="justify-content-between align-items-center">
-            <h5 class="product-name"><a href="#/detail-product/${product.id}">${product.name}</a></h5>
-            <p class="price">${product.city}</p>
+                <h5 class="product-name"><a href="#/detail-product/${product.id}">${product.name}</a></h5>
+                <p class="price">Rp. ${product.price}</p>
             </div>
 
             <div class="d-flex justify-content-between align-items-center pt-1">
-            <div>
-            <i class="bi bi-star-fill rating-star"></i>
-                <span class="rating-number">${product.rating}</span>
-            </div>
-            <span class="btn-buy"><a href="#/product-cart">Add to cart</a></span>
-            
+                <div>
+                    <i class="bi bi-star-fill rating-star"></i>
+                    <span class="rating-number">${product.rating}</span>
+                </div>
+                <span class="btn-buy"><a href="#/product-cart">Add to cart</a></span>
             </div>
         </div>
     </div>

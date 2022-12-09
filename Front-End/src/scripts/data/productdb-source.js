@@ -11,13 +11,7 @@ class ProductDataSource {
   static async getAllProduct() {
     const response = await fetch(API_ENDPOINT.LIST);
     const responseJson = await response.json();
-    return responseJson.restaurants;
-  }
-
-  static async getProductDetail(id) {
-    const response = await fetch(API_ENDPOINT.DETAIL(id));
-    const responseJson = await response.json();
-    return responseJson.restaurant;
+    return responseJson.data;
   }
 }
 
