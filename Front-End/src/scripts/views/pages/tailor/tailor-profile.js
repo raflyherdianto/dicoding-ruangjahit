@@ -75,37 +75,44 @@ const TailorProfile = {
                 </div>
                 <div class="table-pane">
                 <table class="table">
-                    <thead>
-                        <tr>
-                        <th scope="col">No</th>
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
                         <th scope="col">Name</th>
+                        <th scope="col">User</th>
+                        <th scope="col">Category</th>
                         <th scope="col">Price</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Rating</th>
                         <th scope="col">Stock</th>
+                        <th scope="col">Color</th>
+                        <th scope="col">Weight</th>
+                        <th scope="col">Size</th>
+                        <th scope="col">Created_at</th>
+                        <th scope="col">Updated-at</th>
                         <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <th scope="row">1</th>
-                        <td>Blouse</td>
-                        <td>100000</td>
-                        <td>10</td>
-                        <td>
+                    </tr>
+                </thead>
+                <tbody class="align-middle">
+                        <td scope="col">#</td>
+                        <td scope="col">Name</td>
+                        <td scope="col">User</td>
+                        <td scope="col">Category</td>
+                        <td scope="col">Price</td>
+                        <td scope="col">Description</td>
+                        <td scope="col">Rating</td>
+                        <td scope="col">Stock</td>
+                        <td scope="col">Color</td>
+                        <td scope="col">Weight</td>
+                        <td scope="col">Size</td>
+                        <td scope="col">Created_at</td>
+                        <td scope="col">Updated-at</td>
+                        <td scope="col">
                         <button class="btn btn-warning">Delete</button>
                         <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#edit-productModal">Edit</button>
                         </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Blouse</td>
-                            <td>100000</td>
-                            <td>10</td>
-                            <td>
-                            <button class="btn btn-warning">Delete</button>
-                            <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#edit-productModal">Edit</button>
-                            </td>
-                        </tr>
-                    </tbody>
+                </tbody>
+                    
                     </table>
                     </div>
                 </div>
@@ -124,20 +131,15 @@ const TailorProfile = {
                 <table class="table">
                     <thead>
                         <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Action</th>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Actiob</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                        <th scope="row">1</th>
-                        <td>Kemeja.jpg</td>
-                        <td>
-                        <button class="btn btn-warning">Delete</button>
-                        <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#edit-imageProductModal">Edit</button>
-                        </td>
-                        </tr>
+                    <tbody class="align-middle">
+                            <td scope="col">#</td>
+                            <td scope="col">Name</td>
+                            <td scope="col"><button class="btn btn-warning">Delete</button></td>
                     </tbody>
                     </table>
                     </div>
@@ -153,26 +155,19 @@ const TailorProfile = {
                     <hr>
                 </div>
                 <div class="table-pane">
-                <table class="table">
-                    <thead>
-                        <tr>
-                        <th scope="col">No</th>
+                <table id="example" class="table table-striped dt-responsive nowrap" style="width:100%">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <th scope="row">1</th>
-                        <td>Kemeja</td>
-                        <td>
-                        <button class="btn btn-warning">Delete</button>
-                        <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#edit-categoryModal">Edit</button>
-                        </td>
-                        </tr>
-                    </tbody>
-                    </table>
-                    </div>
+                    </tr>
+                </thead>
+                <tbody class="align-middle">
+                        <td scope="col">#</td>
+                        <td scope="col">Name</td>
+                </tbody>
+            </table>
+                </div>
                 </div>
             </div>
         </section>
