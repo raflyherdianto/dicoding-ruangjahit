@@ -80,7 +80,7 @@ const HomeLogin = {
       <h1 class="tagline">Bergabung bersama Kami</h1>
       <!-- button for register user tailor -->
       <h5>Bergabunglah bersama kami untuk menikmati berbagai fitur menarik yang kami tawarkan.</h5>
-      <button>Daftar Penjahit</button>
+      <button onclick="location.href='#'">Daftar Penjahit</button>
     </div>
     `;
   },
