@@ -1,11 +1,3 @@
-@media screen and (max-width: 499px) {
-
-}
-
-@media screen and (min-width: 650px) {
-
-}
-
 @media screen and (max-width: 1200px) {
   .first {
     grid-template-columns: repeat(4, 1fr);
