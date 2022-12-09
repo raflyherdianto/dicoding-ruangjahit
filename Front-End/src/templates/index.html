@@ -13,7 +13,6 @@
     <link rel="icon" href="./ruangjahit.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <title>RuangJahit</title>
-    <script src="./js/style.js"></script>
 </head>
 <body>
     <app-bar style="display: none;"></app-bar>
@@ -21,7 +20,6 @@
     <app-bar-tailor style="display: none;"></app-bar-tailor>
     <main id="mainContent"></main>
     <footer-bar></footer-bar>
-    
     <script>
         // Login
         function Login() {
@@ -64,69 +62,65 @@
             }
         // Regis
         function Registration() {
-        const btnRegis = document.getElementById('btn-regis');
-        const name = document.getElementById('name');
-        const username = document.getElementById('username');
-        const first_address = document.getElementById('first_address');
-        const first_phone = document.getElementById('first_phone');
-        const province_id = document.getElementById('province_id');
-        const regency_id = document.getElementById('regency_id');
-        const zip_code = document.getElementById('zip_code');
-        const email = document.getElementById('email');
-        const password = document.getElementById('password');
-        const password_confirmation = document.getElementById('password_confirmation');
-    
-        const data = JSON.stringify({
-            name: name.value,
-            username: username.value,
-            email: email.value,
-            password: password.value,
-            password_confirmation: password_confirmation.value,
-            first_address: first_address.value,
-            province_id: province_id.value,
-            regency_id: regency_id.value,
-            zip_code: zip_code.value,
-            first_phone: first_phone.value,
-        });
-        const url = 'https://backend-ruangjahit-production.up.railway.app/api/register';
-        fetch(url, {
-            method: 'POST',
-            headers: {
-            Accept: 'application/json',
-            'Content-type': 'application/json',
-            },
-            body: data,
-        }).then((response) => response.json().then((data) => {
-            console.log(response.status);
-            if (response.status == 200) {
-            // alert('Data Berhasil Disimpan!');
-            window.location = "#/sign-in";
-            name.value = '';
-            username.value = '';
-            email.value = '';
-            password.value = '';
-            password_confirmation.value = '';
-            first_address.value = '';
-            province_id.value = '';
-            regency_id.value = '';
-            zip_code.value = '';
-            first_phone.value = '';
-            } else {
-            console.log(data);
-            alert(`Error, terjadi kesalahan ${data.message}`);
-            }
-        })).catch((error) => {
-            alert(`Error, terjadi kesalahan ${error}`);
-        });
+            const btnRegis = document.getElementById('btn-regis');
+            const name = document.getElementById('name');
+            const username = document.getElementById('username');
+            const first_address = document.getElementById('first_address');
+            const first_phone = document.getElementById('first_phone');
+            const province_id = document.getElementById('province_id');
+            const regency_id = document.getElementById('regency_id');
+            const zip_code = document.getElementById('zip_code');
+            const email = document.getElementById('email');
+            const password = document.getElementById('password');
+            const password_confirmation = document.getElementById('password_confirmation');
+        
+            const data = JSON.stringify({
+                name: name.value,
+                username: username.value,
+                email: email.value,
+                password: password.value,
+                password_confirmation: password_confirmation.value,
+                first_address: first_address.value,
+                province_id: province_id.value,
+                regency_id: regency_id.value,
+                zip_code: zip_code.value,
+                first_phone: first_phone.value,
+            });
+            const url = 'https://backend-ruangjahit-production.up.railway.app/api/register';
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                Accept: 'application/json',
+                'Content-type': 'application/json',
+                },
+                body: data,
+            }).then((response) => response.json().then((data) => {
+                console.log(response.status);
+                if (response.status == 200) {
+                // alert('Data Berhasil Disimpan!');
+                window.location = "#/sign-in";
+                name.value = '';
+                username.value = '';
+                email.value = '';
+                password.value = '';
+                password_confirmation.value = '';
+                first_address.value = '';
+                province_id.value = '';
+                regency_id.value = '';
+                zip_code.value = '';
+                first_phone.value = '';
+                } else {
+                console.log(data);
+                alert(`Error, terjadi kesalahan ${data.message}`);
+                }
+            })).catch((error) => {
+                alert(`Error, terjadi kesalahan ${error}`);
+            });
         }
     
         // Logout
         const Logout = () => {
-        // let key = JSON.stringify(localStorage.getItem('token'));
-    
-        //     let token = JSON.parse(key);
             token = localStorage.getItem('token');
-            console.log(token);
     
             fetch('https://backend-ruangjahit-production.up.railway.app/api/logout', {
                 method: 'POST',
@@ -140,13 +134,65 @@
                 console.log(response.status);
                 if (response.status == 200) {
                     alert('Logout Success');
-                    window.location = "/sign-in";
+                    window.location = "#/sign-in";
                     localStorage.removeItem('token');
                 } else {
                     alert('Logout Gagal');
                 }
             }))
         };
+
+        function ProfileEdit() {
+        const name = document.getElementById('edit_name');
+        const username = document.getElementById('edit_username');
+        const first_address = document.getElementById('edit_first_address');
+        const first_phone = document.getElementById('edit_first_phone');
+        const province_id = document.getElementById('edit_province_id');
+        const regency_id = document.getElementById('edit_regency_id');
+        const zip_code = document.getElementById('edit_zip_code');
+    
+        const data = JSON.stringify({
+            name: name.value,
+            username: username.value,
+            password_confirmation: password_confirmation.value,
+            first_address: first_address.value,
+            province_id: province_id.value,
+            regency_id: regency_id.value,
+            zip_code: zip_code.value,
+            first_phone: first_phone.value,
+        });
+
+        token = localStorage.getItem('token');
+
+        const url = 'https://backend-ruangjahit-production.up.railway.app/api/users/edit';
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': `Bearer ${token}`,
+            },
+            body: data,
+        }).then((response) => response.json().then((data) => {
+            console.log(response.status);
+            if (response.status == 200) {
+                alert('Data Berhasil Diubah!');
+                name.value = '';
+                username.value = '';
+                password_confirmation.value = '';
+                first_address.value = '';
+                province_id.value = '';
+                regency_id.value = '';
+                zip_code.value = '';
+                first_phone.value = '';
+            } else {
+                console.log(data);
+                alert(`Error, terjadi kesalahan ${data.message}`);
+            }
+        })).catch((error) => {
+            alert(`Error, terjadi kesalahan ${error}`);
+        });
+        }
     
         </script>
 </body>
