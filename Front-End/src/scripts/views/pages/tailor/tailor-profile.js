@@ -26,333 +26,442 @@ const TailorProfile = {
             </div>
         </div>
         <hr>
-        <div class="row container">
-            <div class="col-2">
-            <button type="button" class="btn btn-sub" data-bs-toggle="modal" data-bs-target="#add-productModal">
-                Add My Product
-            </button>
+        <div class="sidebar">
+            <div class="logo-details">
+            <i><img src="./assets/logo-ruangjahit2.png" class="img-fluid" width="50"></i>
+            <span class="logo_name">RuangJahit</span>
             </div>
-            <div class="col-3">
-            <button type="button" class="btn btn-sub" data-bs-toggle="modal" data-bs-target="#add-catalogueModal">
-                Add My Catalogue
-            </button>
-            </div>
-            
-        </div>
-        <div class="row">
-            <div class="col-lg-8">
-                <nav>
-                    <div class="nav nav-tabs pt-5" id="nav-tab">
-                    <button class="nav-link text-dark" id="nav-myproduct-tab" data-bs-toggle="tab" data-bs-target="#nav-myproduct" type="button" role="tab" aria-controls="nav-myproduct" aria-selected="true">My Product</button>
-                    <button class="nav-link text-dark" id="nav-mycatalogue-tab" data-bs-toggle="tab" data-bs-target="#nav-mycatalogue" type="button" role="tab" aria-controls="nav-mycatalogue" aria-selected="false">My Catalogue</button>
-                    <button class="nav-link text-dark" id="nav-orderstatus-tab" data-bs-toggle="tab" data-bs-target="#nav-orderstatus" type="button" role="tab" aria-controls="nav-orderstatus" aria-selected="false">Order Status</button>
-                    </div>
-                </nav>
-                <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane fade show active p-3" id="nav-myproduct" role="tabpanel" aria-labelledby="nav-myproduct-tab" tabindex="0">
-                        <div class="my-product pt-5">
-                            <h4 class="title-section"><b>My Product</b></h4>
-                            <div class="row my-products">
-                                <div class="col-lg-2 col-12 me-1">
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <div class="card">
-                                        <div class="image-container">
-                                        <div class="header-product">
-                                        
-                                            <div class="d-flex justify-content-between align-items-center">
-                                            <span class="like-btn"><i class="bi bi-bookmark-heart"></i></span>
-                                            </div>
-                                        </div>
-                                        <img src="./users/woman.png" class="img-fluid rounded thumbnail-image">
-                                        </div>
+            <ul class="nav-links" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <li class="nav-link " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-dashboard" type="button" role="tab" aria-controls="v-pills-dashboard" aria-selected="true">
+                <a class="">
+                    <i class="bi bi-grid-fill"></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                </li>
+                <li class="nav-link " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-category" type="button" role="tab" aria-controls="v-pills-category" aria-selected="true">
+                <a>
+                    <i class="bi bi-pie-chart-fill"></i>
+                    <span class="links_name">Category</span>
+                </a>
+                </li>
+                <li class="nav-link " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-addimage" type="button" role="tab" aria-controls="v-pills-addimage" aria-selected="true">
+                <a>
+                    <i class="bi bi-file-text"></i>
+                    <span class="links_name">Image Product</span>
+                </a>
+                </li>
+                <li class="nav-link " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-product" type="button" role="tab" aria-controls="v-pills-product" aria-selected="true">
+                <a>
+                    <i class="bi bi-archive-fill"></i>
+                    <span class="links_name">Product</span>
+                </a>
+                </li>
                 
-                                        <div class="product-detail-container p-2">
-                                            <div class="justify-content-between align-items-center">
-                                            <h5 class="product-name">Blouse</h5>
-                                            <p class="price">IDR 100.000</p>
-                                            </div>
-                        
-                                            <div class="d-flex justify-content-between align-items-center pt-1">
-                                            <div>
-                                                <i class="fa fa-star-o rating-star"></i>
-                                                <span class="rating-number">4.8</span>
-                                            </div>
-                                            <span class="btn-buy">Add to cart</span>
-                                            
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </a>
-                                </div>
-                                </div>
-                            </div>
-                    </div>
-                    <div class="tab-pane fade p-3" id="nav-mycatalogue" role="tabpanel" aria-labelledby="nav-mycatalogus-tab" tabindex="0">
-                        <div class="my-product pt-5">
-                            <h4 class="title-section"><b>My Catalogue</b></h4>
-                            <div class="galery flex">
-                                <div class="item" data-w="344" data-h="333">
-                                    <a href="#" target="_blank">
-                                    <img src="./users/woman.png" class="img-fluid" alt=""></a>
-                                </div>
-                                <div class="item" data-w="344" data-h="333">
-                                    <a href="#" target="_blank">
-                                    <img src="./users/woman.png" class="img-fluid" alt=""></a>
-                                </div>
-                                <div class="item" data-w="344" data-h="333">
-                                    <a href="#" target="_blank">
-                                    <img src="./users/woman.png" class="img-fluid" alt=""></a>
-                                </div>
-                                <div class="item" data-w="344" data-h="333">
-                                    <a href="#" target="_blank">
-                                    <img src="./users/woman.png" class="img-fluid" alt=""></a>
-                                </div>
-                                <div class="item" data-w="344" data-h="333">
-                                    <a href="#" target="_blank">
-                                    <img src="./users/woman.png" class="img-fluid" alt=""></a>
-                                </div>
-                                <div class="item" data-w="344" data-h="333">
-                                    <a href="#" target="_blank">
-                                    <img src="./users/woman.png" class="img-fluid" alt=""></a>
-                                </div>
-                                <div class="item" data-w="344" data-h="333">
-                                    <a href="#" target="_blank">
-                                    <img src="./users/woman.png" class="img-fluid" alt=""></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade p-3 order-list" id="nav-orderstatus" role="tabpanel" aria-labelledby="nav-orderstatus-tab" tabindex="0">
-                    <h5>Order Status</h5>
-                    <nav>
-                        <div class="nav nav-tabs btn-group" id="nav-tab" role="group" aria-label="button group">
-                        <button class="nav-link btn btn-outline-dark" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Received</button>
-                        <button class="nav-link btn btn-outline-dark" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">On Proses</button>
-                        <button class="nav-link btn btn-outline-dark" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Complete</button>
-                        </div>
-                    </nav>
-                    <div class="tab-content" id="nav-tabContent">
-                        <div class="tab-pane fade show active p-3" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-10" style="line-height: 4px;">
-                                            <p>Blouse</p>
-                                            <small>Order ID xxxxxxxx</small>
-                                        </div>
-                                        <div class="col-2" style="font-size: 10px;">
-                                            <p>04-Dec-2022</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade p-3" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
-                            <div class="card">
-                                <div class="card-body">
-                                <div class="row">
-                                    <div class="col-10" style="line-height: 4px;">
-                                        <p>Batik Pekalongan</p>
-                                        <small>Order ID xxxxxxxx</small>
-                                    </div>
-                                    <div class="col-2" style="font-size: 10px;">
-                                        <p>04-Dec-2022</p>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade p-3" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
-                            <!-- untuk card status pemesanan diterima -->
-                            <div class="card">
-                                <div class="card-body">
-                                <div class="row">
-                                    <div class="col-10" style="line-height: 4px;">
-                                        <p>Kemeja</p>
-                                        <small>Order ID xxxxxxxx</small>
-                                    </div>
-                                    <div class="col-2" style="font-size: 10px;">
-                                        <p>04-Dec-2022</p>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>                    
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="order-list">
-                    <h5>Order Status</h5>
-                    <nav>
-                        <div class="nav nav-tabs btn-group" id="nav-tab" role="group" aria-label="button group">
-                        <button class="nav-link btn btn-outline-dark" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Received</button>
-                        <button class="nav-link btn btn-outline-dark" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">On Proses</button>
-                        <button class="nav-link btn btn-outline-dark" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Complete</button>
-                        </div>
-                    </nav>
-                    <div class="tab-content" id="nav-tabContent">
-                        <div class="tab-pane fade show active p-3" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
-                            <div class="card">
-                                <div class="card-body">
-                                <div class="row">
-                                    <div class="col-lg-8" style="line-height: 4px;">
-                                        <p>Blouse</p>
-                                        <small>Order ID xxxxxxxx</small>
-                                    </div>
-                                    <div class="col-lg-4" style="font-size: 10px;">
-                                        <p>04-Dec-2022</p>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade p-3" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
-                            <div class="card">
-                                <div class="card-body">
-                                <div class="row">
-                                    <div class="col-lg-8" style="line-height: 4px;">
-                                        <p>Batik Pekalongan</p>
-                                        <small>Order ID xxxxxxxx</small>
-                                    </div>
-                                    <div class="col-lg-4" style="font-size: 10px;">
-                                        <p>04-Dec-2022</p>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade p-3" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-lg-8" style="line-height: 4px;">
-                                            <p>Kemeja</p>
-                                            <small>Order ID xxxxxxxx</small>
-                                        </div>
-                                        <div class="col-lg-4" style="font-size: 10px;">
-                                            <p>04-Dec-2022</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </ul>
         </div>
+        <section class="home-section tab-content" id="v-pills-tabContent">
+            <div class="home-content tab-pane fade show" id="v-pills-dashboard" role="tabpanel" aria-labelledby="v-pills-dashboard-tab" tabindex="0">
+            <p>Dashboard</p>
+            </div>
 
-        <!-- modal edit profile -->
-        <div class="modal fade" id="edit-ProfileModal" tabindex="-1" aria-labelledby="edit-ProfileModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable">
-            <div class="modal-content">
-                    <div class="modal-body">
-                        <h5 class="text-center">Edit Profile</h5>
-                        <hr>
-                        <form>                        
-                            <div class="mb-3">
-                                <label for="photo" class="form-label"><small>Photo Product</small></label>
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input form-control" id="photo-profile">
-                                    <label class="custom-file-label" for="photo-profile"></label>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="name" class="form-label"><small>Name</small></label>
-                                <input type="text" class="form-control" id="name" placeholder="name">
-                            </div>
-                            <div class="mb-3">
-                                <label for="price" class="form-label"><small>Username</small></label>
-                                <input type="text" class="form-control" id="username" placeholder="username">
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label"><small>Email Address</small></label>
-                                <input type="email" class="form-control" id="email" placeholder="name@example.com">
-                            </div>
-                            <div class="mb-3">
-                                <label for="first_address" class="form-label"><small>Address</small></label>
-                                <input type="text" class="form-control" id="first_address" placeholder="address">
-                            </div>
-                            <div class="mb-3">
-                                <label for="second_address" class="form-label"><small>Complete Address</small></label>
-                                <textarea class="form-control" id="second_address" placeholder="complete address" rows="3"></textarea>
-                            </div>
-                        </form>
+            <div class="home-content tab-pane fade show" data-bs-spy="scroll" id="v-pills-product" role="tabpanel" aria-labelledby="v-pills-product-tab" tabindex="0">
+            <div class="container-lg">
+                <div class="row panel-title">
+                    <div class="col-lg-9"><h4>My Product</h4></div>
+                    <div class="col-lg-3 pb-3">
+                    <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#add-productModal">Add Product</button>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- modal Add Product -->
-        <div class="modal fade" id="add-productModal" tabindex="-1" aria-labelledby="add-productModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <h5 class="text-center">Add Product</h5>
                     <hr>
-                    <div class="mb-3">
-                        <label for="photo" class="form-label"><small>Photo Product</small></label>
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input form-control" id="formFile">
-                            <label class="custom-file-label" for="Image"></label>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="nameproduct" class="form-label"><small>Name Product</small></label>
-                        <input type="text" class="form-control" id="nameproduct" placeholder="name product">
-                    </div>
-                    <div class="mb-3">
-                        <label for="price" class="form-label"><small>Price</small></label>
-                        <input type="text" class="form-control" id="price" placeholder="Price">
-                    </div>
-                    <div class="mb-3">
-                        <label for="stock" class="form-label"><small>Stock</small></label>
-                        <input type="number" class="form-control" id="stock" placeholder="Stoc">
-                    </div>
-                    <div class="mb-3">
-                        <label for="size" class="form-label"><small>Size</small></label>
-                        <input type="text" class="form-control" id="size" placeholder="address">
-                    </div>
-                    <div class="mb-3">
-                        <label for="description" class="form-label"><small>Description</small></label>
-                        <textarea class="form-control" id="description" placeholder="Description" rows="3"></textarea>
+                </div>
+                <div class="table-pane">
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Stock</th>
+                        <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row">1</th>
+                        <td>Blouse</td>
+                        <td>100000</td>
+                        <td>10</td>
+                        <td>
+                        <button class="btn btn-warning">Delete</button>
+                        <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#edit-productModal">Edit</button>
+                        </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Blouse</td>
+                            <td>100000</td>
+                            <td>10</td>
+                            <td>
+                            <button class="btn btn-warning">Delete</button>
+                            <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#edit-productModal">Edit</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
                     </div>
                 </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
             </div>
-            </div>
-        </div>
-        <!-- modal add catalogue -->
-        <div class="modal fade" id="add-catalogueModal" tabindex="-1" aria-labelledby="add-catalogueModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <h5 class="text-center">Add My Catalogue</h5>
+
+            <div class="home-content tab-pane fade show" id="v-pills-addimage" role="tabpanel" aria-labelledby="v-pills-addimage-tab" tabindex="0">
+            <div class="container-lg">
+                <div class="row">
+                    <div class="col-lg-9"><h4>Image Product</h4></div>
+                    <div class="col-lg-3 pb-3">
+                    <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#add-imageProductModal">Add Image</button>
+                    </div>
                     <hr>
-                    <div class="container">
+                </div>
+                <div class="table-pane">
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row">1</th>
+                        <td>Kemeja.jpg</td>
+                        <td>
+                        <button class="btn btn-warning">Delete</button>
+                        <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#edit-imageProductModal">Edit</button>
+                        </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                    </div>
+                </div>
+            </div>
+            <div class="home-content tab-pane fade show" id="v-pills-category" role="tabpanel" aria-labelledby="v-pills-category-tab" tabindex="0">
+                <div class="container-lg">
+                <div class="row">
+                    <div class="col-lg-9"><h4>My Category</h4></div>
+                    <div class="col-lg-3 pb-3">
+                    <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#add-categoryModal">Add Category</button>
+                    </div>
+                    <hr>
+                </div>
+                <div class="table-pane">
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row">1</th>
+                        <td>Kemeja</td>
+                        <td>
+                        <button class="btn btn-warning">Delete</button>
+                        <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#edit-categoryModal">Edit</button>
+                        </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- modal edit profile -->
+    <div class="modal fade" id="edit-ProfileModal" tabindex="-1" aria-labelledby="edit-ProfileModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+                <div class="modal-body">
+                    <h5 class="text-center">Edit Profile</h5>
+                    <hr>
+                    <form>                        
                         <div class="mb-3">
-                            <label for="photo" class="form-label"><small>Photo Product</small></label>
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input form-control" id="formFile" onchange="preview()">
-                                <label class="custom-file-label" for="Image"></label>
-                            </div>
+                            <label for="name" class="form-label"><small>Name</small></label>
+                            <input type="text" class="form-control" id="name" placeholder="name">
                         </div>
-                        <img id="frame" src="" class="img-fluid" />
+                        <div class="mb-3">
+                            <label for="price" class="form-label"><small>Username</small></label>
+                            <input type="text" class="form-control" id="username" placeholder="username">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label"><small>Email Address</small></label>
+                            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label"><small>Password</small></label>
+                            <input type="password" class="form-control" id="password" placeholder="enter your password">
+                        </div>
+                        <div class="mb-3">
+                            <label for="first_address" class="form-label"><small>Address</small></label>
+                            <input type="text" class="form-control" id="first_address" placeholder="address">
+                        </div>
+                        <div class="mb-3">
+                            <label for="province_id" class="form-label"><small>Provinsi</small></label>
+                            <select class="form-select" aria-label="Default select example">
+                            <option selected>Provinsi</option>
+                            <option id="province_id" name="province_id" value="11">ACEH</option>
+                            <option id="province_id" name="province_id" value="12">SUMATERA UTARA</option>
+                            <option id="province_id" name="province_id" value="13">SUMATERA BARAT</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="regency_id" class="form-label"><small>Kabupaten/Kota</small></label>
+                            <select class="form-select" aria-label="Default select example">
+                            <option selected>Kabupaten</option>
+                            <option id="regency_id" name="regency_id" value="1101">KABUPATEN SIMEULUE</option>
+                            <option id="regency_id" name="regency_id" value="1102">KABUPATEN ACEH SINGKIL</option>
+                            <option id="regency_id" name="regency_id" value="1103">KABUPATEN ACEH SELATAN</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="zip_code" class="form-label"><small>Kode Pos</small></label>
+                            <input type="text" class="form-control" id="zip_code" placeholder="address">
+                        </div>
+                        <div class="mb-3">
+                        <label for="first_phone" class="form-label"><small>Phone Number</small></label>
+                        <input type="text" class="form-control" id="first_phone" placeholder="address">
                     </div>
+                    </form>
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
+        </div>
+    </div>
+    <!-- modal edit product -->
+    <div class="modal fade" id="edit-productModal" tabindex="-1" aria-labelledby="edit-ProfileModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+                <div class="modal-body">
+                <div class="container-lg">
+                <h5 class="text-center">Edit Product</h5>
+                <hr>
+                <form class="row g-3">
+                    <div class="col-lg-12">
+                    <label for="inputProductName" class="form-label">Product Name</label>
+                    <input type="text" class="form-control" id="inputProductName" required>
+                    </div>
+                    <div class="col-lg-12">
+                    <label for="inputPrice" class="form-label">Price</label>
+                    <input type="number" class="form-control" id="inputPrice">
+                    </div>
+                    <div class="col-lg-12">
+                    <label for="inputStock" class="form-label">Stock</label>
+                    <input type="number" class="form-control" id="inputStock">
+                    </div>
+                    <div class="col-12">
+                    <label for="inputDescription" class="form-label">Description</label>
+                    <input type="textarea" class="form-control" id="inputDescription">
+                    </div>
+                    <div class="col-lg-12">
+                        <label for="inputCategory">Select Category</label>
+                        <input type="text" class="form-control" id="inputCategory" placeholder="Select category e.g shirt, pants, etc." required>
+                    </div>
+                    <div class="col-lg-12">
+                        <label for="inputSize">Select Size</label>
+                        <select class="form-control" id="inputSize">
+                        <option>Select Size</option>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                        <option>XXL</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-12">
+                        <label for="inputColor">Color</label>
+                        <input type="text" class="form-control" id="inputColor" placeholder="Enter color">
+                    </div>
+                    <div class="col-lg-12">
+                        <label for="inputWeight">Weight</label>
+                        <input type="number" class="form-control" id="inputWeight" placeholder="Enter weight">
+                    </div>
+                    
+                    <div class="col-lg-12">
+                        <button type="submit" class="btn btn-primary mt-3" id="btn-create-product">Create</button>
+                        <button type="submit" class="btn btn-danger mt-3" id="btn-delete-product">Delete</button>
+                    </div>
+                </form>
+            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal Add product -->
+    <div class="modal fade" id="add-productModal" tabindex="-1" aria-labelledby="add-ProfileModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+                <div class="modal-body">
+                <div class="container-lg">
+                <h5 class="text-center">Add Product</h5>
+                <hr>
+                <form class="row g-3">
+                    <div class="col-lg-12">
+                    <label for="inputProductName" class="form-label">Product Name</label>
+                    <input type="text" class="form-control" id="inputProductName" required>
+                    </div>
+                    <div class="col-lg-12">
+                    <label for="inputPrice" class="form-label">Price</label>
+                    <input type="number" class="form-control" id="inputPrice">
+                    </div>
+                    <div class="col-lg-12">
+                    <label for="inputStock" class="form-label">Stock</label>
+                    <input type="number" class="form-control" id="inputStock">
+                    </div>
+                    <div class="col-12">
+                    <label for="inputDescription" class="form-label">Description</label>
+                    <input type="textarea" class="form-control" id="inputDescription">
+                    </div>
+                    <div class="col-lg-12">
+                        <label for="inputCategory">Select Category</label>
+                        <input type="text" class="form-control" id="inputCategory" placeholder="Select category e.g shirt, pants, etc." required>
+                    </div>
+                    <div class="col-lg-12">
+                        <label for="inputSize">Select Size</label>
+                        <select class="form-control" id="inputSize">
+                        <option>Select Size</option>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                        <option>XXL</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-12">
+                        <label for="inputColor">Color</label>
+                        <input type="text" class="form-control" id="inputColor" placeholder="Enter color">
+                    </div>
+                    <div class="col-lg-12">
+                        <label for="inputWeight">Weight</label>
+                        <input type="number" class="form-control" id="inputWeight" placeholder="Enter weight">
+                    </div>
+                    
+                    <div class="col-lg-12">
+                        <button type="submit" class="btn btn-primary mt-3" id="btn-create-product">Create</button>
+                        <button type="submit" class="btn btn-danger mt-3" id="btn-delete-product">Delete</button>
+                    </div>
+                </form>
+            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal Add category -->
+    <div class="modal fade" id="add-categoryModal" tabindex="-1" aria-labelledby="add-ProfileModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+                <div class="modal-body">
+                <div class="container-lg">
+                <h5 class="text-center">Add Category</h5>
+                <hr>
+                <form class="row g-3">
+                    <div class="col-lg-12">
+                    <label for="inputcategoryName" class="form-label">Category Name</label>
+                    <input type="text" class="form-control" id="inputcategoryName" required>
+                    </div>
+                </form>
+            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal Edit category -->
+    <div class="modal fade" id="edit-categoryModal" tabindex="-1" aria-labelledby="add-ProfileModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+                <div class="modal-body">
+                <div class="container-lg">
+                <h5 class="text-center">Edit Category</h5>
+                <hr>
+                <form class="row g-3">
+                    <div class="col-lg-12">
+                    <label for="inputcategoryName" class="form-label">Category Name</label>
+                    <input type="text" class="form-control" id="inputcategoryName" required>
+                    </div>
+                </form>
+            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal add image -->
+    <div class="modal fade" id="add-imageProductModal" tabindex="-1" aria-labelledby="add-ProfileModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+                <div class="modal-body">
+                <div class="container-lg">
+                <h5 class="text-center">Add Image</h5>
+                <hr>
+                <form class="row g-3">
+                <div class="mb-3">
+                    <label for="photo-product" class="form-label"><small>Photo Product</small></label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input form-control" id="photo-product">
+                        <label class="custom-file-label" for="photo-product"></label>
+                    </div>
+                </div>
+                </form>
+            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal Edit category -->
+    <div class="modal fade" id="edit-imageProductModal" tabindex="-1" aria-labelledby="edit-imageProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+                <div class="modal-body">
+                <div class="container-lg">
+                <h5 class="text-center">Edit Image</h5>
+                <hr>
+                <form class="row g-3">
+                <div class="mb-3">
+                    <label for="photo-product" class="form-label"><small>Photo Product</small></label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input form-control" id="photo-product">
+                        <label class="custom-file-label" for="photo-product"></label>
+                    </div>
+                </div>
+                </form>
+            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
             </div>
         </div>
     </div>

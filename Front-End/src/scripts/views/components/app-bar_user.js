@@ -41,8 +41,8 @@ class AppBarUser extends HTMLElement {
                       <a class="nav-link" href="#/user-about-us">About Us</a>
                     </li>
                   </ul>
-                  <li class="login"><a href="#/user-product-cart" class="text-white"><i class="bi bi-bag-fill"></i></a></li>
-                  <li class="register"><a href="#/user-profile" class="text-white"><i class="bi bi-person-circle"></i></a></li>
+                  <li class="btnLeft"><a href="#/user-product-cart" class="text-white"><i class="bi bi-bag-fill"></i></a></li>
+                  <li class="btnRight"><a href="#/user-profile" class="text-white"><i class="bi bi-person-circle"></i></a></li>
                 </div>
               </div>
         </nav>

@@ -29,8 +29,7 @@ class AppBarTailor extends HTMLElement {
                       <a class="nav-link" href="#/tailor-about-us">About Us</a>
                     </li>
                   </ul>
-                  <li class="login"><a href="#/product-cart" class="text-white"><i class="bi bi-bag-fill"></i></a></li>
-                  <li class="register"><a href="#/tailor-profile" class="text-white"><i class="bi bi-person-circle"></i></a></li>
+                  <li class="btnRight-tailor"><a href="#/tailor-profile" class="text-white"><i class="bi bi-person-circle"></i></a></li>
                 </div>
               </div>
         </nav>

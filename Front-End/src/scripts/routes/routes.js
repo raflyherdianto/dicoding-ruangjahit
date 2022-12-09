@@ -5,6 +5,8 @@ import Tailor from '../views/pages/before-login/tailor';
 import AboutUs from '../views/pages/before-login/about-us';
 import SignIn from '../views/pages/before-login/sign-in';
 import SignUp from '../views/pages/before-login/sign-up';
+import SignInTailor from '../views/pages/before-login/sign-in-tailor';
+import SignUpTailor from '../views/pages/before-login/sign-up-tailor';
 import DetailProduct from '../views/pages/before-login/detail-product';
 import DetailTailor from '../views/pages/before-login/detail-tailor';
 
@@ -35,6 +37,8 @@ const routes = {
   '/about-us': AboutUs,
   '/sign-in': SignIn,
   '/sign-up': SignUp,
+  '/sign-in-tailor': SignInTailor,
+  '/sign-up-tailor': SignUpTailor,
   '/detail-product/:id': DetailProduct,
   '/detail-tailor': DetailTailor,
 
