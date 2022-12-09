@@ -1,3 +1,5 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable implicit-arrow-linebreak */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 /* eslint-disable quote-props */
@@ -125,3 +127,29 @@ const LogoutTailor = () => {
       }
     }));
 };
+
+fetch('https://backend-ruangjahit-production.up.railway.app/api/provinces').then((data) =>
+// console.log(data);
+  data.json()).then((ObjectData) => {
+  console.log(ObjectData[0].id);
+  let provincesData = '';
+  ObjectData.map((values) => {
+    provincesData += `
+                <option id="province_id_tailor" value="${values.id}">${values.name}</option>
+                `;
+  });
+  document.getElementById('data-provinsi').innerHTML = provincesData;
+});
+
+fetch('https://backend-ruangjahit-production.up.railway.app/api/regencies').then((data) =>
+// console.log(data);
+  data.json()).then((ObjectData) => {
+  console.log(ObjectData[0].id);
+  let regenciesData = '';
+  ObjectData.map((values) => {
+    regenciesData += `
+                <option id="regencies_id_tailor" value="${values.id}">${values.name}</option>
+                `;
+  });
+  document.getElementById('data-kabupaten').innerHTML = regenciesData;
+});
