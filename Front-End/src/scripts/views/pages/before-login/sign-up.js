@@ -21,19 +21,10 @@ const SignUp = {
                 <div class="input-field">
                     <input type="number" id="first_phone" name="first_phone" placeholder="No. HP" required>
                 </div>
-  
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Provinsi</option>
-                    <option id="province_id" name="province_id" value="11">ACEH</option>
-                    <option id="province_id" name="province_id" value="12">SUMATERA UTARA</option>
-                    <option id="province_id" name="province_id" value="13">SUMATERA BARAT</option>
+                <select class="form-select" id="data-provinsi" aria-label="Default select example">
                 </select>
 
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Kabupaten</option>
-                    <option id="regency_id" name="regency_id" value="1101">KABUPATEN SIMEULUE</option>
-                    <option id="regency_id" name="regency_id" value="1102">KABUPATEN ACEH SINGKIL</option>
-                    <option id="regency_id" name="regency_id" value="1103">KABUPATEN ACEH SELATAN</option>
+                <select class="form-select" id="data-kabupaten" aria-label="Default select example">
                 </select>
 
                 <div class="input-field">

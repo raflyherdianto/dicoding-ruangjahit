@@ -22,18 +22,10 @@ const SignUpTailor = {
                     <input type="number" id="first_phone_tailor" name="first_phone_tailor" placeholder="No. HP" required>
                 </div>
   
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Provinsi</option>
-                    <option id="province_id_tailor" name="province_id_tailor" value="11">ACEH</option>
-                    <option id="province_id_tailor" name="province_id_tailor" value="12">SUMATERA UTARA</option>
-                    <option id="province_id_tailor" name="province_id_tailor" value="13">SUMATERA BARAT</option>
+                <select class="form-select" id="data-provinsi" aria-label="Default select example">
                 </select>
 
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Kabupaten</option>
-                    <option id="regency_id_tailor" name="regency_id_tailor" value="1101">KABUPATEN SIMEULUE</option>
-                    <option id="regency_id_tailor" name="regency_id_tailor" value="1102">KABUPATEN ACEH SINGKIL</option>
-                    <option id="regency_id_tailor" name="regency_id_tailor" value="1103">KABUPATEN ACEH SELATAN</option>
+                <select class="form-select" id="data-kabupaten" aria-label="Default select example">
                 </select>
 
                 <div class="input-field">
