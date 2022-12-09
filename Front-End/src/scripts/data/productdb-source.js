@@ -9,7 +9,7 @@ import API_ENDPOINT from '../globals/api-endpoint';
 
 class ProductDataSource {
   static async getAllProduct() {
-    const response = await fetch(API_ENDPOINT.LIST);
+    const response = await fetch(API_ENDPOINT.PRODUCTS);
     const responseJson = await response.json();
     return responseJson.data;
   }
