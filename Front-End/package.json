@@ -35,9 +35,10 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "idb": "^7.1.0",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.2",
-    "regenerator-runtime": "^0.13.10"
+    "idb": "^7.1.0",
+    "regenerator-runtime": "^0.13.10",
+    "sweetalert2": "^11.6.15"
   }
 }

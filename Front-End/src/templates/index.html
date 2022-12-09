@@ -7,11 +7,11 @@
     memberikan ruang untuk jasa penjahit agar dapat lebih dikenal oleh banyak orang.">
     <meta name="theme-color" content="#FF8A00"/>   
     <meta name="keywords" content="jasa jahit, produk lokal">
-
     <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
     <link rel="manifest" href="./app.webmanifest">
     <link rel="icon" href="./ruangjahit.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>RuangJahit</title>
 </head>
 <body>
@@ -46,18 +46,34 @@
                     return response.json().then(function(data) {
                         console.log(response.status);
                         if (response.status == 200) {
+                            swal({
+                                title: "Login Success!",
+                                text: "",
+                                icon: "success",
+                                button: "OK",
+                            })
                             // alert('Login Success, Selamat Datang! ' + username.value);
                             window.location = "#/user-home";
                             username.value = "";
                             password.value = "";
                             localStorage.setItem('token', data.data.token);
                         } else {
-                            alert('Login Gagal');
+                            swal({
+                                title: "Login Failed!",
+                                text: "Username atau Password Salah!",
+                                icon: "error",
+                                button: "OK",
+                            })
                         }
                     });
                 })
                 .catch(function(error) {
-                    alert('Error, Terjadi kesalahan ' + error);
+                    swal({
+                        title: "Login Failed!",
+                        text: "Username atau Password Salah!",
+                        icon: "error",
+                        button: "OK",
+                    })
                 });
             }
         // Regis
@@ -97,6 +113,12 @@
         }).then((response) => response.json().then((data) => {
             console.log(response.status);
             if (response.status == 200) {
+            swal({
+                title: "Registrasi Berhasil!",
+                text: "",
+                icon: "success",
+                button: "OK",
+            })
             // alert('Data Berhasil Disimpan!');
             window.location = "#/sign-in";
             name.value = '';
@@ -111,10 +133,20 @@
             first_phone.value = '';
             } else {
             console.log(data);
-            alert(`Error, terjadi kesalahan ${data.message}`);
+            swal({
+                title: "Registrasi Gagal!",
+                text: "Terdapat data yang tidak valid!",
+                icon: "error",
+                button: "OK",
+            })
             }
         })).catch((error) => {
-            alert(`Error, terjadi kesalahan ${error}`);
+            swal({
+                title: "Registrasi Gagal!",
+                text: "Terdapat data yang tidak valid!",
+                icon: "error",
+                button: "OK",
+            })
         });
         }
     
@@ -137,15 +169,24 @@
             .then((response) => response.json().then((data) => {
                 console.log(response.status);
                 if (response.status == 200) {
-                    alert('Logout Success');
-                    window.location = "/sign-in";
+                    swal({
+                        title: "Logout Success!",
+                        text: "",
+                        icon: "success",
+                        button: "OK",
+                    })
+                    window.location = "#/sign-in";
                     localStorage.removeItem('token');
                 } else {
-                    alert('Logout Gagal');
+                    swal({
+                        title: "Logout Failed!",
+                        text: "Terjadi Kesalahan!",
+                        icon: "error",
+                        button: "OK",
+                    })
                 }
             }))
         };
-    
         </script>
 </body>
 </html>
