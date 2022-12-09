@@ -6,8 +6,8 @@
 /* eslint-disable no-shadow */
 // Login
 function LoginTailor() {
-  const username = document.getElementById('username');
-  const password = document.getElementById('password');
+  const username = document.getElementById('username-tailor');
+  const password = document.getElementById('password-tailor');
 
   const data = JSON.stringify({
     username: username.value,
@@ -43,16 +43,16 @@ function LoginTailor() {
 
 // Regis
 function RegistrationTailor() {
-  const name = document.getElementById('name');
-  const username = document.getElementById('username');
-  const first_address = document.getElementById('first_address');
-  const first_phone = document.getElementById('first_phone');
-  const province_id = document.getElementById('province_id');
-  const regency_id = document.getElementById('regency_id');
-  const zip_code = document.getElementById('zip_code');
-  const email = document.getElementById('email');
-  const password = document.getElementById('password');
-  const password_confirmation = document.getElementById('password_confirmation');
+  const name = document.getElementById('name_tailor');
+  const username = document.getElementById('username_tailor');
+  const first_address = document.getElementById('first_address_tailor');
+  const first_phone = document.getElementById('first_phone_tailor');
+  const province_id = document.getElementById('province_id_tailor');
+  const regency_id = document.getElementById('regency_id_tailor');
+  const zip_code = document.getElementById('zip_code_tailor');
+  const email = document.getElementById('email_tailor');
+  const password = document.getElementById('password_tailor');
+  const password_confirmation = document.getElementById('password_confirmation_tailor');
 
   const data = JSON.stringify({
     name: name.value,
