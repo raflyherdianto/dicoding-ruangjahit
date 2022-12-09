@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 import TailorDataSource from '../../../data/tailordb-source';
 import { createTailorItemTemplate } from '../../templates/template-creator';
 import '../../components/search-bar';
@@ -165,12 +166,30 @@ const Tailor = {
   },
 
   async afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
+    const searchElement = document.querySelector('search-bar');
     const tailors = await TailorDataSource.getAllTailor();
     const tailorContainer = document.querySelector('#tailors');
     tailors.forEach((tailor) => {
       tailorContainer.innerHTML += createTailorItemTemplate(tailor);
     });
+
+    const onButtonSearchClicked = async () => {
+      const searchValue = searchElement.value;
+      const filterTailor = tailors.filter((data) => data.first_address.toLowerCase().includes(searchValue));
+
+      if (filterTailor.length > 0) {
+        tailorContainer.innerHTML = '';
+        filterTailor.forEach((user) => {
+          tailorContainer.innerHTML += createTailorItemTemplate(user);
+        });
+      } else {
+        Swal.fire({
+          icon: 'warning',
+          text: 'There are no tailors that match',
+        });
+      }
+    };
+    searchElement.clickEvent = onButtonSearchClicked;
   },
 };
 
