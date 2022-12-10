@@ -18,9 +18,7 @@ class CategoryProductsController extends Controller
      */
     public function index()
     {
-        return CategoryProductsResource::collection(
-            CategoryProducts::all()
-        );
+        return new CategoryProductsResource(CategoryProducts::all());
     }
 
     /**
