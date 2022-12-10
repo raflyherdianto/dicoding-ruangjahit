@@ -8,6 +8,8 @@ const API_ENDPOINT = {
   LIST: `${CONFIG.API_BASE_URL}/list`,
   DETAIL: (id) => `${CONFIG.API_BASE_URL}/detail/${id}`,
   ADD_REVIEW: `${CONFIG.API_BASE_URL}/review`,
+  PROVINCE: `${CONFIG.API_BASE_URL}/provinces`,
+  REGENCY: `${CONFIG.API_BASE_URL}/regencies`,
 };
 
 export default API_ENDPOINT;

@@ -1,3 +1,10 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-multiple-empty-lines */
+import Swal from 'sweetalert2';
+import IndoRegionDataSource from '../../../data/indoregiondb-source';
+import { createProvinceItemTemplate, createRegencyItemTemplate } from '../../templates/template-creator';
+
+
 const SignUp = {
   async render() {
     return `
@@ -21,10 +28,13 @@ const SignUp = {
                 <div class="input-field">
                     <input type="number" id="first_phone" name="first_phone" placeholder="No. HP" required>
                 </div>
-                <select class="form-select" id="data-provinsi" aria-label="Default select example">
+                <select class="form-select" id="province_id" aria-label="Default select example">
+                <option selected>Pilih Provinsi</option>
                 </select>
-
-                <select class="form-select" id="data-kabupaten" aria-label="Default select example">
+            
+                <select class="form-select" id="regency_id" aria-label="Default select example">
+                <option selected>Pilih Kota</option>
+                
                 </select>
 
                 <div class="input-field">
@@ -66,6 +76,16 @@ const SignUp = {
   async afterRender() {
     document.querySelector('app-bar').style.display = 'none';
     document.querySelector('footer-bar').style.display = 'none';
+    const provinces = await IndoRegionDataSource.getAllProvince();
+    const regencies = await IndoRegionDataSource.getAllRegencies();
+    const provinceContainer = document.querySelector('#province_id');
+    const regencyContainer = document.querySelector('#regency_id');
+    provinces.forEach((province) => {
+      provinceContainer.innerHTML += createProvinceItemTemplate(province);
+    });
+    regencies.forEach((regency) => {
+      regencyContainer.innerHTML += createRegencyItemTemplate(regency);
+    });
   },
 
 };

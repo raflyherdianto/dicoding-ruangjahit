@@ -167,10 +167,21 @@ const createTailorItemTemplate = (tailor) => `
         </div>
     </div>
 `;
+
+const createProvinceItemTemplate = (province) => `
+<option value="${province.id}">${province.name}</option>
+`;
+
+const createRegencyItemTemplate = (regency) => `
+<option value="${regency.id}">${regency.name}</option>
+`;
+
 export {
   createProductItemTemplate,
   createProductDetailTemplate,
   createLikeProductButtonTemplate,
   createUnlikeProductButtonTemplate,
   createTailorItemTemplate,
+  createProvinceItemTemplate,
+  createRegencyItemTemplate,
 };
