@@ -21,7 +21,7 @@ function LoginTailor() {
   fetch(url, {
     method: 'POST',
     headers: {
-      Accept: 'application/json',
+      'Accept': 'application/json',
       'Content-type': 'application/json',
     },
     body: data,

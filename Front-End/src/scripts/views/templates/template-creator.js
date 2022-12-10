@@ -176,6 +176,23 @@ const createRegencyItemTemplate = (regency) => `
 <option value="${regency.id}">${regency.name}</option>
 `;
 
+const createLoginTailorProductTemplate = (product) => `
+                        <td scope="col">${product.id}</td>
+                        <td scope="col">${product.name}</td>
+                        <td scope="col">${product.category_product.name}</td>
+                        <td scope="col">${product.price}</td>
+                        <td scope="col">${product.description}</td>
+                        <td scope="col">${product.rating}</td>
+                        <td scope="col">${product.stock}</td>
+                        <td scope="col">${product.color}</td>
+                        <td scope="col">${product.weight}</td>
+                        <td scope="col">${product.size}</td>
+                        <td scope="col">
+                        <button class="btn btn-warning">Delete</button>
+                        <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#edit-productModal">Edit</button>
+                        </td>
+`;
+
 export {
   createProductItemTemplate,
   createProductDetailTemplate,
@@ -184,4 +201,5 @@ export {
   createTailorItemTemplate,
   createProvinceItemTemplate,
   createRegencyItemTemplate,
+  createLoginTailorProductTemplate,
 };

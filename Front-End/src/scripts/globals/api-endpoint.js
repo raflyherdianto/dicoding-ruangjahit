@@ -10,6 +10,7 @@ const API_ENDPOINT = {
   ADD_REVIEW: `${CONFIG.API_BASE_URL}/review`,
   PROVINCE: `${CONFIG.API_BASE_URL}/provinces`,
   REGENCY: `${CONFIG.API_BASE_URL}/regencies`,
+  TAILOR_LOGIN_PRODUCT: `${CONFIG.API_BASE_URL}/admin/products`,
 };
 
 export default API_ENDPOINT;

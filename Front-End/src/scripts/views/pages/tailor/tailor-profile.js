@@ -1,4 +1,9 @@
+/* eslint-disable import/named */
 /* eslint-disable no-unused-vars */
+import Swal from 'sweetalert2';
+import TailorDataSource from '../../../data/tailordb-source';
+import { createLoginTailorProductTemplate } from '../../templates/template-creator';
+
 const TailorProfile = {
   async render() {
     return `
@@ -79,7 +84,6 @@ const TailorProfile = {
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
-                        <th scope="col">User</th>
                         <th scope="col">Category</th>
                         <th scope="col">Price</th>
                         <th scope="col">Description</th>
@@ -88,31 +92,12 @@ const TailorProfile = {
                         <th scope="col">Color</th>
                         <th scope="col">Weight</th>
                         <th scope="col">Size</th>
-                        <th scope="col">Created_at</th>
-                        <th scope="col">Updated-at</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
-                <tbody class="align-middle">
-                        <td scope="col">#</td>
-                        <td scope="col">Name</td>
-                        <td scope="col">User</td>
-                        <td scope="col">Category</td>
-                        <td scope="col">Price</td>
-                        <td scope="col">Description</td>
-                        <td scope="col">Rating</td>
-                        <td scope="col">Stock</td>
-                        <td scope="col">Color</td>
-                        <td scope="col">Weight</td>
-                        <td scope="col">Size</td>
-                        <td scope="col">Created_at</td>
-                        <td scope="col">Updated-at</td>
-                        <td scope="col">
-                        <button class="btn btn-warning">Delete</button>
-                        <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#edit-productModal">Edit</button>
-                        </td>
+                <tbody class="align-middle" id="product">
+                        
                 </tbody>
-                    
                     </table>
                     </div>
                 </div>
@@ -465,6 +450,11 @@ const TailorProfile = {
 
   async afterRender() {
     // Fungsi ini akan dipanggil setelah render()
+    const products = await TailorDataSource.getTailorLoginProduct();
+    const productContainer = document.querySelector('#product');
+    products.forEach((product) => {
+      productContainer.innerHTML += createLoginTailorProductTemplate(product);
+    });
   },
 
 };
