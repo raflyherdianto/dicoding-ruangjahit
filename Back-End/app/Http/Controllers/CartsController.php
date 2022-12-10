@@ -170,12 +170,12 @@ class CartsController extends Controller
                 'message' => 'You are not authorized to make request',
             ], 403);
         }
-        $carts = Carts::where('user_id', Auth::user()->id)->orWhere('id', $cart)->get();
+        $carts = Carts::where('user_id', Auth::user()->id)->where('id', $cart)->get();
         $total_price = 0;
         foreach ($carts as $cart) {
             $total_price += $cart->product->price * $cart->quantity;
         }
-        $transaction = Transactions::where('user_id', Auth::user()->id)->orWhere('status', 'CARTS')->first();
+        $transaction = Transactions::where('user_id', Auth::user()->id)->where('status', 'CARTS')->first();
         $transaction->status = 'PENDING';
         $transaction->save();
         $cart->delete();
