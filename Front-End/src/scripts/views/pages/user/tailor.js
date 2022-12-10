@@ -25,40 +25,6 @@ const TailorUser = {
 
           <aside>
             <h5>Filter Search</h5>
-            <div class="category-filter">
-              <p>Category</p>
-              <div class="category-filter-list">
-                <div class="mukenah-filter">
-                  <input type="checkbox" name="category" value="mukenah" id="check-mukenah">
-                  <label for="check-mukenah">Mukenah</label>
-                </div>
-                <div class="gorden-filter">
-                  <input type="checkbox" name="category" value="gorden" id="check-gorden">
-                  <label for="check-gorden">Gorden</label>
-                </div>
-                <div class="sprei-filter">
-                  <input type="checkbox" name="category" value="sprei" id="check-sprei">
-                  <label for="check-sprei">Sprei</label>
-                </div>
-                <div class="kemeja-filter">
-                  <input type="checkbox" name="category" value="kemeja" id="check-kemeja">
-                  <label for="check-kemeja">Kemeja</label>
-                </div>
-                <div class="gamis-filter">
-                  <input type="checkbox" name="category" value="gamis" id="check-gamis">
-                  <label for="check-gamis">Gamis</label>
-                </div>
-                <div class="celana-filter">
-                  <input type="checkbox" name="category" value="celana" id="check-celana">
-                  <label for="check-celana">Celana</label>
-                </div>
-                <div class="rok-filter">
-                  <input type="checkbox" name="category" value="rok" id="check-rok">
-                  <label for="check-rok">Rok</label>
-                </div>
-              </div>
-            </div>
-            
             <div class="rate-filter">
               <p>Rating</p>
               <center class="mb-2">

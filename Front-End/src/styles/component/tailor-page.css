@@ -230,25 +230,28 @@ aside input[type="submit"] {
 } 
 
 @media screen and (max-width: 768px) {    
-    .tailor {
-        grid-template-columns: repeat(3, 1fr);
+    .tailor .row {
+        grid-template-columns: repeat(3, auto);
+        gap: 20px;
     }
 } 
 
 @media screen and (max-width: 600px) { 
     .container-tailor {
-        padding: 50px 10px 0px;
+        padding: 20px;
     }
 
-    .tailor {
-        grid-template-columns: repeat(2, 1fr);
+    .tailor .row {
+        grid-template-columns: repeat(2, auto);
         gap: 10px;
-        row-gap: 30px;
+        margin: 0px;
     }
 } 
 
 @media screen and (max-width: 425px) {  
-    .tailor {
+    .tailor .row {
         grid-template-columns: auto;
+        margin: 0px 35px;
+        margin-left: 45px;
     }
 }

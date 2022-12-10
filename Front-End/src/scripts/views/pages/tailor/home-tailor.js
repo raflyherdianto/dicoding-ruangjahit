@@ -26,7 +26,6 @@ const HomeTailor = {
                     <p><span>RuangJahit</span> adalah website yang menghubungkan Pelanggan dan Penyedia Jasa Jahit baik individu maupun UMKM agar dapat memperluas potensi Penyedia Jasa Jahit untuk dapat dikenal banyak orang dan memudahkan Pelanggan dalam menemukan informasi Penyedia Jasa Jahit terbaik.</p>
 
                     <p>Kami hadir untuk membantu Anda dalam menyediakan informasi Penyedia Layanan Jahit berdasarkan rating atau lokasi.</p>
-                    <p>Bergabunglah bersama kami untuk membantu lebih banyak pelanggan dalam menemukan Layanan Jahit terbaik.</p>
                 </div>
             </div>
         </div>
