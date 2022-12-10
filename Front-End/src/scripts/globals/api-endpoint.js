@@ -12,6 +12,7 @@ const API_ENDPOINT = {
   REGENCY: `${CONFIG.API_BASE_URL}/regencies`,
   TAILOR_LOGIN_PRODUCT: `${CONFIG.API_BASE_URL}/admin/products`,
   CATEGORY: `${CONFIG.API_BASE_URL}/categories`,
+  USER: `${CONFIG.API_BASE_URL}/user`,
 };
 
 export default API_ENDPOINT;

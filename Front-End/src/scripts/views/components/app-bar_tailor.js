@@ -29,7 +29,7 @@ class AppBarTailor extends HTMLElement {
                       <a class="nav-link" href="#/tailor-about-us">About Us</a>
                     </li>
                   </ul>
-                  <li class="btnRight-tailor" onclick="GetTailorProfile()"><a href="#/tailor-profile" class="text-white"><i class="bi bi-person-circle"></i></a></li>
+                  <li class="btnRight-tailor"><a href="#/tailor-profile" class="text-white"><i class="bi bi-person-circle"></i></a></li>
                 </div>
               </div>
         </nav>

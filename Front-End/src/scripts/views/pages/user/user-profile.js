@@ -1,4 +1,7 @@
 /* eslint-disable no-unused-vars */
+import UserDataSource from '../../../data/userdb-source';
+import { createUserDetailTemplate } from '../../templates/template-creator';
+
 const UserProfile = {
   async render() {
     return `
@@ -160,7 +163,9 @@ const UserProfile = {
   },
 
   async afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
+    const user = await UserDataSource.getUserData();
+    const userContainer = document.querySelector('#user_name');
+    userContainer.innerHTML += createUserDetailTemplate(user);
   },
 
 };

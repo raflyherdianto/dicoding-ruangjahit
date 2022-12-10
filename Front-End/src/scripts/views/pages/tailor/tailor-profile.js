@@ -6,7 +6,8 @@
 import Swal from 'sweetalert2';
 import CategoryDataSource from '../../../data/categorydb-source';
 import TailorDataSource from '../../../data/tailordb-source';
-import {createLoginTailorProductTemplate, createCategoryTailorTemplate} from '../../templates/template-creator';
+import {createLoginTailorProductTemplate, createCategoryTailorTemplate, createTailorDetailTemplate} from '../../templates/template-creator';
+import UserDataSource from '../../../data/userdb-source';
 
 const TailorProfile = {
   async render() {
@@ -556,6 +557,10 @@ const TailorProfile = {
     categories.forEach((category_product) => {
       categoryContainer.innerHTML += createCategoryTailorTemplate(category_product);
     });
+
+    const user = await UserDataSource.getUserData();
+    const userContainer = document.querySelector('#user_name');
+    userContainer.innerHTML += createTailorDetailTemplate(user);
   },
 
 };
