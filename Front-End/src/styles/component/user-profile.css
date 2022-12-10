@@ -134,6 +134,50 @@
     display: none;
 }
 
+.user-profile .my-transaction h4, .user-profile .my-appointment h4{
+   text-align: center;
+}
+
+.user-profile .my-transaction .card{
+   cursor: pointer;
+}
+
+.user-profile .my-transaction h5{
+   font-weight: 900;
+   font-size: 30px;
+}
+
+.user-profile .my-transaction .status-transaksi{
+   text-align: center;
+   font-weight: 900;
+   padding: 5px;
+   width: 100px;
+   background-color: #ff880050;
+   border-radius: 10px;
+}
+.modal .modal-body .status-transaksi{
+   text-align: center;
+   font-weight: 900;
+   padding: 5px;
+   width: 100px;
+   background-color: #ff880050;
+   border-radius: 10px;
+}
+
+
+.user-profile .my-transaction .btn-detailTransaksi{
+   color: #FF8A00;
+}
+
+.user-profile .my-appointment .status-appointment{
+   text-align: center;
+   font-weight: 900;
+   padding: 5px;
+   width: 100px;
+   background-color: #ff880050;
+   border-radius: 10px;
+}
+
 /* responsive */
 
 @media screen and (width: 768px) {
