@@ -38,37 +38,37 @@ const HomeLogin = {
       <div class="row">
         <div class="col">
           <div class="card">
-            <img src="./tailors/tailor1.jpg" class="card-img-top" alt="./tailors/1.png">
+            <img src="./artikel/artikel01.jpg" class="card-img-top" alt="">
             <div class="card-body">
-              <h5 class="card-title">Article Title</h5>
-              <a href="#" class="btn-read-article">Read more</a>
+              <h5 class="card-title">7 Alasan Kenapa Usaha Menjahit Baju Menguntungkan</h5>
+              <a href="https://www.cermati.com/artikel/7-alasan-kenapa-usaha-menjahit-baju-menguntungkan" class="btn-read-article">Read more</a>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card" >
-            <img src="./tailors/tailor1.jpg" class="card-img-top" alt="./tailors/1.png">
+            <img src="./artikel/artikel02.jpg" class="card-img-top" alt="">
             <div class="card-body">
-              <h5 class="card-title">Article Title</h5>
-              <a href="#" class="btn-read-article">Read more</a>
+              <h5 class="card-title">Peluang Usaha Jahit Pakaian dan Tips Sukses Memulainya</h5>
+              <a href="https://smkperintis.sch.id/2020/11/19/peluang-usaha-jahit-pakaian-dan-tips-sukses-memulainya/" class="btn-read-article">Read more</a>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card">
-            <img src="./tailors/tailor1.jpg" class="card-img-top" alt="./tailors/1.png">
+            <img src="./artikel/artikel03.jpg" class="card-img-top" alt="">
             <div class="card-body">
-              <h5 class="card-title">Article Title</h5>
-              <a href="#" class="btn-read-article">Read more</a>
+              <h5 class="card-title">Cerita Dibalik Seorang Penjahit Milenial</h5>
+              <a href="https://baranewsaceh.co/cerita-dibalik-seorang-penjahit-milenial/" class="btn-read-article">Read more</a>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card">
-            <img src="./tailors/tailor1.jpg" class="card-img-top" alt="./tailors/1.png">
+            <img src="./artikel/artikel04.jpg" class="card-img-top" alt="">
             <div class="card-body">
-              <h5 class="card-title">Article Title</h5>
-              <a href="#" class="btn-read-article">Read more</a>
+              <h5 class="card-title">Tips Memulai Usaha Jahit Pakaian</h5>
+              <a href="https://blog.indodana.id/usaha-jahit/" class="btn-read-article">Read more</a>
             </div>
           </div>
         </div>
