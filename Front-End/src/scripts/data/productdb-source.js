@@ -13,6 +13,12 @@ class ProductDataSource {
     const responseJson = await response.json();
     return responseJson.data;
   }
+
+  static async getDetailProduct(id) {
+    const response = await fetch(API_ENDPOINT.PRODUCTS_DETAIL(id));
+    const responseJson = await response.json();
+    return responseJson.data;
+  }
 }
 
 export default ProductDataSource;

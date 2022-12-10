@@ -32,9 +32,10 @@ const DetailProduct = {
   async afterRender() {
     // document.querySelector('hero-element').style.display = 'none';
     const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const product = await ProductDataSource.getProductDetail(url.id);
+    
+    const product = await ProductDataSource.getDetailProduct(url.id);
     const productContainer = document.querySelector('#detail-products');
-    productContainer.innerHTML = createProductDetailTemplate(product);
+    productContainer.innerHTML += createProductDetailTemplate(product);
 
     LikeButtonPresenter.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),

@@ -35,17 +35,13 @@ const createProductDetailTemplate = (product) => `
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="${CONFIG.LARGE_BASE_IMAGE_URL + product.pictureId}" class="d-block w-100 pb-1" alt="...">
+                        <img src="https://picsum.photos/100" class="d-block w-100 pb-1" alt="...">
                     </div>
-                    <div class="carousel-item">
-                        <img src="${CONFIG.LARGE_BASE_IMAGE_URL + product.pictureId}" class="d-block w-100 pb-1" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="${CONFIG.LARGE_BASE_IMAGE_URL + product.pictureId}" class="d-block w-100 pb-1" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="${CONFIG.LARGE_BASE_IMAGE_URL + product.pictureId}" class="d-block w-100 pb-1" alt="...">
-                    </div>
+                    ${product.image_products.map((image_products) => `
+                        <div class="carousel-item">
+                            <img src="https://picsum.photos/200" class="d-block w-100 pb-1" alt="...">
+                        </div>
+                    `)}
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -57,27 +53,13 @@ const createProductDetailTemplate = (product) => `
                     </button>
                 </div>
         
-                <div class="small-img-group">
-                    <div class="small-img-col">
-                    <img src="${CONFIG.LARGE_BASE_IMAGE_URL + product.pictureId}" width="100%" class="small-img" alt="...">
-                    </div>
-                    <div class="small-img-col">
-                    <img src="${CONFIG.LARGE_BASE_IMAGE_URL + product.pictureId}" width="100%" class="small-img" alt="...">
-                    </div>
-                    <div class="small-img-col">
-                    <img src="${CONFIG.LARGE_BASE_IMAGE_URL + product.pictureId}" width="100%" class="small-img" alt="...">
-                    </div>
-                    <div class="small-img-col">
-                    <img src="${CONFIG.LARGE_BASE_IMAGE_URL + product.pictureId}" width="100%" class="small-img" alt="...">
-                    </div>
-                </div>
                 </div>
                 <div class="col-md-7">
-                <h1 class="name-product">Blouse Wanita</h1>
+                <h1 class="name-product">${product.name}</h1>
                 <div class="detail-product">
-                    <p><b>Rating:</b> 5<i class="bi bi-star-fill"></i> (200)</p>
-                    <p><b>Stock: </b><span>10</span></p>
-                    <p class="price pt-3 pb-3">Rp. 100.000,-</p>
+                    <p><b>Rating:</b>${product.rating}<i class="bi bi-star-fill"></i></p>
+                    <p><b>Stock: </b><span>${product.stock}</span></p>
+                    <p class="price pt-3 pb-3">Rp. ${product.price},-</p>
                 </div>
                 <form action="#" method="post">
                     <div class="color">
@@ -124,19 +106,12 @@ const createProductDetailTemplate = (product) => `
 
                     <ul>
                       <li class="review-item">
-                        ${product.customerReviews.map((review) => `
-                        <img
-                            src="https://cdn-icons-png.flaticon.com/512/3177/3177440.png"
-                            alt="Foto dari akun ${review.name}"
-                            width="48"
-                            height="48"
-                            class="reviewer_photo"
-                            >
-                        <div class="review-content">
-                        <p class="reviewer_name" id="name">${review.name}</p>
-                        <p class="reviewer_date" id="rate">${review.date}</p>
-                        <p class="reviewer_comment" id="comment-rate">"${review.review}"</p>
-                        </div>
+                        ${product.reviews.map((reviews) => `
+                            <div class="review-content">
+                            <p class="reviewer_name" id="name">${reviews.user_id}</p>
+                            <p class="reviewer_date" id="rate">${reviews.star}</p>
+                            <p class="reviewer_comment" id="comment-rate">"${reviews.description}"</p>
+                            </div>
                         `).join('<br>')}
                       </li>
                     </ul>
