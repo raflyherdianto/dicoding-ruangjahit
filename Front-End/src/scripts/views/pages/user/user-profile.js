@@ -17,10 +17,83 @@ const UserProfile = {
                   <button type="button" class="btn btn-sub" id="btn-logout" onclick="Logout()">
                       Logout
                   </button>
-                  
               </div>
           </div>
           <hr>
+          <div class="row">
+            <div class="col-lg-6 my-transaction">
+                <h4>My Transaction</h4>
+                <hr>
+                <div class="card p-3" data-bs-toggle="modal" data-bs-target="#detail-transaksiModal">
+                    <div class="row">
+                        <div class="col-9">
+                            <h5 class="pt-2">Blouse</h5>
+                            <small>Resi: JPG2789010282</small>
+                        </div>
+                        <div class="col-3">
+                            <div class="status-transaksi">Success</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 my-appointment">
+                    <h4>My Appointment</h4>
+                    <hr>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Deadline</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="align-middle">
+                                <td scope="col">Blouse</td>
+                                <td scope="col">11-12-22</td>
+                                <td scope="col"><p class="status-appointment mt-3">Success</p></td>
+                        </tbody>
+                    </table>
+            </div>
+          </div>
+          
+           <!-- modal  detail transaksi-->
+          <div class="modal fade" id="detail-transaksiModal" tabindex="-1" aria-labelledby="detail-transaksiModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-body">
+                    <div class="row">
+                        <div class="col-7">
+                            <h6 class="pt-2"><b>Detail Pesanan</b></h6>
+                        </div>
+                        <div class="col-5">
+                            <h6 class="pt-2">Resi: JPG2789010282</h6>
+                        </div>
+                        <hr>
+                    
+                    <div class="p-3" data-bs-toggle="modal" data-bs-target="#detail-transaksiModal">
+                        <div class="row" card-detail-transaksi">
+                            <div class="col-6">
+                                <h5 class="pt-2">Blouse</h5>
+                            </div>
+                            <div class="col-3">
+                                <p class="pt-2">5pcs</p>
+                            </div>
+                            <div class="col-3">
+                                <p class="pt-2">Rp.100.000</p>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                    </div>
+                    <h6 class=""><b>Detail Pembayaran</b></h6>
+                    <hr>
+                    <p>Total Harga: 500.000</p>
+                    <p>Metode Pembayaran: Transfer Bank</p>
+                    <div>Status: <span class="status-transaksi">Success</span></div>
+                  </div>
+                </div>
+            </div>
+        </div>            
   
           <!-- modal edit profile -->
           <div class="modal fade" id="edit-ProfileModal" tabindex="-1" aria-labelledby="edit-ProfileModalLabel" aria-hidden="true">
