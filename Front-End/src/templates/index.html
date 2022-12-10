@@ -76,7 +76,50 @@
             alert(`Error, terjadi kesalahan ${error}`);
         });
         }
-    
+
+        function GetUserProfile() {
+            token = localStorage.getItem('token');
+
+            const url = 'https://backend-ruangjahit-production.up.railway.app/api/user';
+            fetch(url, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                },
+            }).then((response) => response.json().then((data)=> {
+                let UserData = '';
+                    UserData += `
+                        <p style="font-size: 1.5rem;"><strong>${data.data.name}</strong></p>
+                        <p>${data.data.username}</p>
+                        <p>${data.data.first_phone} - ${data.data.first_address}</p>
+                    `;
+                document.getElementById('user_name').innerHTML = UserData;
+            }));
+        }
+
+        function GetTailorProfile() {
+            token = localStorage.getItem('token');
+
+            const url = 'https://backend-ruangjahit-production.up.railway.app/api/user';
+            fetch(url, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                },
+            }).then((response) => response.json().then((data)=> {
+                let UserData = '';
+                    UserData += `
+                        <p style="font-size: 1.5rem;"><strong>${data.data.store_name}</strong></p>
+                        <p><strong>${data.data.username} </strong> ${data.data.name}</p>
+                        <p>${data.data.first_phone} - ${data.data.first_address}</p>
+                        <small>
+                        <span class="category" style="font-size: 0.8rem;">${data.data.store_status}</span>
+                        </small>
+                    `;
+                document.getElementById('user_name').innerHTML = UserData;
+            }));
+        }
+        
         </script>
 </body>
 </html>

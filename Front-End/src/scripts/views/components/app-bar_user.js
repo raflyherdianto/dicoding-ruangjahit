@@ -42,7 +42,7 @@ class AppBarUser extends HTMLElement {
                     </li>
                   </ul>
                   <li class="btnLeft"><a href="#/user-product-cart" class="text-white" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="bi bi-bag-fill"></i><sub id="count">  0</sub></a></li>
-                  <li class="btnRight"><a href="#/user-profile" class="text-white"><i class="bi bi-person-circle"></i></a></li>
+                  <li class="btnRight" onclick="GetUserProfile()"><a href="#/user-profile" class="text-white"><i class="bi bi-person-circle"></i></a></li>
                 </div>
               </div>
         </nav>

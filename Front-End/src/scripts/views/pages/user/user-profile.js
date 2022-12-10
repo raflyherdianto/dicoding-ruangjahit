@@ -8,12 +8,7 @@ const UserProfile = {
               <div class="col-lg-3 col-md-4 col-12">
                   <img src="./users/woman.png" class="img-fluid" width="250" alt="">
               </div>
-              <div class="col-lg-7 col-md-5 col-12 pt-2"  id="user_name">
-                  
-                  <p>Bekasi, Jawa Barat Indonesia</p>
-                  <small>
-                      <span class="category"><i class="bi bi-telephone-fill"></i></span><span class="category">Female</span>
-                  </small>
+              <div class="col-lg-7 col-md-5 col-12 pt-2" id="user_name">
               </div>
               <div class="col-lg-2 col-md-3 col-12 pt-4">
                   <button type="button" class="btn btn-sub" data-bs-toggle="modal" data-bs-target="#edit-ProfileModal">
