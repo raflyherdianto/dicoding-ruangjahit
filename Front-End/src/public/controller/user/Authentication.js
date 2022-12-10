@@ -102,9 +102,6 @@ function Registration() {
 
 // Logout
 const Logout = () => {
-  // let key = JSON.stringify(localStorage.getItem('token'));
-
-  //     let token = JSON.parse(key);
   token = localStorage.getItem('token');
   console.log(token);
 
@@ -127,29 +124,3 @@ const Logout = () => {
       }
     }));
 };
-
-fetch('https://backend-ruangjahit-production.up.railway.app/api/provinces').then((data) =>
-// console.log(data);
-  data.json()).then((ObjectData) => {
-  console.log(ObjectData[0].id);
-  let provincesData = '';
-  ObjectData.map((values) => {
-    provincesData += `
-                <option id="province_id" value="${values.id}">${values.name}</option>
-                `;
-  });
-  document.getElementById('data-provinsi').innerHTML = provincesData;
-});
-
-fetch('https://backend-ruangjahit-production.up.railway.app/api/regencies').then((data) =>
-// console.log(data);
-  data.json()).then((ObjectData) => {
-  console.log(ObjectData[0].id);
-  let regenciesData = '';
-  ObjectData.map((values) => {
-    regenciesData += `
-                <option id="regencies_id" value="${values.id}">${values.name}</option>
-                `;
-  });
-  document.getElementById('data-kabupaten').innerHTML = regenciesData;
-});
