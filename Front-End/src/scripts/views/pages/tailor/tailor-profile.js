@@ -1,11 +1,4 @@
-/* eslint-disable camelcase */
-/* eslint-disable import/named */
 /* eslint-disable no-unused-vars */
-import Swal from 'sweetalert2';
-import CategoryDataSource from '../../../data/categorydb-source';
-import TailorDataSource from '../../../data/tailordb-source';
-import { createLoginTailorProductTemplate, createCategoryTailorTemplate } from '../../templates/template-creator';
-
 const TailorProfile = {
   async render() {
     return `
@@ -39,12 +32,6 @@ const TailorProfile = {
             <span class="logo_name">RuangJahit</span>
             </div>
             <ul class="nav-links" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <li class="nav-link " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-dashboard" type="button" role="tab" aria-controls="v-pills-dashboard" aria-selected="true">
-                <a class="">
-                    <i class="bi bi-grid-fill"></i>
-                    <span class="links_name">Dashboard</span>
-                </a>
-                </li>
                 <li class="nav-link " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-category" type="button" role="tab" aria-controls="v-pills-category" aria-selected="true">
                 <a>
                     <i class="bi bi-pie-chart-fill"></i>
@@ -61,6 +48,18 @@ const TailorProfile = {
                 <a>
                     <i class="bi bi-archive-fill"></i>
                     <span class="links_name">Product</span>
+                </a>
+                </li>
+                <li class="nav-link " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-transaction" type="button" role="tab" aria-controls="v-pills-transaction" aria-selected="true">
+                <a>
+                    <i class="bi bi-archive-fill"></i>
+                    <span class="links_name">Transaction</span>
+                </a>
+                </li>
+                <li class="nav-link " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-appointment" type="button" role="tab" aria-controls="v-pills-appointment" aria-selected="true">
+                <a>
+                    <i class="bi bi-archive-fill"></i>
+                    <span class="links_name">Appointment</span>
                 </a>
                 </li>
                 
@@ -86,6 +85,7 @@ const TailorProfile = {
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
+                        <th scope="col">User</th>
                         <th scope="col">Category</th>
                         <th scope="col">Price</th>
                         <th scope="col">Description</th>
@@ -94,12 +94,31 @@ const TailorProfile = {
                         <th scope="col">Color</th>
                         <th scope="col">Weight</th>
                         <th scope="col">Size</th>
+                        <th scope="col">Created_at</th>
+                        <th scope="col">Updated-at</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
-                <tbody class="align-middle" id="product">
-                        
+                <tbody class="align-middle">
+                        <td scope="col">#</td>
+                        <td scope="col">Name</td>
+                        <td scope="col">User</td>
+                        <td scope="col">Category</td>
+                        <td scope="col">Price</td>
+                        <td scope="col">Description</td>
+                        <td scope="col">Rating</td>
+                        <td scope="col">Stock</td>
+                        <td scope="col">Color</td>
+                        <td scope="col">Weight</td>
+                        <td scope="col">Size</td>
+                        <td scope="col">Created_at</td>
+                        <td scope="col">Updated-at</td>
+                        <td scope="col">
+                        <button class="btn btn-warning">Delete</button>
+                        <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#edit-productModal">Edit</button>
+                        </td>
                 </tbody>
+                    
                     </table>
                     </div>
                 </div>
@@ -149,11 +168,22 @@ const TailorProfile = {
                         <th scope="col">Name</th>
                     </tr>
                 </thead>
-                <tbody class="align-middle" id="category">
-                        
+                <tbody class="align-middle">
+                        <td scope="col">#</td>
+                        <td scope="col">Name</td>
                 </tbody>
             </table>
                 </div>
+                </div>
+            </div>
+            <div class="home-content tab-pane fade show" id="v-pills-transaction" role="tabpanel" aria-labelledby="v-pills-transaction-tab" tabindex="0">
+                <div class="container-lg">
+                <p>transaction</p>
+                </div>
+            </div>
+            <div class="home-content tab-pane fade show" id="v-pills-appointment" role="tabpanel" aria-labelledby="v-pills-appointment-tab" tabindex="0">
+                <div class="container-lg">
+                <p>appointment</p>
                 </div>
             </div>
         </section>
@@ -451,16 +481,6 @@ const TailorProfile = {
 
   async afterRender() {
     // Fungsi ini akan dipanggil setelah render()
-    const products = await TailorDataSource.getTailorLoginProduct();
-    const productContainer = document.querySelector('#product');
-    products.forEach((product) => {
-      productContainer.innerHTML += createLoginTailorProductTemplate(product);
-    });
-    const categories = await CategoryDataSource.getAllCategory();
-    const categoryContainer = document.querySelector('#category');
-    categories.forEach((category_product) => {
-      categoryContainer.innerHTML += createCategoryTailorTemplate(category_product);
-    });
   },
 
 };
