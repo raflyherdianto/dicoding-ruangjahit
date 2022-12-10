@@ -11,6 +11,7 @@ const API_ENDPOINT = {
   PROVINCE: `${CONFIG.API_BASE_URL}/provinces`,
   REGENCY: `${CONFIG.API_BASE_URL}/regencies`,
   TAILOR_LOGIN_PRODUCT: `${CONFIG.API_BASE_URL}/admin/products`,
+  CATEGORY: `${CONFIG.API_BASE_URL}/categories`,
 };
 
 export default API_ENDPOINT;

@@ -1,7 +1,6 @@
 import Swal from 'sweetalert2';
 import TailorDataSource from '../../../data/tailordb-source';
-import IndoRegionDataSource from '../../../data/indoregiondb-source';
-import { createTailorItemTemplate, createRegencyItemTemplate } from '../../templates/template-creator';
+import { createTailorItemTemplate } from '../../templates/template-creator';
 import '../../components/search-bar';
 
 const Tailor = {
@@ -75,9 +74,15 @@ const Tailor = {
             
             <div class="location-filter">
               <p>Location</p>
-              <select class="form-select" id="regency_id" aria-label="Default select example">
-                <option selected>Select by Regency</option>
-                </select>
+              <select class="form-select" aria-label="Select your location">
+                <option selected>Select your location</option>
+                <option value="Aceh">ACEH</option>
+                <option value="Sumatera">SUMATERA</option>
+                <option value="Jawa Barat">JAWA BARAT</option>
+                <option value="Jawa Tengah">JAWA TENGAH</option>
+                <option value="Jawa Timur">JAWA TIMUR</option>
+                <option value="Kalimantan">KALIMANTAN</option>
+              </select>
             </div>
             
             <input type="submit" name="search" value="Search">
@@ -141,8 +146,14 @@ const Tailor = {
               
               <div class="location-filter">
                 <p>Location</p>
-                <select class="form-select" id="regency_id_filter" aria-label="Default select example">
-                <option selected>Select by Regency</option>
+                <select class="form-select" aria-label="Select your location">
+                  <option selected>Select your location</option>
+                  <option value="Aceh">ACEH</option>
+                  <option value="Sumatera">SUMATERA</option>
+                  <option value="Jawa Barat">JAWA BARAT</option>
+                  <option value="Jawa Tengah">JAWA TENGAH</option>
+                  <option value="Jawa Timur">JAWA TIMUR</option>
+                  <option value="Kalimantan">KALIMANTAN</option>
                 </select>
               </div>
               
@@ -174,23 +185,11 @@ const Tailor = {
       } else {
         Swal.fire({
           icon: 'warning',
-          title: 'Tailor not found!',
-          confirmButtonColor: '#FF8A00',
-          showConfirmButton: false,
+          text: 'There are no tailors that match',
         });
       }
     };
     searchElement.clickEvent = onButtonSearchClicked;
-
-    const regencies = await IndoRegionDataSource.getAllRegencies();
-    const regencyContainer = document.querySelector('#regency_id');
-    const regencyContainerFilter = document.querySelector('#regency_id_filter');
-    regencies.forEach((regency) => {
-      regencyContainer.innerHTML += createRegencyItemTemplate(regency);
-    });
-    regencies.forEach((regency) => {
-      regencyContainerFilter.innerHTML += createRegencyItemTemplate(regency);
-    });
   },
 };
 

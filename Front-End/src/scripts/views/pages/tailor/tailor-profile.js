@@ -1,8 +1,10 @@
+/* eslint-disable camelcase */
 /* eslint-disable import/named */
 /* eslint-disable no-unused-vars */
 import Swal from 'sweetalert2';
+import CategoryDataSource from '../../../data/categorydb-source';
 import TailorDataSource from '../../../data/tailordb-source';
-import { createLoginTailorProductTemplate } from '../../templates/template-creator';
+import { createLoginTailorProductTemplate, createCategoryTailorTemplate } from '../../templates/template-creator';
 
 const TailorProfile = {
   async render() {
@@ -147,9 +149,8 @@ const TailorProfile = {
                         <th scope="col">Name</th>
                     </tr>
                 </thead>
-                <tbody class="align-middle">
-                        <td scope="col">#</td>
-                        <td scope="col">Name</td>
+                <tbody class="align-middle" id="category">
+                        
                 </tbody>
             </table>
                 </div>
@@ -454,6 +455,11 @@ const TailorProfile = {
     const productContainer = document.querySelector('#product');
     products.forEach((product) => {
       productContainer.innerHTML += createLoginTailorProductTemplate(product);
+    });
+    const categories = await CategoryDataSource.getAllCategory();
+    const categoryContainer = document.querySelector('#category');
+    categories.forEach((category_product) => {
+      categoryContainer.innerHTML += createCategoryTailorTemplate(category_product);
     });
   },
 

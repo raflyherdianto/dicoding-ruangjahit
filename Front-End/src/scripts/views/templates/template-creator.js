@@ -192,6 +192,10 @@ const createLoginTailorProductTemplate = (product) => `
                         <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#edit-productModal">Edit</button>
                         </td>
 `;
+const createCategoryTailorTemplate = (category_product) => `
+                        <td scope="col">${category_product.id}</td>
+                        <td scope="col">${category_product.name}</td>
+`;
 
 export {
   createProductItemTemplate,
@@ -202,4 +206,5 @@ export {
   createProvinceItemTemplate,
   createRegencyItemTemplate,
   createLoginTailorProductTemplate,
+  createCategoryTailorTemplate,
 };

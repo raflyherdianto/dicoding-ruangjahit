@@ -1,7 +1,5 @@
-import Swal from 'sweetalert2';
 import ProductDataSource from '../../../data/productdb-source';
-import IndoRegionDataSource from '../../../data/indoregiondb-source';
-import { createProductItemTemplate, createRegencyItemTemplate } from '../../templates/template-creator';
+import { createProductItemTemplate } from '../../templates/template-creator';
 import '../../components/search-bar';
 
 const Product = {
@@ -75,9 +73,15 @@ const Product = {
             
             <div class="location-filter">
               <p>Location</p>
-              <select class="form-select" id="regency_id" aria-label="Default select example">
-                <option selected>Select by Regency</option>
-                </select>
+              <select class="form-select" aria-label="Select your location">
+                <option selected>Select your location</option>
+                <option value="Aceh">ACEH</option>
+                <option value="Sumatera">SUMATERA</option>
+                <option value="Jawa Barat">JAWA BARAT</option>
+                <option value="Jawa Tengah">JAWA TENGAH</option>
+                <option value="Jawa Timur">JAWA TIMUR</option>
+                <option value="Kalimantan">KALIMANTAN</option>
+              </select>
             </div>
             
             <input type="submit" name="search" value="Search">
@@ -141,8 +145,14 @@ const Product = {
               
               <div class="location-filter">
                 <p>Location</p>
-                <select class="form-select" id="regency_id_filter" aria-label="Default select example">
-                <option selected>Select by Regency</option>
+                <select class="form-select" aria-label="Select your location">
+                  <option selected>Select your location</option>
+                  <option value="Aceh">ACEH</option>
+                  <option value="Sumatera">SUMATERA</option>
+                  <option value="Jawa Barat">JAWA BARAT</option>
+                  <option value="Jawa Tengah">JAWA TENGAH</option>
+                  <option value="Jawa Timur">JAWA TIMUR</option>
+                  <option value="Kalimantan">KALIMANTAN</option>
                 </select>
               </div>
               
@@ -172,25 +182,10 @@ const Product = {
           productContainer.innerHTML += createProductItemTemplate(product);
         });
       } else {
-        Swal.fire({
-          icon: 'warning',
-          title: 'Product not found!',
-          confirmButtonColor: '#FF8A00',
-          showConfirmButton: false,
-        });
+        productContainer.innerHTML = '<h5 class="text-warning fs-2">There are no products that match</h5>';
       }
     };
     searchElement.clickEvent = onButtonSearchClicked;
-
-    const regencies = await IndoRegionDataSource.getAllRegencies();
-    const regencyContainer = document.querySelector('#regency_id');
-    const regencyContainerFilter = document.querySelector('#regency_id_filter');
-    regencies.forEach((regency) => {
-      regencyContainer.innerHTML += createRegencyItemTemplate(regency);
-    });
-    regencies.forEach((regency) => {
-      regencyContainerFilter.innerHTML += createRegencyItemTemplate(regency);
-    });
   },
 };
 
