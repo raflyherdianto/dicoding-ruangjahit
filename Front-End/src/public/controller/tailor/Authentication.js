@@ -45,16 +45,16 @@ function LoginTailor() {
 
 // Regis
 function RegistrationTailor() {
-  const name = document.getElementById('name_tailor');
-  const username = document.getElementById('username_tailor');
-  const first_address = document.getElementById('first_address_tailor');
-  const first_phone = document.getElementById('first_phone_tailor');
-  const province_id = document.getElementById('province_id_tailor');
-  const regency_id = document.getElementById('regency_id_tailor');
-  const zip_code = document.getElementById('zip_code_tailor');
-  const email = document.getElementById('email_tailor');
-  const password = document.getElementById('password_tailor');
-  const password_confirmation = document.getElementById('password_confirmation_tailor');
+  const name = document.getElementById('name');
+  const username = document.getElementById('username');
+  const first_address = document.getElementById('first_address');
+  const first_phone = document.getElementById('first_phone');
+  const province_id = document.getElementById('province_id');
+  const regency_id = document.getElementById('regency_id');
+  const zip_code = document.getElementById('zip_code');
+  const email = document.getElementById('email');
+  const password = document.getElementById('password');
+  const password_confirmation = document.getElementById('password_confirmation');
 
   const data = JSON.stringify({
     name: name.value,
@@ -127,29 +127,3 @@ const LogoutTailor = () => {
       }
     }));
 };
-
-fetch('https://backend-ruangjahit-production.up.railway.app/api/provinces').then((data) =>
-// console.log(data);
-  data.json()).then((ObjectData) => {
-  console.log(ObjectData[0].id);
-  let provincesData = '';
-  ObjectData.map((values) => {
-    provincesData += `
-                <option id="province_id_tailor" value="${values.id}">${values.name}</option>
-                `;
-  });
-  document.getElementById('data-provinsi').innerHTML = provincesData;
-});
-
-fetch('https://backend-ruangjahit-production.up.railway.app/api/regencies').then((data) =>
-// console.log(data);
-  data.json()).then((ObjectData) => {
-  console.log(ObjectData[0].id);
-  let regenciesData = '';
-  ObjectData.map((values) => {
-    regenciesData += `
-                <option id="regencies_id_tailor" value="${values.id}">${values.name}</option>
-                `;
-  });
-  document.getElementById('data-kabupaten').innerHTML = regenciesData;
-});
