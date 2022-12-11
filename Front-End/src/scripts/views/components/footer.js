@@ -14,7 +14,7 @@ class Footer extends HTMLElement {
         <div class="row">
             <div class="footer-col">
                 <h4>Tentang RuangJahit</h4>
-                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                <p style="padding-right:16px">RuangJahit adalah website yang menghubungkan Pelanggan dan Penyedia Jasa Jahit yang bertujuan memperluas potensi Penyedia Jasa Jahit di Indonesia.</p>
             </div>
             <div class="footer-col">
                 <h4>Navigasi</h4>
