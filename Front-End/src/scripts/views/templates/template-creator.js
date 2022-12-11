@@ -193,6 +193,10 @@ const createCategoryTailorTemplate = (category_product) => `
                         <td scope="col">${category_product.name}</td>
 `;
 
+const createProductCategoryTemplate = (category_product) => `
+<option value="${category_product.id}">${category_product.name}</option>
+`;
+
 export {
   createProductItemTemplate,
   createProductDetailTemplate,
@@ -205,4 +209,5 @@ export {
   createCategoryTailorTemplate,
   createUserDetailTemplate,
   createTailorDetailTemplate,
+  createProductCategoryTemplate,
 };

@@ -111,7 +111,7 @@
                             text: 'Kategori berhasil ditambahkan!',
                             button: 'OK',
                         }).then((value) => {
-                            location.reload();
+                            location.reload(true);
                         });
                     } else {
                         console.log(data);
@@ -132,7 +132,69 @@
                     })
                 });
         }
-        
+        function productAdd() {
+            const name = document.getElementById('productName');
+            const price = document.getElementById('productPrice');
+            const description = document.getElementById('productDescription');
+            const stock = document.getElementById('productStock');
+            const color = document.getElementById('productColor');
+            const weight = document.getElementById('productWeight');
+            const size = document.getElementById('productSize');
+            const category_product_id = document.getElementById('productCategory');
+
+            const data = JSON.stringify({
+                name: name.value,
+                price: price.value,
+                description: description.value,
+                stock: stock.value,
+                color: color.value,
+                weight: weight.value,
+                size: size.value,
+                category_product_id: category_product_id.value,
+            });
+
+            const url = 'https://backend-ruangjahit-production.up.railway.app/api/products';
+            const token = localStorage.getItem('token');
+
+            fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'Authorization': `Bearer ${token}`,
+                    },
+                    body: data,
+                })
+                .then((response) => response.json().then((data) => {
+                    console.log(response.status);
+                    if (response.status == 200 || response.status == 201) {
+                        swal({
+                            icon: 'success',
+                            title: 'Success!',
+                            text: 'Produk Berhasil Ditambahkan!',
+                            button: 'OK',
+                        }).then((value) => {
+                            location.reload(true);
+                        });
+                    } else {
+                        console.log(data);
+                        swal({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Gagal Menambahkan Produk!',
+                            button: 'OK',
+                        })
+                    }
+                }))
+                .catch((error) => {
+                    swal({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Gagal Menambahkan Kategori!',
+                        button: 'OK',
+                    })
+                });
+        }
     </script>
 </body>
 

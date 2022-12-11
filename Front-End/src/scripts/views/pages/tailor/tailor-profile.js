@@ -1,3 +1,5 @@
+/* eslint-disable object-curly-newline */
+/* eslint-disable no-self-assign */
 /* eslint-disable object-curly-spacing */
 /* eslint-disable eol-last */
 /* eslint-disable camelcase */
@@ -6,7 +8,7 @@
 import Swal from 'sweetalert2';
 import CategoryDataSource from '../../../data/categorydb-source';
 import TailorDataSource from '../../../data/tailordb-source';
-import {createLoginTailorProductTemplate, createCategoryTailorTemplate, createTailorDetailTemplate} from '../../templates/template-creator';
+import {createLoginTailorProductTemplate, createCategoryTailorTemplate, createTailorDetailTemplate, createProductCategoryTemplate} from '../../templates/template-creator';
 import UserDataSource from '../../../data/userdb-source';
 
 const TailorProfile = {
@@ -391,54 +393,38 @@ const TailorProfile = {
                 <form class="row g-3">
                     <div class="col-lg-12">
                     <label for="inputProductName" class="form-label">Product Name</label>
-                    <input type="text" class="form-control" id="inputProductName" required>
-                    </div>
-                    <div class="col-lg-12">
-                    <label for="inputPrice" class="form-label">Price</label>
-                    <input type="number" class="form-control" id="inputPrice">
-                    </div>
-                    <div class="col-lg-12">
-                    <label for="inputStock" class="form-label">Stock</label>
-                    <input type="number" class="form-control" id="inputStock">
-                    </div>
-                    <div class="col-12">
-                    <label for="inputDescription" class="form-label">Description</label>
-                    <input type="textarea" class="form-control" id="inputDescription">
-                    </div>
-                    <div class="col-lg-12">
-                        <label for="inputCategory">Select Category</label>
-                        <input type="text" class="form-control" id="inputCategory" placeholder="Select category e.g shirt, pants, etc." required>
-                    </div>
-                    <div class="col-lg-12">
-                        <label for="inputSize">Select Size</label>
-                        <select class="form-control" id="inputSize">
-                        <option>Select Size</option>
-                        <option>S</option>
-                        <option>M</option>
-                        <option>L</option>
-                        <option>XL</option>
-                        <option>XXL</option>
-                        </select>
-                    </div>
-                    <div class="col-lg-12">
-                        <label for="inputColor">Color</label>
-                        <input type="text" class="form-control" id="inputColor" placeholder="Enter color">
-                    </div>
-                    <div class="col-lg-12">
-                        <label for="inputWeight">Weight</label>
-                        <input type="number" class="form-control" id="inputWeight" placeholder="Enter weight">
-                    </div>
-                    
-                    <div class="col-lg-12">
-                        <button type="submit" class="btn btn-primary mt-3" id="btn-create-product">Create</button>
-                        <button type="submit" class="btn btn-danger mt-3" id="btn-delete-product">Delete</button>
+                    <input type="text" class="form-control" id="productName" placeholder="Nama Produk" required>
+                    <br>
+                    <label for="inputProductName" class="form-label">Product Category</label>
+                    <select class="form-select" id="productCategory" aria-label="Default select example">
+                        <option selected>Pilih Kategori</option>
+  
+                    </select>
+                    <br>
+                    <label for="inputProductName" class="form-label">Product Price</label>
+                    <input type="text" class="form-control" id="productPrice" placeholder="Harga Produk" required>
+                    <br>
+                    <label for="inputProductName" class="form-label">Product Description</label>
+                    <input type="text" class="form-control" id="productDescription" placeholder="Deskripsi Produk" required>
+                    <br>
+                    <label for="inputProductName" class="form-label">Product Stock</label>
+                    <input type="text" class="form-control" id="productStock" placeholder="Stok Produk" required>
+                    <br>
+                    <label for="inputProductName" class="form-label">Product Color</label>
+                    <input type="text" class="form-control" id="productColor" placeholder="Warna Produk" required>
+                    <br>
+                    <label for="inputProductName" class="form-label">Product Weight (Kg)</label>
+                    <input type="text" class="form-control" id="productWeight" placeholder="Berat Produk" required>
+                    <br>
+                    <label for="inputProductName" class="form-label">Product Size</label>
+                    <input type="text" class="form-control" id="productSize" placeholder="Ukuran Produk" required>
                     </div>
                 </form>
             </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn btn-primary" onclick="productAdd()">Save changes</button>
                 </div>
             </div>
         </div>
@@ -456,6 +442,7 @@ const TailorProfile = {
                     <label for="inputcategoryName" class="form-label">Category Name</label>
                     <input type="text" class="form-control" id="categoryName" placeholder="Nama Kategori" required>
                     <br>
+                    <label for="inputcategoryName" class="form-label">Category Slug</label>
                     <input type="text" class="form-control" id="slug" placeholder="Nama Slug" required>
                     </div>
                 </form>
@@ -464,29 +451,6 @@ const TailorProfile = {
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary" onclick="categoryAdd()">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- modal Edit category -->
-    <div class="modal fade" id="edit-categoryModal" tabindex="-1" aria-labelledby="add-ProfileModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content">
-                <div class="modal-body">
-                <div class="container-lg">
-                <h5 class="text-center">Edit Category</h5>
-                <hr>
-                <form class="row g-3">
-                    <div class="col-lg-12">
-                    <label for="inputcategoryName" class="form-label">Category Name</label>
-                    <input type="text" class="form-control" id="inputcategoryName" required>
-                    </div>
-                </form>
-            </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
@@ -561,12 +525,17 @@ const TailorProfile = {
       categoryContainer.innerHTML += createCategoryTailorTemplate(category_product);
     });
 
+    const productCategoryContainer = document.querySelector('#productCategory');
+    categories.forEach((category_product) => {
+      productCategoryContainer.innerHTML += createProductCategoryTemplate(category_product);
+    });
+
     const user = await UserDataSource.getUserData();
     const userContainer = document.querySelector('#user_name');
     userContainer.innerHTML += createTailorDetailTemplate(user);
 
-    const photoContainer = document.querySelector('#profile_picture');
-    photoContainer.innerHTML += createUserPictureTemplate(user);
+    // const photoContainer = document.querySelector('#profile_picture');
+    // photoContainer.innerHTML += createUserPictureTemplate(user);
   },
 
 };
