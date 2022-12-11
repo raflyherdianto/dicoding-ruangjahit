@@ -114,11 +114,12 @@ Clone Repository
 git clone https://github.com/raflyherdianto/dicoding-ruangjahit.git
 ```
 ## Front-End
-Install modules pada terminal
+- Buka Folder Front-End
+- Install modules pada terminal
 ```javascript
 npm install
 ```
-run 
+- run 
 ```javascript
 npm run start-dev
 ```
