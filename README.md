@@ -15,7 +15,8 @@
 9. ##### [Executive Summary](#9)
 10. ###### [About RuangJahit](#10)
 11. ###### [Project Resource](#11)
-12. ###### [Daftar Pustaka](#12)
+12. ###### [User Guide](#12)
+13. ###### [Daftar Pustaka](#13)
 
 <a id="1"></a>
 ## Authors
@@ -52,10 +53,11 @@ https://github.com/raflyherdianto/dicoding-ruangjahit
 
 <a id="7"></a>
 ## Slide Presentation Link:
-
+https://docs.google.com/presentation/d/15bJlr-feSNU1MAjIW8iLJjHNUz0h1OY_C7LPiWaekXI/edit?usp=sharing
 
 <a id="8"></a>
-## Video Demo Aplikasi Link :
+## Video Presentation Link :
+https://youtu.be/4o6ckgB8H5Y
 
 <a id="9"></a>
 # Executive Summary
@@ -106,4 +108,25 @@ Berikut Resources yang dibutuhkan dalam pengembangan Website FoodIntake :
 </ul>
 
 <a id="12"></a>
+# User Guide
+Clone Repository
+```javascript
+git clone https://github.com/raflyherdianto/dicoding-ruangjahit.git
+```
+## Front-End
+Install modules pada terminal
+```javascript
+npm install
+```
+run 
+```javascript
+npm run start-dev
+```
+## Back-End
+
+
+<a id="13"></a>
 # Daftar Pustaka
+[1] Bratakusuma, Trias & Rifai, Zanuar & Saputra, Jeffri Prayitno Bangkit. “Aplikasi Untuk Order Jahit Secara Online”. Naratif: Jurnal Ilmiah Nasional Riset Aplikasi dan Teknik Informatika, Vol. 3, No.1, 2021. (Online). Tersedia di https://naratif.sttbandung.ac.id/index.php/naratif/article/view/115
+
+[2] Khumaidi, Ali. “Perancangan Aplikasi Marketplace Order Baju Pintar Menggunakan Web Responsif Untuk Memudahkan Customer Mendesain Sesuai Selera”. Ikraith Informatika, Vol.2, No.2, 2018 (Online). Tersedia di https://journals.upi-yai.ac.id/index.php/ikraith-informatika/article/view/205
