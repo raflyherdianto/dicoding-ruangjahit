@@ -15,11 +15,10 @@ const TailorProfile = {
     <app-bar-tailor></app-bar-tailor>
     <div class="container pt-5 user-profile">
         <div class="row content">
-            <div class="col-lg-3 col-md-4 col-12">
-                <img src="./users/woman.png" class="img-fluid" width="250" alt="">
-            </div>
-            <div class="col-lg-7 col-md-5 col-12 pt-2" id="user_name">
-            </div>
+        <div id="profile_picture" class="col-lg-3 col-12">
+        </div>
+        <div class="col-lg-7 col-md-5 col-12 pt-2" id="user_name">
+        </div>
             <div class="col-lg-2 col-md-3 col-12 pt-4">
                 <button type="button" class="btn btn-sub" data-bs-toggle="modal" data-bs-target="#edit-ProfileModal">
                     Edit Profile
@@ -549,6 +548,8 @@ const TailorProfile = {
 
   async afterRender() {
     // Fungsi ini akan dipanggil setelah render()
+    window.location.href = window.location.href;
+
     const products = await TailorDataSource.getTailorLoginProduct();
     const productContainer = document.querySelector('#product');
     products.forEach((product) => {
@@ -563,6 +564,9 @@ const TailorProfile = {
     const user = await UserDataSource.getUserData();
     const userContainer = document.querySelector('#user_name');
     userContainer.innerHTML += createTailorDetailTemplate(user);
+
+    const photoContainer = document.querySelector('#profile_picture');
+    photoContainer.innerHTML += createUserPictureTemplate(user);
   },
 
 };
