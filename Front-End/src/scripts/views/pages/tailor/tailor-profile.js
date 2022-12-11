@@ -455,14 +455,16 @@ const TailorProfile = {
                 <form class="row g-3">
                     <div class="col-lg-12">
                     <label for="inputcategoryName" class="form-label">Category Name</label>
-                    <input type="text" class="form-control" id="inputcategoryName" required>
+                    <input type="text" class="form-control" id="categoryName" placeholder="Nama Kategori" required>
+                    <br>
+                    <input type="text" class="form-control" id="slug" placeholder="Nama Slug" required>
                     </div>
                 </form>
             </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn btn-primary" onclick="categoryAdd()">Save changes</button>
                 </div>
             </div>
         </div>
