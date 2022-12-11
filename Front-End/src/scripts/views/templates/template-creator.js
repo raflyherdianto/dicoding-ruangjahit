@@ -128,6 +128,10 @@ const createUserDetailTemplate = (data) => `
     <p>${data.first_phone} - ${data.first_address}</p>
 `;
 
+const createUserPictureTemplate = (data) => `
+    <img src="https://ui-avatars.com/api/?name=${data.username}&size=250" class="img-fluid" alt="">
+`;
+
 const createTailorDetailTemplate = (data) => `
     <p style="font-size: 1.5rem;"><strong>${data.store_name}</strong></p>
     <p><strong>${data.username} </strong> ${data.name}</p>
