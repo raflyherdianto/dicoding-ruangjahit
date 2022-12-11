@@ -38,12 +38,6 @@ const TailorProfile = {
             <span class="logo_name">RuangJahit</span>
             </div>
             <ul class="nav-links" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <li class="nav-link " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-dashboard" type="button" role="tab" aria-controls="v-pills-dashboard" aria-selected="true">
-                <a class="">
-                    <i class="bi bi-grid-fill"></i>
-                    <span class="links_name">Dashboard</span>
-                </a>
-                </li>
                 <li class="nav-link " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-category" type="button" role="tab" aria-controls="v-pills-category" aria-selected="true">
                 <a>
                     <i class="bi bi-pie-chart-fill"></i>
@@ -52,20 +46,20 @@ const TailorProfile = {
                 </li>
                 <li class="nav-link " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-addimage" type="button" role="tab" aria-controls="v-pills-addimage" aria-selected="true">
                 <a>
-                    <i class="bi bi-file-text"></i>
+                    <i class="bi bi-file-earmark-image"></i>
                     <span class="links_name">Image Product</span>
                 </a>
                 </li>
                 <li class="nav-link " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-product" type="button" role="tab" aria-controls="v-pills-product" aria-selected="true">
                 <a>
-                    <i class="bi bi-archive-fill"></i>
+                    <i class="bi bi-box-seam-fill"></i>
                     <span class="links_name">Product</span>
                 </a>
                 </li>
 
                 <li class="nav-link " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-transaction" type="button" role="tab" aria-controls="v-pills-transaction" aria-selected="true">
                 <a>
-                    <i class="bi bi-archive-fill"></i>
+                    <i class="bi bi-credit-card"></i>
                     <span class="links_name">Transaction</span>
                 </a>
                 </li>
