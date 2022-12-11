@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import UserDataSource from '../../../data/userdb-source';
-import { createUserDetailTemplate } from '../../templates/template-creator';
+import IndoRegionDataSource from '../../../data/indoregiondb-source';
+import { createProvinceItemTemplate, createRegencyItemTemplate, createLoginTailorProductTemplate, createCategoryTailorTemplate, createTailorDetailTemplate, createUserPictureTemplate } from '../../templates/template-creator';
 
 const UserProfile = {
   async render() {
@@ -118,23 +119,18 @@ const UserProfile = {
                               <input type="text" class="form-control" id="edit_first_address" placeholder="address">
                           </div>
                           <div class="mb-3">
-                              <label for="edit_province_id" class="form-label"><small>Provinsi</small></label>
-                                  <select class="form-select" aria-label="Default select example">
-                                  <option selected>Provinsi</option>
-                                  <option id="edit_province_id" name="edit_province_id" value="11">ACEH</option>
-                                  <option id="edit_province_id" name="edit_province_id" value="12">SUMATERA UTARA</option>
-                                  <option id="edit_province_id" name="edit_province_id" value="13">SUMATERA BARAT</option>
-                              </select>
-                          </div>
-                          <div class="mb-3">
-                              <label for="edit_regency_id" class="form-label"><small>Kabupaten/Kota</small></label>
-                              <select class="form-select" aria-label="Default select example">
-                              <option selected>Kabupaten</option>
-                              <option id="edit_regency_id" name="edit_regency_id" value="1101">KABUPATEN SIMEULUE</option>
-                              <option id="edit_regency_id" name="edit_regency_id" value="1102">KABUPATEN ACEH SINGKIL</option>
-                              <option id="edit_regency_id" name="edit_regency_id" value="1103">KABUPATEN ACEH SELATAN</option>
-                              </select>
-                          </div>
+                            <label for="edit_profile_id" class="form-label"><small>Pilih Provinsi</small></label>
+                            <select class="form-select mb-1" id="edit_profile_id" aria-label="Default select example">
+                            <option selected>Pilih Provinsi</option>
+                            </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="edit_regency_id" class="form-label"><small>Pilih Kota</small></label>
+                                <select class="form-select" id="edit_regency_id" aria-label="Default select example">
+                                <option selected>Pilih Kota</option>
+                                </select>
+                            </div>
                           <div class="mb-3">
                               <label for="edit_zip_code" class="form-label"><small>Kode Pos</small></label>
                               <input type="text" class="form-control" id="edit_zip_code" placeholder="zip code">
@@ -170,6 +166,17 @@ const UserProfile = {
 
     const photoContainer = document.querySelector('#profile_picture');
     photoContainer.innerHTML += createUserPictureTemplate(user);
+
+    const provinces = await IndoRegionDataSource.getAllProvince();
+    const regencies = await IndoRegionDataSource.getAllRegencies();
+    const provinceContainer = document.querySelector('#edit_profile_id');
+    const regencyContainer = document.querySelector('#edit_regency_id');
+    provinces.forEach((province) => {
+      provinceContainer.innerHTML += createProvinceItemTemplate(province);
+    });
+    regencies.forEach((regency) => {
+      regencyContainer.innerHTML += createRegencyItemTemplate(regency);
+    });
   },
 
 };
