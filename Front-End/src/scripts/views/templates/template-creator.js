@@ -210,4 +210,5 @@ export {
   createUserDetailTemplate,
   createTailorDetailTemplate,
   createProductCategoryTemplate,
+  createUserPictureTemplate
 };
