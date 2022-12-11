@@ -45,7 +45,7 @@ Nama Anggota Kelompok :
 
 <a id="5"></a>
 ## User-accessible Link
-
+https://ruangjahit.netlify.app
 
 <a id="6"></a>
 ## Github Repo Link
@@ -123,6 +123,23 @@ run
 npm run start-dev
 ```
 ## Back-End
+- Install proyek laravel baru menggunakan composer pada terminal
+```javascript
+composer create-project laravel/laravel example-app
+```
+- paste semua file back-end ke repository tersebut
+- Copy isi dari .env.example file 
+- Buat .env file baru dan paste di file tersebut
+
+- Lakukan migrasi database
+```javascript
+php artisan migrate:fresh --seed
+```
+
+- Menjalankan back-end
+```javascript
+php artisan serve
+```
 
 
 <a id="13"></a>
