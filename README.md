@@ -141,6 +141,8 @@ php artisan migrate:fresh --seed
 ```javascript
 php artisan serve
 ```
+# Deployed API
+https://backend-ruangjahit-production.up.railway.app/
 
 
 <a id="13"></a>
