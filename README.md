@@ -65,7 +65,7 @@ https://youtu.be/4o6ckgB8H5Y
 
 <a id="10"></a>
 # About RuangJahit
-**RuangJahit** adalah adalah website yang menghubungkan Pelanggan dan Penyedia Jasa Jahit baik individu maupun UMKM agar dapat memperluas potensi Penyedia Jasa Jahit untuk dapat dikenal banyak orang dan memudahkan Pelanggan dalam menemukan informasi Penyedia Jasa Jahit terbaik. Kami hadir untuk membantu Anda dalam menyediakan informasi Penyedia Layanan Jahit berdasarkan rating atau lokasi.
+**RuangJahit** adalah website yang menghubungkan Pelanggan dan Penyedia Jasa Jahit baik individu maupun UMKM agar dapat memperluas potensi Penyedia Jasa Jahit untuk dapat dikenal banyak orang dan memudahkan Pelanggan dalam menemukan informasi Penyedia Jasa Jahit terbaik. Kami hadir untuk membantu Anda dalam menyediakan informasi Penyedia Layanan Jahit berdasarkan rating atau lokasi.
 
 <a id="11"></a>
 # Project Resource
@@ -90,7 +90,6 @@ Berikut Resources yang dibutuhkan dalam pengembangan Website FoodIntake :
     <ul>
       <li>Visual Studio Code</li>
       <li>FIGMA</li>
-      <li>Github</li>
       <li>Railway.app</li>
       <li>Draw.io</li>
     </ul>
