@@ -8,6 +8,7 @@
     memberikan ruang untuk jasa penjahit agar dapat lebih dikenal oleh banyak orang.">
     <meta name="theme-color" content="#FF8A00" />
     <meta name="keywords" content="jasa jahit, produk lokal">
+    <meta name="dicoding:email" content="f131x0221@dicoding.org">
 
     <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
     <link rel="manifest" href="./app.webmanifest">
@@ -190,7 +191,70 @@
                     swal({
                         icon: 'error',
                         title: 'Oops...',
-                        text: 'Gagal Menambahkan Kategori!',
+                        text: 'Gagal Menambahkan Produk!',
+                        button: 'OK',
+                    })
+                });
+        }
+        function productEdit() {
+            const name = document.getElementById('productName');
+            const price = document.getElementById('productPrice');
+            const description = document.getElementById('productDescription');
+            const stock = document.getElementById('productStock');
+            const color = document.getElementById('productColor');
+            const weight = document.getElementById('productWeight');
+            const size = document.getElementById('productSize');
+            const category_product_id = document.getElementById('productCategory');
+
+            const data = JSON.stringify({
+                name: name.value,
+                price: price.value,
+                description: description.value,
+                stock: stock.value,
+                color: color.value,
+                weight: weight.value,
+                size: size.value,
+                category_product_id: category_product_id.value,
+            });
+
+            const url = 'https://backend-ruangjahit-production.up.railway.app/api/products/'.$_GET['id'];
+            const token = localStorage.getItem('token');
+
+            fetch(url, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'Authorization': `Bearer ${token}`,
+                    },
+                    body: data,
+                })
+                .then((response) => response.json().then((data) => {
+                    console.log(response.status);
+                    if (response.status == 200 || response.status == 201) {
+                        swal({
+                            icon: 'success',
+                            title: 'Success!',
+                            text: 'Produk Berhasil Diubah!',
+                            button: 'OK',
+                        }).then((value) => {
+                            location.reload(true);
+                        });
+                    } else {
+                        console.log(data);
+                        swal({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Gagal Mengubah Produk!',
+                            button: 'OK',
+                        })
+                    }
+                }))
+                .catch((error) => {
+                    swal({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Gagal Mengubah Produk!',
                         button: 'OK',
                     })
                 });
