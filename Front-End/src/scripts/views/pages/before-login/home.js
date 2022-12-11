@@ -8,7 +8,7 @@ const Home = {
                   <h1>Buat Desain Impianmu
                       bersama RuangJahit!</h1>
                   <p class="lead ">Kami hadir untuk membantu Anda dalam menemukan jasa penjahit terbaik dan memberikan ruang untuk jasa penjahit agar dapat lebih dikenal oleh banyak orang.</p>
-                  <button type="button" class="btn bg-white text-warning font-weight-bolder">Pesan Sekarang!</button>
+                  <button type="button" class="btn bg-white text-warning font-weight-bolder"><a href="#/product" style="text-decoration: none; color: #FF8A00;">Pesan Sekarang!</a></button>
               </div>
               <div class="col-lg-6 col-md-12 hero-right">
                   <img src="./assets/header.png" class="img-fluid align-content-between" alt="">
@@ -78,7 +78,7 @@ const Home = {
       <h1 class="tagline">Bergabung bersama Kami</h1>
       <!-- button for register user tailor -->
       <h5>Bergabunglah bersama kami untuk menikmati berbagai fitur menarik yang kami tawarkan.</h5>
-      <button onclick="location.href='#'">Daftar Penjahit</button>
+      <button onclick="location.href='#/sign-up-tailor'">Daftar Penjahit</button>
     </div>
     `;
   },
