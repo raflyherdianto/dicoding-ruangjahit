@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
 import CategoryDataSource from '../../../data/categorydb-source';
 import TailorDataSource from '../../../data/tailordb-source';
 import IndoRegionDataSource from '../../../data/indoregiondb-source';
-import { createProvinceItemTemplate, createRegencyItemTemplate, createLoginTailorProductTemplate, createCategoryTailorTemplate, createTailorDetailTemplate, createUserPictureTemplate } from '../../templates/template-creator';
+import { createProvinceItemTemplate, createRegencyItemTemplate, createLoginTailorProductTemplate, createCategoryTailorTemplate, createTailorDetailTemplate, createProductCategoryTemplate, createUserPictureTemplate } from '../../templates/template-creator';
 import UserDataSource from '../../../data/userdb-source';
 
 const TailorProfile = {
