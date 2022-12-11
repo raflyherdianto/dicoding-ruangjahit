@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import UserDataSource from '../../../data/userdb-source';
 import IndoRegionDataSource from '../../../data/indoregiondb-source';
-import { createProvinceItemTemplate, createRegencyItemTemplate, createLoginTailorProductTemplate, createCategoryTailorTemplate, createTailorDetailTemplate, createUserPictureTemplate } from '../../templates/template-creator';
+import { createProvinceItemTemplate, createRegencyItemTemplate, createUserDetailTemplate, createUserPictureTemplate } from '../../templates/template-creator';
 
 const UserProfile = {
   async render() {
